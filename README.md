@@ -5,11 +5,16 @@ The advent of the Green Revolution triggered a substantial increase in food prod
 
 ## (Draft) hypotheses
 (i) bromeliad size and density will have an indirect negative effect on leaf damage, because they increase predator presence in the tree
+
 (ii) for the same reason, trees with bigger and more numerous bromeliads will have a more abundant predator community
+
 (iii) because of consumptive and non-consumptive effects, a higher abundance of predators will result in a lower abundance of herbivores
+
 (iv) higher herbivore abundance will result in higher leaf damage, because they preferentially say on their food plant
 
 ## Notes on R code
 *lamona* or *mona* refer to vacuum sampling
+
 *Square* means quadrat (i to iv) for each tree
+
 propdamage is damage proportion, bounded between 0 and 1
