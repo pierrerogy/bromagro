@@ -53,11 +53,11 @@ distance <- rbind(distance, missing_tree)
 ##Correct wrong  quadrat distance
 distance$Square[distance$Site == "DO" 
                 & distance$Tree == "F23"
-                & distance$Bromeliad_. == "b"
+                & distance$Bromeliad == "b"
                 &distance$Distance == 167] <- "ii"
 distance$Square[distance$Site == "ER" 
                 & distance$Tree == "M12"
-                & distance$Bromeliad_. == "d"
+                & distance$Bromeliad == "d"
                 &distance$Distance == 201.9] <- "iii"
 
 #Add new variables
@@ -80,7 +80,7 @@ calc_index <-
 distance <- 
   distance %>%
   left_join(calc_index) %>% 
-  rename(Bromeliad = Bromeliad_.)
+  rename(Bromeliad_. = Bromeliad)
 
 
 
@@ -137,27 +137,27 @@ leafdamage$quadrats <-as.factor(leafdamage$quadrats)
 ##Bromeliad number and size
 bromnumber <- 
   distance %>% 
-  dplyr::select(Site, Tree, Longest_leaf_length, Bromeliad_.) %>% 
+  dplyr::select(Site, Tree, Longest_leaf_length, Bromeliad) %>% 
   unite(alltrees, Site, Tree, sep ="_")
 bromnumber <- unique(bromnumber)
-bromnumber$Bromeliad_. <- 1
+bromnumber$Bromeliad <- 1
 bromnumber <- 
   bromnumber %>% 
   group_by(alltrees) %>% 
-  summarise_each(funs(sum)) %>% 
-  mutate(meansize = Longest_leaf_length/Bromeliad_.) %>% 
+  summarise_all(funs(sum)) %>% 
+  mutate(meansize = Longest_leaf_length/Bromeliad) %>% 
   dplyr::select(-Longest_leaf_length)
 ###Bind and update
 leafdamage <- 
   leafdamage %>% 
   left_join(bromnumber)
-leafdamage$Bromeliad_.[which(leafdamage$Treatment == "wo")] <- 0
+leafdamage$Bromeliad[which(leafdamage$Treatment == "wo")] <- 0
 leafdamage$meansize[leafdamage$Treatment == "wo"] <- 0
-leafdamage$Bromeliad_.[which(leafdamage$Treatment == "wr" & leafdamage$Sampling == "A")] <- 0
+leafdamage$Bromeliad[which(leafdamage$Treatment == "wr" & leafdamage$Sampling == "A")] <- 0
 leafdamage$meansize[leafdamage$Treatment == "wr" & leafdamage$Sampling == "A"] <- 0
 
 ##Make names better
-names(leafdamage)[names(leafdamage) == "Bromeliad_."] <- "broms"
+names(leafdamage)[names(leafdamage) == "Bromeliad"] <- "broms"
 names(leafdamage)[names(leafdamage) == "Actual_area"] <- "actual"
 names(leafdamage)[names(leafdamage) == "Original_area"] <- "original"
 
@@ -294,7 +294,7 @@ nrow(leafdamage_noNAs %>%
 nrow(leafdamage_noNAs %>% filter(propdamage == 0))/nrow(leafdamage_noNAs)
 nrow(leafdamage_noNAs %>% 
        filter(propdamage < 0.05))
-# Models with % damage pooled---------------------------------------------------
+# Models with % damage pooled Gamma---------------------------------------------------
 #Data
 testmodel <- 
   leafdamage_noNAs %>% 
@@ -407,52 +407,118 @@ Anova(leafmodele)
 
 
 
-# Model Testing Binomial on damage presence----------------------------------------------------------------
-#largeleaf
-leafmodel_dampres <- 
-  glmer(round(propdamage+0.49999) ~ 
-          largeleaf*Sampling + (1|Site/alltrees/Square), 
-        family ="binomial"(link ="probit"),
-        data = leafdamage_noNAs)
-plot(leafmodel_dampres)
-summary(leafmodel_dampres)
-Anova(leafmodel_dampres)
-#presence
-leafmodel_damprespresence <- 
-  glmer(round(propdamage+0.49999) ~ 
-          presence*Sampling + (1|Site/alltrees/Square), 
-        family ="binomial"(link ="probit"),
-        data = leafdamage_noNAs)
-plot(leafmodel_damprespresence)
-summary(leafmodel_damprespresence)
-Anova(leafmodel_damprespresence)
-#numbers
-leafmodel_dampresnumber <- 
-  glmer(round(propdamage+0.49999) ~ 
-          broms*Sampling + (1|Site/alltrees/Square), 
-        family ="binomial"(link ="probit"),
-        data = leafdamage_noNAs)
-plot(leafmodel_dampresnumber)
-summary(leafmodel_dampresnumber)
-Anova(leafmodel_dampresnumber)
-#nestindex
-leafmodel_dampres_nestindex <- 
-  glmer(round(propdamage+0.49999) ~ 
-          log(nestindex+0.001)*Sampling + (1|Site/alltrees/Square), 
-        family ="binomial"(link ="probit"),
-        data = insidepred_noNAs)
-plot(leafmodel_dampres_nestindex)
-summary(leafmodel_dampres_nestindex)
-Anova(leafmodel_dampres_nestindex)
-#nestabund
-leafmodel_dampres_nestabund <- 
-  glmer(round(propdamage+0.49999) ~ 
-          log(nestabund+1)*Sampling + (1|Site/alltrees/Square), 
-        family ="binomial"(link ="probit"),
-        data = insidepred_noNAs)
-plot(leafmodel_dampres_nestabund)
-summary(leafmodel_dampres_nestabund)
-Anova(leafmodel_dampres_nestabund)
+# Models with % damage pooled binomial---------------------------------------------------
+#Data
+testmodel <- 
+  leafdamage_noNAs %>% 
+  filter(Site =="CP")
+poolmodel <- 
+  leafdamage_noNAs %>% 
+  dplyr::select(Site, alltrees, Sampling, quadrats, Treatment, propdamage, largeleaf, broms, meansize, presence) %>% 
+  group_by(Site, alltrees, Sampling, quadrats, Treatment, presence) %>% 
+  summarise_all(funs(mean))
+pooltest <-
+  poolmodel %>% 
+  dplyr::filter(Site =="CP")
+
+#Base
+##largeleaf
+leafmodel_largeleafb <- 
+  glmer(propdamage ~ 
+          largeleaf*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="cauchit"),
+        data = poolmodel)
+plot(leafmodel_largeleaf)
+qqnorm(residuals(leafmodel_largeleaf))
+qqline(residuals(leafmodel_largeleaf), col = "red")
+summary(leafmodel_largeleaf)
+Anova(leafmodel_largeleaf)
+##nestindex
+leafmodel_nestindex<- 
+  glmer(propdamage+0.01 ~ 
+          nestindex*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="log"),
+        data = poolinside)
+plot(leafmodel_nestindex)
+qqnorm(residuals(leafmodel_nestindex))
+qqline(residuals(leafmodel_nestindex), col = "red")
+summary(leafmodel_nestindex)
+Anova(leafmodel_nestindex)
+##nestabund
+leafmodel_nestabund<- 
+  glmer(propdamage+0.01 ~ 
+          log(nestabund+1)*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="inverse"),
+        data = poolinside)
+plot(leafmodel_nestabund)
+qqnorm(residuals(leafmodel_nestabund))
+qqline(residuals(leafmodel_nestabund), col = "red")
+summary(leafmodel_nestabund)
+Anova(leafmodel_nestabund)
+
+
+
+#Treatment
+leafmodelb <- 
+  glmer(propdamage+0.01 ~ 
+          Treatment*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="inverse"),
+        data = poolmodel)
+plot(leafmodelb)
+qqnorm(residuals(leafmodelb))
+qqline(residuals(leafmodelb), col ="red")
+summary(leafmodelb)
+Anova(leafmodelb)
+rsquared(leafmodelb)
+
+
+#Bromeliad number
+leafmodelc <- 
+  glmer(propdamage+0.01 ~ 
+          broms*Sampling +
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="log"),
+        data = poolmodel)
+plot(leafmodelc)
+qqnorm(residuals(leafmodelc))
+qqline(residuals(leafmodelc), col ="red")
+summary(leafmodelc)
+Anova(leafmodelc) 
+
+
+#bromeliad total volume
+leafmodeld <- 
+  glmer(propdamage+0.01 ~ 
+          log(broms*meansize +1)*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="log"),
+        data = poolmodel)
+plot(leafmodeld)
+qqnorm(residuals(leafmodeld))
+qqline(residuals(leafmodeld), col ="red")
+summary(leafmodeld)
+Anova(leafmodeld) 
+
+
+#Just with bromeliad presence, absence
+leafmodele <- 
+  glmer(propdamage + 0.01~ 
+          presence*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="binomial"(link="log"),
+        data = poolmodel)
+plot(leafmodele)
+qqnorm(residuals(leafmodele))
+qqline(residuals(leafmodele), col ="red")
+summary(leafmodele)
+Anova(leafmodele)
+
+
+
 
 
 # Damage difference model -----------------------------------------------
