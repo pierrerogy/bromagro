@@ -1,9 +1,6 @@
 #Leaf damage analysis
 #Models with % damage averaged per plot
 
-# Bromeliad parameters ----------------------------------------------------
-
-
 #Volume index
 leafpoolmodel_largeleaf <- 
   glmer.nb(I(round((propdamage +0.01)*100))~ 
@@ -100,7 +97,7 @@ leafpoolplot_treatment <-
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
-  ylab("Pooled leaf damage") +
+  ylab("Pooled leaf damage (%)") +
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
@@ -112,69 +109,30 @@ leafpoolplot_treatment <-
         axis.line = element_line(colour = "black"))
 
 
-
-# Herbivores --------------------------------------------------------------
-#Herbivores on leaf damage
-leafmodel_herb <- 
-  glmer(propdamage+0.001 ~ 
+#Herbivores
+leafpoolmodel_herb <- 
+  glmer.nb(I(round((propdamage +0.01)*100)) ~ 
           herbcenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="Gamma"(link="inverse"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = leafmodel_herb, n = 1000)
+  simulateResiduals(fittedModel = leafpoolmodel_herb, n = 1000)
 plotSimulatedResiduals(simulationOutput = simulationOutput)
-overdispersion(leafmodel_herb)
-summary(leafmodel_herb)
+overdispersion(leafpoolmodel_herb)
+summary(leafpoolmodel_herb)
 leaftest_herb <- 
-  mixed(propdamage+0.001~ 
+  mixed(I(round((propdamage +0.01)*100)) ~ 
           herbcenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="Gamma"(link="inverse"),
+        family ="negative.binomial"(theta = getME(leafpoolmodel_herb, "glmer.nb.theta")),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
-visreg(leafmodel_herb,
+visreg(leafpoolmodel_herb,
        "herbcenter", by = "Sampling")
 
-plot(effect("herbcenter:Sampling", 
-            leafmodel_herb),
-     ci.style = "band",
-     lines = list(multiline = T, 
-                  lty =1, 
-                  col = c("grey50", "black")),
-     lattice = list(key.args =list(
-       x = 0.79, 
-       y = 1,
-       cex = 0.75,
-       between.columns = 0)),
-     ylab = "Pooled damage proportion",
-     xlab = "Site-centered herbivore abundance",
-     type = "response",
-     ylim = c(0,0.5),
-     main = ""
-)
-#No snails
-
-leafmodel_herbsnailless <- 
-  glmer(propdamage+0.001 ~ 
-          herbsnaillesscenter*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="Gamma"(link="inverse"),
-        data = poolcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel = leafmodel_herb, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-overdispersion(leafmodel_herbsnailless)
-summary(leafmodel_herbsnailless)
-leaftest_herbsnailless <- 
-  mixed(propdamage+0.001~ 
-          herbsnaillesscenter*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="Gamma"(link="inverse"),
-        type = afex_options(type = "2"),
-        data = poolcenter,
-        method = "LRT")$anova_table
-visreg(leafmodel_herbsnailless,
-       "herbsnaillesscenter", by = "Sampling")
-
+plot(ggeffect(leafpoolmodel_herb,
+              terms = c("herbcenter", "Sampling"),
+              swap.pred = T,
+              type = "re",
+              ci.level = 0.95))

@@ -106,7 +106,7 @@ nrow(leafdamage_noNAs %>%
 
 
 
-#Bromeliad-Tree communities comparisons ----------------------------------
+# Bromeliad-Tree communities comparisons ----------------------------------
 bromtree_cca <- 
   vegan::cca(bromtree_comparison ~ loc, 
            data = whereloc)
@@ -149,7 +149,7 @@ dev.off()
 
 
 
-#Plotting herbivores and predators ----------------------------------------------------------------
+# Plotting herbivores and predators ----------------------------------------------------------------
 #Predator and herbivore abundance with volume proximity index
 pdf("predherb_largeleaf.pdf",
     width = 10,
@@ -175,28 +175,68 @@ pdf("psyllid_largeleaf.pdf",
 psyllidplot_largeleaf
 dev.off()
 
-# Large treatment plot grid ----------------------------------
-#predators
-pdf("predkinds_treatment.pdf",
+# Large treatment grid ----------------------------------
+#Treatment
+pdf("panel_treatment.pdf",
     height = 20,
     width = 20)
-grid.arrange(grobs = list(predsplot_treatment, antsplot_treatment, huntspidsplot_treatment,
-                         bromantsplot_treatment, bromhuntspidsplot_treatment,
-                          nobromantsplot_treatment, nobromhuntspidsplot_treatment),
-             ncol = 2,
-             labels = "AUTO")
+grid.arrange(grobs = list(predsplot_treatment + ggtitle("a") + theme(legend.position = "none",
+                                                                     axis.title.x=element_blank(),
+                                                                     axis.text.x=element_blank(),
+                                                                     axis.ticks.x=element_blank()), 
+                          brompredplot_treatment+ ggtitle("b")+ theme(axis.title.x=element_blank(),
+                                                                      axis.text.x=element_blank(),
+                                                                      axis.ticks.x=element_blank()),
+                          bromantsplot_treatment+ ggtitle("c")+ theme(legend.position = "none",
+                                                                      axis.title.x=element_blank(),
+                                                                      axis.text.x=element_blank(),
+                                                                      axis.ticks.x=element_blank()), 
+                          bromhuntspidsplot_treatment+ ggtitle("d")+ theme(legend.position = "none",
+                                                                           axis.title.x=element_blank(),
+                                                                           axis.text.x=element_blank(),
+                                                                           axis.ticks.x=element_blank()),
+                          nobromantsplot_treatment+ ggtitle("e")+ theme(legend.position = "none",
+                                                                        axis.title.x=element_blank(),
+                                                                        axis.text.x=element_blank(),
+                                                                        axis.ticks.x=element_blank()), 
+                          nobromhuntspidsplot_treatment+ ggtitle("f")+ theme(legend.position = "none",
+                                                                             axis.title.x=element_blank(),
+                                                                             axis.text.x=element_blank(),
+                                                                             axis.ticks.x=element_blank()),
+                          herbplot_treatment + ggtitle("g")+ theme(legend.position = "none"), 
+                          leafpoolplot_treatment + ggtitle("h")+ theme(legend.position = "none")),
+             ncol = 2)
 dev.off()
 
-#herbivores
-pdf("psyllid_herbeetle_largeleaf.pdf",
+# Volume index plot grid --------------------------------------------------
+
+pdf("panel_largeleaf.pdf",
     height = 20,
     width = 20)
-grid.arrange(grobs = list(psyllidplot_largeleaf,
-                          herbeetleplot_largeleaf),
+grid.arrange(grobs = list(predsplot_largeleaf + 
+                            ggtitle("a") +
+                            theme(axis.title.x=element_blank(),
+                                  axis.text.x=element_blank(),
+                                  axis.ticks.x=element_blank()),
+                          herbplot_largeleaf +
+                            ggtitle("b") +
+                            theme(legend.position = "none",
+                                  axis.title.x=element_blank(),
+                                  axis.text.x=element_blank(),
+                                  axis.ticks.x=element_blank()),
+                          herbeetleplot_largeleaf + 
+                            ggtitle("c") +
+                            theme(legend.position = "none",
+                                  axis.title.x=element_blank(),
+                                  axis.text.x=element_blank(),
+                                  axis.ticks.x=element_blank()),
+                          psyllidplot_largeleaf + 
+                            ggtitle("d") +
+                            theme(legend.position = "none")),
              ncol =1)
 dev.off()
 
-#Testing bromeliad seasonal overall content -------------------------
+# Testing bromeliad seasonal overall content -------------------------
 #Make frame
 calc_season <- 
   distance %>% 
@@ -304,7 +344,7 @@ plot(ggeffect(seasonmodel_preds,
 
 
 
-#Trophic cascade with bromhuntspids? --------------------------------------------------------
+# Trophic cascade with bromhuntspids? --------------------------------------------------------
 #Treatment on bromeliad huntspids
 pdf("bromhuntspids_treatment_hoppers.pdf",
     width = 5,
@@ -319,54 +359,7 @@ dev.off()
 
 
 
-#bl ----------------------------------------------------------------------
-##Treatment on bromeliad ants
-chart <- 
-  as.data.frame(effect("Treatment:Sampling", 
-                       bromantsmodel_treatment))
-chartwo <- 
-  chart[which(chart$Treatment=="wo"),]
-chartw <- 
-  chart[which(chart$Treatment=="w"),]
-chartwr <- 
-  chart[which(chart$Treatment=="wr"),]
-chartmeanbromants <- 
-  cbind(chartwo[,3], chartw[,3], chartwr[,3])
-colnames(chartmeanbromants) <- 
-  c("Without", "With", "Removal")
-rownames(chartmeanbromants) <- 
-  c("A", "B")
-chartmeanbromants <- 
-  rbind(chartmeanbromants[2,], chartmeanbromants[1,])
-
-chartcibromants <- 
-  rbind(chartwo[2,5:6],chartwo[1,5:6],
-        chartw[2,5:6], chartw[1,5:6], 
-        chartwr[2,5:6], chartwr[1,5:6])
-barplot <- 
-  barplot(chartmeanbromants, 
-          beside=T,
-          ylim = c(0,5),
-          ylab = "Bromeliad-associated ant abundance per quadrat",
-          space = c(0,0.5),
-          col = c("grey30", "grey70"))
-box(bty="l")
-segments(barplot, chartcibromants$lower, 
-         barplot,chartcibromants$upper, 
-         lwd = 1.5)
-arrows(barplot, chartcibromants$lower, 
-       barplot, chartcibromants$upper, 
-       lwd = 1.5,
-       angle = 90,
-       code = 3, 
-       length = 0.05)
-
-
-
-
-
-
-#Adonis frame (run #04 and #06 beforehand) --------------------------------
+# Adonis frame (run #04 and #06 beforehand) --------------------------------
 #bromeliad parameters in categories
 write.csv(
   rbind(predadonis_largeleaf$aov.tab,predadonis_predindex$aov.tab, predadonis_treatment$aov.tab,
@@ -384,7 +377,7 @@ write.csv(
         herbadonis_mobipred$aov.tab,
         herbadonis_para$aov.tab),
   "predherb_adonis.csv")
-#plotting (in progress)----------------------------------------------------------------
+# plotting (in progress)----------------------------------------------------------------
 ##volume index vs. total volume
 plot1 <- 
   plot(effect("largeleaf:Sampling", 
@@ -505,7 +498,7 @@ legend("topleft",
 
 
 
-# Bragraph draft ----------------------------------------------------------
+# Bargraph draft ----------------------------------------------------------
 
 
 ##bromeliad predators

@@ -2,7 +2,7 @@
 
 #Models all herbivore abundance per quadrat ------------------------------------------
 #Volume index
-  herbmodel_largeleaf <- 
+herbmodel_largeleaf <- 
   glmer(herb ~
           largeleaf*Sampling +
           (1|Site/alltrees/quadrats),
@@ -38,12 +38,17 @@ col <-
   ifelse(poolcenter$Sampling == "B",
          "darkorange2", 
          "dodgerblue4")
-
+herbeffect_largeleaf$conf.low <- 
+  herbeffect_largeleaf$conf.low +1
+herbeffect_largeleaf$conf.high <- 
+  herbeffect_largeleaf$conf.high +1
+herbeffect_largeleaf$predicted <- 
+  herbeffect_largeleaf$predicted +1
 herbplot_largeleaf <- 
   plot(herbeffect_largeleaf,
        ci = T) + 
   geom_point(data = poolcenter,
-             mapping = aes(x = largeleaf, y = jitter(herb, 2)), 
+             mapping = aes(x = largeleaf, y = jitter(herb +1, 2)), 
              colour = col, 
              fill = col) +
   ggtitle("") + 
@@ -51,6 +56,8 @@ herbplot_largeleaf <-
   ylab("Herbivore abundance") +
   scale_color_manual(labels = c("Before", "After"), 
                      values = c("darkorange2", "dodgerblue4")) +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,5,20)) +
   theme(legend.position = "none",
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
@@ -261,12 +268,18 @@ col <-
   ifelse(predcenter$Sampling == "B",
          "darkorange2", 
          "dodgerblue4")
+herbeetleeffect_largeleaf$conf.low <- 
+  herbeetleeffect_largeleaf$conf.low +1
+herbeetleeffect_largeleaf$conf.high <- 
+  herbeetleeffect_largeleaf$conf.high +1
+herbeetleeffect_largeleaf$predicted <- 
+  herbeetleeffect_largeleaf$predicted +1
 
 herbeetleplot_largeleaf <- 
   plot(herbeetleeffect_largeleaf,
        ci = T) + 
   geom_point(data = predcenter,
-             mapping = aes(x = largeleaf, y = jitter(herbeetle, 2)), 
+             mapping = aes(x = largeleaf, y = jitter(herbeetle +1, 2)), 
              colour = col, 
              fill = col) +
   ggtitle("") + 
@@ -274,7 +287,8 @@ herbeetleplot_largeleaf <-
   ylab("Herbivorous beetle abundance") +
   scale_color_manual(labels = c("Before", "After"), 
                      values = c("darkorange2", "dodgerblue4")) +
-  scale_y_continuous(trans = "log") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,3,7)) +
   theme(legend.position = "none",
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
@@ -475,12 +489,17 @@ col <-
   ifelse(predcenter$Sampling == "B",
          "darkorange2", 
          "dodgerblue4")
-
+psyllideffect_largeleaf$conf.low <- 
+  psyllideffect_largeleaf$conf.low +1
+psyllideffect_largeleaf$conf.high <- 
+  psyllideffect_largeleaf$conf.high +1
+psyllideffect_largeleaf$predicted <- 
+  psyllideffect_largeleaf$predicted +1
 psyllidplot_largeleaf <- 
   plot(psyllideffect_largeleaf,
        ci = T) + 
   geom_point(data = predcenter,
-             mapping = aes(x = largeleaf, y = jitter(psyllid, 2)), 
+             mapping = aes(x = largeleaf, y = jitter(psyllid +1, 2)), 
              colour = col, 
              fill = col) +
   ggtitle("") + 
@@ -488,7 +507,8 @@ psyllidplot_largeleaf <-
   ylab("Psyllid abundance") +
   scale_color_manual(labels = c("Before", "After"), 
                      values = c("darkorange2", "dodgerblue4")) +
-  scale_y_continuous(trans = "log") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,3,7)) +
   theme(legend.position = "none",
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),

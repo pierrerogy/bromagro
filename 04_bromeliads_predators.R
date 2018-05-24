@@ -180,7 +180,7 @@ predsmodel_largeleaf <-
   glmer(preds ~
           largeleaf*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
+        family="poisson"(link ="sqrt"),
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = predsmodel_largeleaf, n = 1000)
@@ -191,33 +191,53 @@ predstest_largeleaf <-
   mixed(preds~ 
           largeleaf*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
+        family ="poisson"(link="sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
 ##plot
+###visreg
 visreg(predsmodel_largeleaf,
        "largeleaf", by = "Sampling")
-predplot_largeleaf <- 
-  plot(effect("largeleaf:Sampling", 
-            predsmodel_largeleaf),
-     ci.style = "band",
-     lines = list(multiline = T, 
-                  lty =1, 
-                  col = c("grey50", "black")),
-     lattice = list(key.args =list(
-       x = 0.79, 
-       y = 1,
-       cex = 0.75,
-       text = list(c("After", "Before")),
-       between.columns = 0)),
-     ylab = "Predator abundance per quadrat",
-     xlab = "",
-     type = "response",
-     ylim = c(0,10),
-     xlim = c(0,5),
-     main = ""
-)
+###ggeffect
+predseffect_largeleaf <- 
+  ggeffect(predsmodel_largeleaf,
+           terms = c("largeleaf", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predseffect_largeleaf$group <- 
+  factor(predseffect_largeleaf$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predseffect_largeleaf$conf.low <- 
+  predseffect_largeleaf$conf.low +1
+predseffect_largeleaf$conf.high <- 
+  predseffect_largeleaf$conf.high +1
+predseffect_largeleaf$predicted <- 
+  predseffect_largeleaf$predicted +1
+
+predsplot_largeleaf <- 
+  plot(predseffect_largeleaf,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = largeleaf, y = jitter(preds +1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Volume proximity index") +
+  ylab("All predator abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
 #Predator index
 predsmodel_predindex <- 
@@ -274,7 +294,6 @@ predsmodel_treatment <-
 simulationOutput <- 
   simulateResiduals(fittedModel = predsmodel_treatment, n = 1000)
 plotSimulatedResiduals(simulationOutput = simulationOutput, asFactor = T)
-dispersion_glmer(predsmodel_predindex)
 summary(predsmodel_treatment)
 predstest_treatment <- 
   mixed(preds~ 
@@ -1077,6 +1096,48 @@ brompredplot_treatment <-
         axis.line = element_line(colour = "black"))
 
 
+
+# Models non-bromeliad predator abundance per quadrat ---------------------
+#Volume proximity index
+nonbromypredmodel_largeleaf <- 
+  glmer(I(preds - bromypred) ~
+          largeleaf*Sampling +
+          (1|Site/alltrees/quadrats),
+        family="poisson"(link ="sqrt"),
+        data = poolcenter)
+simulationOutput <- 
+  simulateResiduals(fittedModel =nonbromypredmodel_largeleaf, n = 1000)
+plotSimulatedResiduals(simulationOutput = simulationOutput)
+summary(nonbromypredmodel_largeleaf)
+nonbromypredtest_largeleaf <- 
+  mixed(I(preds - bromypred)~ 
+          largeleaf*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="poisson"(link="sqrt"),
+        type = afex_options(type = "2"),
+        data = poolcenter,
+        method = "LRT")$anova_table
+
+#Volume proximity index
+nonbromypredmodel_treatment <- 
+  glmer(I(preds - bromypred) ~
+          Treatment*Sampling +
+          (1|Site/alltrees/quadrats),
+        family="poisson"(link ="log"),
+        data = poolcenter)
+simulationOutput <- 
+  simulateResiduals(fittedModel =nonbromypredmodel_treatment, n = 1000)
+plotSimulatedResiduals(simulationOutput = simulationOutput, asFactor = T)
+summary(nonbromypredmodel_treatment)
+nonbromypredtest_treatment <- 
+  mixed(I(preds - bromypred)~ 
+          Treatment*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="poisson"(link="log"),
+        type = afex_options(type = "2"),
+        data = poolcenter,
+        method = "LRT")$anova_table
+
 #Models antless bromeliad predators abundance per quadrat -------------------------------------
 #Volume index
 bromantlessmodel_largeleaf <- 
@@ -1252,7 +1313,7 @@ bromantsplot_treatment <-
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
-  ylab("Bromeliad ant abundance") +
+  ylab("Bromeliad-associated ant abundance") +
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
@@ -1369,12 +1430,11 @@ bromhuntspidsplot_treatment <-
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
-  ylab("Bromeliad-associated active hunting spider abundance") +
+  ylab("Bromeliad-associated hunting spider abundance") +
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
   theme(legend.position = c(0.9,0.9),
-        axis.title.y= element_text(size = 8),
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
         panel.background = element_blank(), 
@@ -1565,7 +1625,7 @@ nobromantsplot_treatment <-
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
-  ylab("Non-bromeliad ant abundance") +
+  ylab("Non-bromeliad-associated ant abundance") +
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
@@ -1673,7 +1733,7 @@ nobromhuntspidsplot_treatment <-
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
-  ylab("Non-bromeliad hunting spider abundance") +
+  ylab("Non-bromeliad-associated hunting spider abundance") +
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
