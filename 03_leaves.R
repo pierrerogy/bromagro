@@ -9,8 +9,10 @@ leafpoolmodel_largeleaf <-
           control = glmerControl(optimizer = "bobyqa"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = leafpoolmodel_largeleaf, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
+  simulateResiduals(fittedModel = leafpoolmodel_largeleaf, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(leafpoolmodel_largeleaf)
 leafpooltest_largeleaf <- 
   mixed(I(round((propdamage +0.01)*100))~ 
@@ -24,28 +26,6 @@ visreg(leafpoolmodel_largeleaf,
        "largeleaf", by = "Sampling")
 
 
-#Predator index
-leafpoolmodel_predindex<- 
-  glmer.nb(I(round((propdamage +0.01)*100)) ~ 
-          predindex*Sampling + 
-          (1|Site/alltrees/quadrats),
-          control = glmerControl(optimizer = "bobyqa"),
-        data = poolcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel = leafpoolmodel_predindex, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-summary(leafpoolmodel_predindex)
-leafpooltest_predindex <- 
-  mixed(I(round((propdamage +0.01)*100))~ 
-          predindex*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="negative.binomial"(theta = getME(leafpoolmodel_predindex, "glmer.nb.theta")),
-        type = afex_options(type = "2"),
-        data = poolcenter,
-        method = "LRT")$anova_table
-visreg(leafpoolmodel_predindex,
-       "predindex", by = "Sampling")
-
 #Treatment
 leafpoolmodel_treatment <- 
   glmer.nb(I(round((propdamage +0.01)*100))~ 
@@ -54,8 +34,11 @@ leafpoolmodel_treatment <-
           control = glmerControl(optimizer = "bobyqa"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = leafpoolmodel_treatment, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput, asFactor = T)
+  simulateResiduals(fittedModel = leafpoolmodel_treatment, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput, 
+                       asFactor = T,
+                       quantreg = F)
 summary(leafpoolmodel_treatment)
 leafpooltest_treatment <- 
   mixed(I(round((propdamage +0.01)*100))~ 
@@ -116,9 +99,10 @@ leafpoolmodel_herb <-
           (1|Site/alltrees/quadrats),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = leafpoolmodel_herb, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-overdispersion(leafpoolmodel_herb)
+  simulateResiduals(fittedModel = leafpoolmodel_herb, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(leafpoolmodel_herb)
 leaftest_herb <- 
   mixed(I(round((propdamage +0.01)*100)) ~ 
@@ -131,8 +115,33 @@ leaftest_herb <-
 visreg(leafpoolmodel_herb,
        "herbcenter", by = "Sampling")
 
-plot(ggeffect(leafpoolmodel_herb,
-              terms = c("herbcenter", "Sampling"),
-              swap.pred = T,
-              type = "re",
-              ci.level = 0.95))
+leafmodeleffect_herb <- 
+  ggeffect(leafpoolmodel_herb,
+           terms = c("herbcenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+leafmodeleffect_herb$group <- 
+  factor(leafmodeleffect_herb$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+
+leafmodelplot_herb <-  
+  plot(leafmodeleffect_herb,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = herbcenter, y = jitter(round((propdamage +0.01)*100), 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Herbivore abundance") +
+  ylab("Pooled leaf damage (%)") +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))

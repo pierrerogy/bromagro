@@ -236,6 +236,66 @@ grid.arrange(grobs = list(predsplot_largeleaf +
              ncol =1)
 dev.off()
 
+# Intraguild grid ---------------------------------------------------------
+pdf("intraplot_brompreds.pdf",
+    height = 17,
+    width = 8)
+grid.arrange(grobs = list(intraplot_brompara + ggtitle("a") + theme(axis.title.x=element_blank(),
+                                                                    axis.text.x=element_blank(),
+                                                                    axis.ticks.x=element_blank()),
+                          intraplot_brommobipred + ggtitle("b") + theme(legend.position = "none",
+                                                                        axis.title.x=element_blank(),
+                                                                        axis.text.x=element_blank(),
+                                                                        axis.ticks.x=element_blank()),
+                          intraplot_bromarbopred + ggtitle("c") + theme(legend.position = "none")),
+                          ncol=1)
+dev.off()
+                                                                        
+pdf("intraplot_para.pdf",
+    height = 11,
+    width = 8)
+grid.arrange(grobs = list(intraplot_paraarbopred + ggtitle("a") + theme(axis.title.x=element_blank(),
+                                                                        axis.text.x=element_blank(),
+                                                                        axis.ticks.x=element_blank()),
+                          intraplot_paramobipred + ggtitle("b") + theme(legend.position = "none")),
+             ncol=1)                       
+
+dev.off()
+
+
+pdf("intraplot_aerial.pdf",
+    height = 5,
+    width = 8)
+intraplot_mobiarbopred
+dev.off()
+
+
+# Predators on herbivores grid --------------------------------------------
+pdf("predherbplot_preds.pdf",
+    height = 15,
+    width = 15)
+grid.arrange(grobs = list(predherbplot_pred + 
+                            ggtitle("a"),
+                          predherbplot_brompreds +
+                            ggtitle("b") +
+                            theme(legend.position = "none"),
+                          predherbplot_treepreds + 
+                            ggtitle("c") +
+                            theme(legend.position = "none"),
+                          predherbplot_mobipreds  + 
+                            ggtitle("d") +
+                            theme(legend.position = "none"),
+                          predherbplot_para + 
+                            ggtitle("d") +
+                            theme(legend.position = "none")),
+             ncol =2)
+dev.off()
+
+
+
+
+
+
 # Testing bromeliad seasonal overall content -------------------------
 #Make frame
 calc_season <- 
@@ -289,8 +349,10 @@ seasonmodel_todo <-
          family = "poisson"(link ="sqrt"),
         data = calc_season %>% filter(brom != "DO_G11_c"))
 simulationOutput <- 
-  simulateResiduals(fittedModel = seasonmodel_todo, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
+  simulateResiduals(fittedModel = seasonmodel_todo, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(seasonmodel_todo)
 dispersion_glmer(seasonmodel_todo)
 summary(seasonmodel_todo)
@@ -320,8 +382,10 @@ seasonmodel_preds <-
        family = "poisson"(link ="sqrt"),
        data = calc_season %>% filter(brom != "DO_G11_c"))
 simulationOutput <- 
-  simulateResiduals(fittedModel = seasonmodel_preds, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
+  simulateResiduals(fittedModel = seasonmodel_preds, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(seasonmodel_preds)
 seasontest_preds <- 
   mixed(I(round(preds^0.25)) ~
@@ -344,21 +408,84 @@ plot(ggeffect(seasonmodel_preds,
 
 
 
-# Trophic cascade with bromhuntspids? --------------------------------------------------------
-#Treatment on bromeliad huntspids
-pdf("bromhuntspids_treatment_hoppers.pdf",
-    width = 5,
-    height = 10)
-gridExtra::grid.arrange(grobs = list(bromhuntspidsplot_treatment,
-                                     jumpplot_bromhuntspids,
-                                     jumpplot_treatment),
-                        ncol = 1)
+# Solo plotting -----------------------------------------------------------
+pdf("solo_predtreatment.pdf",
+    width= 5,
+    height = 5)
+predsplot_treatment
 dev.off()
- 
 
+pdf("solo_brompredlargeleaf.pdf",
+    width= 8,
+    height = 5)
+brompredplot_largeleaf
+dev.off()
 
+pdf("solo_brompredtreatment.pdf",
+    width= 5,
+    height = 5)
+brompredplot_treatment 
+dev.off()
 
+pdf("solo_mobipredtreatment.pdf",
+    width= 5,
+    height = 5)
+mobipredplot_treatment
+dev.off()
 
+pdf("solo_leafpoolherb.pdf",
+    width= 8,
+    height = 5)
+leafmodelplot_herb
+dev.off()
+
+pdf("solo_herblargeleaf.pdf",
+    width= 8,
+    height = 5)
+herbplot_largeleaf
+dev.off()
+
+pdf("solo_brompredherb.pdf",
+    width= 8,
+    height = 5)
+predherbplot_brompreds
+dev.off()
+
+pdf("solo_herbtreatment.pdf",
+    width= 5,
+    height = 5)
+herbplot_treatment
+dev.off()
+
+pdf("solo_bromanttreatment.pdf",
+    width= 5,
+    height = 5)
+bromantsplot_treatment
+dev.off()
+
+pdf("solo_nobromantplottreatment.pdf",
+    width= 5,
+    height = 5)
+nobromantsplot_treatment
+dev.off()
+
+pdf("solo_bromhuntspidstreatment.pdf",
+    width= 5,
+    height = 5)
+bromhuntspidsplot_treatment
+dev.off()
+
+pdf("solo_nobromhuntspidsplottreatment.pdf",
+    width= 5,
+    height = 5)
+nobromhuntspidsplot_treatment
+dev.off()
+
+pdf("solo_leafpooltreatment.pdf",
+    width= 5,
+    height = 5)
+leafpoolplot_treatment 
+dev.off()
 # Adonis frame (run #04 and #06 beforehand) --------------------------------
 #bromeliad parameters in categories
 write.csv(
@@ -377,127 +504,6 @@ write.csv(
         herbadonis_mobipred$aov.tab,
         herbadonis_para$aov.tab),
   "predherb_adonis.csv")
-# plotting (in progress)----------------------------------------------------------------
-##volume index vs. total volume
-plot1 <- 
-  plot(effect("largeleaf:Sampling", 
-              bromypredmodel_largeleaf),
-       ci.style = "band",
-       lines = list(multiline = T, 
-                    lty =1, 
-                    col = c("grey50", "black")),
-       lattice = list(key.args =list(
-         space = "top",
-         cex = 0.75,
-         text= list(c("July", "May")),
-         border= "transparent",
-         between.columns = 0)),
-       ylab = "Bromeliad-associated predator abundance",
-       xlab = "Volume proximity index",
-       type = "response",
-       ylim = c(0,10),
-       main = ""
-  )
-plot2 <- 
-  plot(effect("log(totalvolume+1):Sampling", 
-              bromypredmodel_totalvolume),
-       ci.style = "band",
-       lines = list(multiline = T, 
-                    lty =1, 
-                    col = c("grey50", "black")),
-       lattice = list(legend = NULL),
-       ylab = "",
-       xlab = "Total volume",
-       type = "response",
-       ylim = c(0,10),
-       main = ""
-  )
-grid.arrange(plot1,plot2, ncol=2)
-
-#NMDS presence on all predators
-##quadrats
-prednmds_quadpresence <- 
-  metaMDS(spread_brompred[,16:20],
-          k =2,
-          trymax = 100,
-          distance = "bray",
-          autotransform = T,
-          engine = c("monoMDS", "isoMDS"))
-datascores <- 
-  as.data.frame(scores(prednmds_quadpresence))
-datascores$site <- 
-  spread_brompred$Site
-datascores$presence <- 
-  spread_brompred$presence
-datascores$sampling <- 
-  spread_brompred$Sampling
-datascores$treatment <- 
-  spread_brompred$Treatment
-##quadrat
-plot(datascores$NMDS2 ~ 
-       datascores$NMDS1, 
-     pch = c(17, 19)[datascores$sampling], 
-     col = c("red", "blue", "grey50")[datascores$treatment],
-     cex =1, 
-     xlab = "NMDS1", 
-     ylab = "NMDS2")
-legend("topright", 
-       legend = levels(datascores$treatment), 
-       pch = 15,
-       col = c("red", "blue", "grey50"),
-       cex =0.7)
-legend("topleft",
-       legend = c("July", "May"),
-       pch = c(17, 19))
-
-##tree
-spread_bromtreepred <- 
-  spread_brompred %>% 
-  ungroup() %>% 
-  dplyr::select(Site, alltrees, presence, Treatment, Sampling, 16:20) %>% 
-  group_by(Site, alltrees, presence, Treatment, Sampling) %>% 
-  summarise_all(funs(sum))
-
-prednmds_treepresence <- 
-  metaMDS(spread_treepred[,6:14],
-          k =2,
-          trymax = 20,
-          distance = "bray",
-          autotransform = T,
-          engine = c("monoMDS", "isoMDS"))
-datascores <- 
-  as.data.frame(scores(prednmds_treepresence))
-datascores$site <- 
-  spread_treepred$Site
-datascores$presence <- 
-  spread_treepred$presence
-datascores$sampling <- 
-  spread_treepred$Sampling
-datascores$treatment <- 
-  spread_treepred$Treatment
-plot(datascores$NMDS2 ~ 
-       datascores$NMDS1, 
-     pch = c(17, 19)[datascores$sampling], 
-     col = c("red", "blue", "grey50")[datascores$treatment],
-     cex =1, 
-     xlab = "NMDS1", 
-     ylab = "NMDS2")
-legend("topright", 
-       legend = levels(datascores$treatment), 
-       pch = 15,
-       col = c("red", "blue", "grey50"),
-       cex =0.7)
-legend("topleft",
-       legend = c("July", "May"),
-       pch = c(17, 19))
-
-
-
-
-
-
-
-
 # Bargraph draft ----------------------------------------------------------
 
 

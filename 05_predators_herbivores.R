@@ -1,146 +1,327 @@
 #Predator effect on herbivore
-#Models ------------------------------------------------------------------
-#All predators and parasitoids
-predherbmodel_predpara <- 
-  glmer(herb ~
-          predparacenter*Sampling +
-          (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
-        data = poolcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_predpara, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_predpara)
-summary(predherbmodel_predpara)
-predherbtest_predpara <- 
-  mixed(herb~ 
-          predparacenter*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
-        type = afex_options(type = "2"),
-        data = poolcenter,
-        method = "LRT")$anova_table
-visreg(predherbmodel_predpara,
-       "predparacenter", by = "Sampling")
-
+# Models ------------------------------------------------------------------
 #All predators
 predherbmodel_pred <- 
   glmer(herb ~
           predcenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
+        family= "poisson"(link = "sqrt"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_pred, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_pred)
+  simulateResiduals(fittedModel =predherbmodel_pred, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(predherbmodel_pred)
 predherbtest_pred <- 
   mixed(herb~ 
           predcenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
+        family ="poisson"(link="sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
+##plot
+###visreg
 visreg(predherbmodel_pred,
        "predcenter", by = "Sampling")
+###ggeffect
+predherbeffect_pred <- 
+  ggeffect(predherbmodel_pred,
+           terms = c("predcenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predherbeffect_pred$group <- 
+  factor(predherbeffect_pred$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predherbeffect_pred$conf.low <- 
+  predherbeffect_pred$conf.low +1
+predherbeffect_pred$conf.high <- 
+  predherbeffect_pred$conf.high +1
+predherbeffect_pred$predicted <- 
+  predherbeffect_pred$predicted +1
+predherbplot_pred <- 
+  plot(predherbeffect_pred,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = predcenter, y = jitter(herb+1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Predator abundance") +
+  ylab("Herbivore abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
-#Parasitoids
-predherbmodel_para <- 
-  glmer(herb~
-          paracenter*Sampling +
-          (1|Site/alltrees/quadrats),
-        family="poisson"(link ="sqrt"),
-        data = poolcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_para, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_para)
-summary(predherbmodel_para)
-predherbtest_para <- 
-  mixed(herb~ 
-          paracenter*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
-        type = afex_options(type = "2"),
-        data = poolcenter,
-        method = "LRT")$anova_table
-visreg(predherbmodel_para,
-       "paracenter", by = "Sampling")
-
-#Bromeliad predators
+#Bromeliad-associated predators
 predherbmodel_brompreds <- 
   glmer(herb ~
           bromcenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
+        family="poisson"(link ="sqrt"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_brompreds, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_brompreds)
+  simulateResiduals(fittedModel =predherbmodel_brompreds, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(predherbmodel_brompreds)
 predherbtest_brompreds <- 
   mixed(herb~ 
           bromcenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
+        family ="poisson"(link="sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
+##plot
+###
 visreg(predherbmodel_brompreds,
        "bromcenter", by = "Sampling")
+###ggeffect
+predherbeffect_brompreds <- 
+  ggeffect(predherbmodel_brompreds,
+           terms = c("bromcenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predherbeffect_brompreds$group <- 
+  factor(predherbeffect_brompreds$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predherbeffect_brompreds$conf.low <- 
+  predherbeffect_brompreds$conf.low +1
+predherbeffect_brompreds$conf.high <- 
+  predherbeffect_brompreds$conf.high +1
+predherbeffect_brompreds$predicted <- 
+  predherbeffect_brompreds$predicted +1
+predherbplot_brompreds <- 
+  plot(predherbeffect_brompreds,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = bromcenter, y = jitter(herb+1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Bromeliad-associated predator abundance") +
+  ylab("Herbivore abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
+
 
 #Tree predators
 predherbmodel_treepreds <- 
   glmer(herb ~
           arbocenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
+          family = "poisson"(link ="sqrt"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_treepreds, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_treepreds)
+  simulateResiduals(fittedModel =predherbmodel_treepreds, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(predherbmodel_treepreds)
 predherbtest_treepreds <- 
   mixed(herb~ 
           arbocenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
+        family = "poisson"(link ="sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
+##plot
+###visreg
 visreg(predherbmodel_treepreds,
        "arbocenter", by = "Sampling")
+###ggeffect
+predherbeffect_treepreds <- 
+  ggeffect(predherbmodel_treepreds,
+           terms = c("arbocenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predherbeffect_treepreds$group <- 
+  factor(predherbeffect_treepreds$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predherbeffect_treepreds$conf.low <- 
+  predherbeffect_treepreds$conf.low +1
+predherbeffect_treepreds$conf.high <- 
+  predherbeffect_treepreds$conf.high +1
+predherbeffect_treepreds$predicted <- 
+  predherbeffect_treepreds$predicted +1
+predherbplot_treepreds <- 
+  plot(predherbeffect_treepreds,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = arbocenter, y = jitter(herb+1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Tree-associated predator abundance") +
+  ylab("Herbivore abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
 #Mobile predators
 predherbmodel_mobipreds <- 
   glmer(herb ~
           mobicenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="log"),
+        family="poisson"(link ="sqrt"),
         data = poolcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel =predherbmodel_mobipreds, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-dispersion_glmer(predherbmodel_mobipreds)
+  simulateResiduals(fittedModel =predherbmodel_mobipreds, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(predherbmodel_mobipreds)
 predherbtest_mobipreds <- 
   mixed(herb~ 
           mobicenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="log"),
+        family ="poisson"(link="sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
+##plot
+###visreg
 visreg(predherbmodel_mobipreds,
        "mobicenter", by = "Sampling")
+###ggeffect
+predherbeffect_mobipreds <- 
+  ggeffect(predherbmodel_mobipreds,
+           terms = c("mobicenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predherbeffect_mobipreds$group <- 
+  factor(predherbeffect_mobipreds$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predherbeffect_mobipreds$conf.low <- 
+  predherbeffect_mobipreds$conf.low +1
+predherbeffect_mobipreds$conf.high <- 
+  predherbeffect_mobipreds$conf.high +1
+predherbeffect_mobipreds$predicted <- 
+  predherbeffect_mobipreds$predicted +1
+predherbplot_mobipreds <- 
+  plot(predherbeffect_mobipreds,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = mobicenter, y = jitter(herb+1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Aerial predator abundance") +
+  ylab("Herbivore abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
+#Parasitoids
+predherbmodel_para <- 
+  glmer.nb(herb~
+             paracenter*Sampling +
+             (1|Site/alltrees/quadrats),
+           data = poolcenter)
+simulationOutput <- 
+  simulateResiduals(fittedModel =predherbmodel_para, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
+summary(predherbmodel_para)
+predherbtest_para <- 
+  mixed(herb~ 
+          paracenter*Sampling + 
+          (1|Site/alltrees/quadrats),
+        family ="negative.binomial"(theta = getME(predherbmodel_para,
+                                                  "glmer.nb.theta")),
+        type = afex_options(type = "2"),
+        data = poolcenter,
+        method = "LRT")$anova_table
+##plot
+###
+visreg(predherbmodel_para,
+       "paracenter", by = "Sampling")
+###ggeffect
+predherbeffect_para <- 
+  ggeffect(predherbmodel_para,
+           terms = c("paracenter", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+predherbeffect_para$group <- 
+  factor(predherbeffect_para$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+predherbeffect_para$conf.low <- 
+  predherbeffect_para$conf.low +1
+predherbeffect_para$conf.high <- 
+  predherbeffect_para$conf.high +1
+predherbeffect_para$predicted <- 
+  predherbeffect_para$predicted +1
+predherbplot_para <- 
+  plot(predherbeffect_para,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = paracenter, y = jitter(herb+1, 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Parasitoid abundance") +
+  ylab("Herbivore abundance") +
+  scale_y_continuous(trans = "log",
+                     breaks = c(1,7,40)) +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9 ,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
-
-#Adonis ------------------------------------------------------------------
+# Adonis ------------------------------------------------------------------
 #All predators
 herbadonis_preds <- 
   adonis(spread_herb[,8:14] ~
@@ -190,7 +371,7 @@ herbadonis_para <-
 
 
 
-#Model Loop predator shrunk (not for broms) and herbivores expanded -------
+# Model Loop predator shrunk (not for broms) and herbivores expanded -------
 #For log link function
 ##Creating vectors to indicate locations of dependent and independent groups
 #Not reinitialising them before every loop will clutter things up
@@ -920,8 +1101,7 @@ association_clean <-
   association_lastframe %>% 
   dplyr::select(dependent, independent, p_variable, var_coef, p_interaction, interaction_coef)
 
-#Exploring interactions (run script #7 beforehand) --------------------------------------------------
-
+# Exploring interactions (run script #7 beforehand) --------------------------------------------------
 #Hoppers and bromeliad hunting spiders
 jumpmodel_bromhuntspids <- 
   glmer(jump ~ 
@@ -930,10 +1110,11 @@ jumpmodel_bromhuntspids <-
         family ="poisson"(link="sqrt"),
         data =predcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = jumpmodel_bromhuntspids, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
+  simulateResiduals(fittedModel = jumpmodel_bromhuntspids, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(jumpmodel_bromhuntspids)
-dispersion_glmer(jumpmodel_bromhuntspids)
 jumptest_bromhuntspids <- 
   mixed(jump~ 
           bromhuntspids_center*Sampling + 
@@ -946,7 +1127,7 @@ jumptest_bromhuntspids <-
 ###visreg
 visreg(jumpmodel_bromhuntspids,
        "bromhuntspids_center", by = "Sampling")
-###ggeffects
+###ggeffect
 jumpeffect_bromhuntspids <- 
   ggeffect(jumpmodel_bromhuntspids,
            terms = c("bromhuntspids_center", "Sampling"),
@@ -985,69 +1166,22 @@ snailmodel_bromant <-
   glmer(snail ~ 
           bromant_center*Sampling +
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
+        family ="poisson"(link="log"),
         data =predcenter)
 simulationOutput <- 
-  simulateResiduals(fittedModel = snailmodel_bromant, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
+  simulateResiduals(fittedModel = snailmodel_bromant, 
+                    n = 2000)
+plotSimulatedResiduals(simulationOutput = simulationOutput,
+                       quantreg = F)
 summary(snailmodel_bromant)
-dispersion_glmer(snailmodel_bromant)
 snailtest_bromant <- 
   mixed(snail~ 
           bromant_center*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
+        family ="poisson"(link="log"),
         type = afex_options(type = "2"),
         data = predcenter,
         method = "LRT")$anova_table
 visreg(snailmodel_bromant,
        "bromant_center", by = "Sampling")
-##Is this interaction mediated by bromeliads?
-##largeleaf not significant
-snailtest_largeleaf
-##predindex
-snailtest_predindex
-snailtest_bromant
-m3 <- 
-  glmer(snail ~ 
-          predindex*Sampling +  bromant_center*Sampling +
-          (1|Site/alltrees/quadrats),
-        family= "poisson"(link ="sqrt"), 
-        data =predcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel = m3, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-summary(m3)
-dispersion_glmer(m3)
-m3test <- 
-  mixed(snail~ 
-          predindex*Sampling +
-          bromant_center*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
-        type = afex_options(type = "2"),
-        data = predcenter,
-        method = "LRT")$anova_table
-##Treatment
-snailtest_treatment
-snailtest_bromants
-m3 <- 
-  glmer(snail ~ 
-          Treatment*Sampling +  bromant_center*Sampling +
-          (1|Site/alltrees/quadrats),
-        family= "poisson"(link ="sq"), 
-        data =predcenter)
-simulationOutput <- 
-  simulateResiduals(fittedModel = m3, n = 1000)
-plotSimulatedResiduals(simulationOutput = simulationOutput)
-summary(m3)
-dispersion_glmer(m3)
-m3test <- 
-  mixed(snail~ 
-          Treatment*Sampling +
-          bromant_center*Sampling + 
-          (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
-        type = afex_options(type = "2"),
-        data = predcenter,
-        method = "LRT")$anova_table
+
