@@ -10,9 +10,11 @@ predsmodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = predsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000, 
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predsmodel_largeleaf)
 predstest_largeleaf <- 
   mixed(preds~ 
@@ -144,9 +146,11 @@ antsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = antsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(antsmodel_largeleaf)
 antstest_largeleaf <- 
   mixed(ants~ 
@@ -246,9 +250,11 @@ heteropredmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = heteropredmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(heteropredmodel_largeleaf)
 heteropredtest_largeleaf <- 
   mixed(heteropred~ 
@@ -316,9 +322,11 @@ huntspidsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = huntspidsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(huntspidsmodel_largeleaf)
 huntspidstest_largeleaf <- 
   mixed(huntspids~ 
@@ -415,9 +423,11 @@ predfliesmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = predfliesmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predfliesmodel_largeleaf)
 predfliestest_largeleaf <- 
   mixed(predflies~ 
@@ -483,9 +493,11 @@ roachesmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = roachesmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(roachesmodel_largeleaf)
 roachestest_largeleaf <- 
   mixed(roaches~ 
@@ -550,9 +562,11 @@ webspidsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = webspidsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(webspidsmodel_largeleaf)
 webspidstest_largeleaf <- 
   mixed(webspids~ 
@@ -619,9 +633,11 @@ paramodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = paramodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(paramodel_largeleaf)
 paratest_largeleaf <- 
   mixed(para~ 
@@ -688,19 +704,21 @@ bromypredmodel_largeleaf <-
   glmer(bromypred~
           largeleaf*Sampling +
           (1|Site/alltrees/quadrats),
-        family = "poisson"(link = "log"),
+        family = "poisson"(link = "sqrt"),
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =bromypredmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(bromypredmodel_largeleaf)
 bromypredtest_largeleaf <- 
   mixed(bromypred~ 
           largeleaf*Sampling + 
           (1|Site/alltrees/quadrats),
-        family = "poisson"(link = "log"),
+        family = "poisson"(link = "sqrt"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
@@ -825,9 +843,11 @@ nonbromypredmodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =nonbromypredmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg=F)
+                       quantreg=F,
+                       rank = T)
 summary(nonbromypredmodel_largeleaf)
 nonbromypredtest_largeleaf <- 
   mixed(I(preds - bromypred)~ 
@@ -890,9 +910,11 @@ bromantsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =bromantsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(bromantsmodel_largeleaf)
 bromantstest_largeleaf <- 
   mixed(bromants~ 
@@ -992,9 +1014,11 @@ bromhuntspidsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =bromhuntspidsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(bromhuntspidsmodel_largeleaf)
 bromhuntspidstest_largeleaf <- 
   mixed(bromhuntspids~ 
@@ -1091,9 +1115,11 @@ bromroachesmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =bromroachesmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(bromroachesmodel_largeleaf)
 bromroachestest_largeleaf <- 
   mixed(bromroaches~ 
@@ -1157,9 +1183,11 @@ nobromantsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =nobromantsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(nobromantsmodel_largeleaf)
 nobromantstest_largeleaf <- 
   mixed(I(ants-bromants)~ 
@@ -1258,9 +1286,11 @@ nobromhuntspidsmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =nobromhuntspidsmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(nobromhuntspidsmodel_largeleaf)
 nobromhuntspidstest_largeleaf <- 
   mixed(I(huntspids - bromhuntspids) ~ 
@@ -1355,9 +1385,11 @@ arbopredmodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =arbopredmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(arbopredmodel_largeleaf)
 arbopredtest_largeleaf <- 
   mixed(arbopred~ 
@@ -1431,9 +1463,11 @@ mobipredmodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =mobipredmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(mobipredmodel_largeleaf)
 mobipredtest_largeleaf <- 
   mixed(mobipred~ 
@@ -1538,9 +1572,11 @@ intramodel_brompara <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_brompara, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_brompara)
 intratest_brompara <- 
   mixed(para~ 
@@ -1603,9 +1639,11 @@ intramodel_brommobipred <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_brommobipred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_brommobipred)
 intratest_brommobipred <- 
   mixed(mobipred~ 
@@ -1669,9 +1707,11 @@ intramodel_bromarbopred <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_bromarbopred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_bromarbopred)
 intratest_bromarbopred <- 
   mixed(arbopred~ 
@@ -1734,9 +1774,11 @@ intramodel_paraarbopred <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_paraarbopred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_paraarbopred)
 intratest_paraarbopred <- 
   mixed(arbopred~ 
@@ -1794,19 +1836,21 @@ intramodel_paramobipred <-
   glmer(mobipred ~
           paracenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family="poisson"(link ="sqrt"),
+        family="poisson"(link ="log"),
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_paramobipred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_paramobipred)
 intratest_paramobipred <- 
   mixed(mobipred~ 
           paracenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
+        family ="poisson"(link="log"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
@@ -1863,9 +1907,11 @@ intramodel_mobiarbopred <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =intramodel_mobiarbopred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(intramodel_mobiarbopred)
 intratest_mobiarbopred <- 
   mixed(mobipred~ 

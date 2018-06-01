@@ -10,9 +10,11 @@ leafpoolmodel_largeleaf <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = leafpoolmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(leafpoolmodel_largeleaf)
 leafpooltest_largeleaf <- 
   mixed(I(round((propdamage +0.01)*100))~ 
@@ -100,9 +102,10 @@ leafpoolmodel_herb <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = leafpoolmodel_herb, 
-                    n = 2000)
+                    n = 2000, rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(leafpoolmodel_herb)
 leaftest_herb <- 
   mixed(I(round((propdamage +0.01)*100)) ~ 

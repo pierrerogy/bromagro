@@ -10,9 +10,11 @@ herbmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = herbmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(herbmodel_largeleaf)
 herbtest_largeleaf <- 
   mixed(herb~ 
@@ -145,9 +147,11 @@ herbsnaillessmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = herbsnaillessmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(herbsnaillessmodel_largeleaf)
 herbsnaillesstest_largeleaf <- 
   mixed(herbsnailless~ 
@@ -240,9 +244,11 @@ herbeetlemodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = herbeetlemodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(herbeetlemodel_largeleaf)
 herbeetletest_largeleaf <- 
   mixed(herbeetle~ 
@@ -373,9 +379,11 @@ jumpmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = jumpmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(jumpmodel_largeleaf)
 jumptest_largeleaf <- 
   mixed(jump~ 
@@ -505,9 +513,11 @@ psyllidmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = psyllidmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(psyllidmodel_largeleaf)
 psyllidtest_largeleaf <- 
   mixed(psyllid~ 
@@ -637,9 +647,11 @@ scaleaphidmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = scaleaphidmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(scaleaphidmodel_largeleaf)
 scaleaphidtest_largeleaf <- 
   mixed(scaleaphid~ 
@@ -770,9 +782,11 @@ snailmodel_largeleaf <-
         data = predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = snailmodel_largeleaf, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(snailmodel_largeleaf)
 snailtest_largeleaf <- 
   mixed(snail~ 

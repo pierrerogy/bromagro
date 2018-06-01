@@ -5,19 +5,21 @@ predherbmodel_pred <-
   glmer(herb ~
           predcenter*Sampling +
           (1|Site/alltrees/quadrats),
-        family= "poisson"(link = "sqrt"),
+        family= "poisson"(link = "log"),
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =predherbmodel_pred, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predherbmodel_pred)
 predherbtest_pred <- 
   mixed(herb~ 
           predcenter*Sampling + 
           (1|Site/alltrees/quadrats),
-        family ="poisson"(link="sqrt"),
+        family ="poisson"(link="log"),
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
@@ -73,9 +75,11 @@ predherbmodel_brompreds <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =predherbmodel_brompreds, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predherbmodel_brompreds)
 predherbtest_brompreds <- 
   mixed(herb~ 
@@ -138,9 +142,11 @@ predherbmodel_treepreds <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =predherbmodel_treepreds, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predherbmodel_treepreds)
 predherbtest_treepreds <- 
   mixed(herb~ 
@@ -202,9 +208,11 @@ predherbmodel_mobipreds <-
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =predherbmodel_mobipreds, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predherbmodel_mobipreds)
 predherbtest_mobipreds <- 
   mixed(herb~ 
@@ -265,9 +273,11 @@ predherbmodel_para <-
            data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel =predherbmodel_para, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(predherbmodel_para)
 predherbtest_para <- 
   mixed(herb~ 
@@ -1111,9 +1121,11 @@ jumpmodel_bromhuntspids <-
         data =predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = jumpmodel_bromhuntspids, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(jumpmodel_bromhuntspids)
 jumptest_bromhuntspids <- 
   mixed(jump~ 
@@ -1170,9 +1182,11 @@ snailmodel_bromant <-
         data =predcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = snailmodel_bromant, 
-                    n = 2000)
+                    n = 2000,
+                    rank = T)
 plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
+                       quantreg = F,
+                       rank = T)
 summary(snailmodel_bromant)
 snailtest_bromant <- 
   mixed(snail~ 
