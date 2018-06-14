@@ -15,6 +15,7 @@ library(DHARMa)
 library(visreg)
 library(car)
 library(gridExtra)
+library(MASS)
 ##Diversity
 library(vegan)
 library(ade4)
@@ -1158,7 +1159,6 @@ bromtree_comparison <-
          Abundance, 
          fill = 0) %>% 
   unite(where, alltrees, loc, Sampling, sep= "_", remove = F)
-##Remove very different communities (accoring to previous tests)
 bromtree_comparison <- 
   data.frame(bromtree_comparison,
              row.names = bromtree_comparison$where)

@@ -12,9 +12,9 @@ simulationOutput <-
   simulateResiduals(fittedModel = predsmodel_largeleaf, 
                     n = 2000, 
                     rank = T)
-plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F,
-                       rank = T)
+plot(simulationOutput,
+     quantreg = F,
+     rank = T)
 summary(predsmodel_largeleaf)
 predstest_largeleaf <- 
   mixed(preds~ 
@@ -73,6 +73,7 @@ predsmodel_treatment <-
           Treatment*Sampling +
           (1|Site/alltrees/quadrats),
         family="poisson"(link ="log"),
+        control=glmerControl(optimizer = "bobyqa"),
         data = poolcenter)
 simulationOutput <- 
   simulateResiduals(fittedModel = predsmodel_treatment, 
@@ -87,6 +88,7 @@ predstest_treatment <-
           (1|Site/alltrees/quadrats),
         family="poisson"(link ="log"),
         type = afex_options(type = "2"),
+        control=glmerControl(optimizer = "bobyqa"),
         data = poolcenter,
         method = "LRT")$anova_table
 ##plot

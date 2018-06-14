@@ -48,6 +48,7 @@ leafpooltest_treatment <-
           (1|Site/alltrees/quadrats),
         family ="negative.binomial"(theta = getME(leafpoolmodel_treatment, "glmer.nb.theta")),
         type = afex_options(type = "2"),
+        control = glmerControl(optimizer = "bobyqa"),
         data = poolcenter,
         method = "LRT")$anova_table
 ##plot
@@ -131,7 +132,7 @@ col <-
          "darkorange2", 
          "dodgerblue4")
 
-leafmodelplot_herb <-  
+leafpoolplot_herb <-  
   plot(leafmodeleffect_herb,
        ci = T) + 
   geom_point(data = poolcenter,
