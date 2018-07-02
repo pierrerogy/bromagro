@@ -17,7 +17,7 @@ The presence of bodies of water in epiphytic tank bromeliads make their study ve
 So, if bromeliads attract predators, what are the consequences for other arthropods dwelling around the bromeliads? What are the ecological consequences of increased predator habitat and abundance in an arthropod community?
 If the bromeliad grows on a tree, will the tree arthropod community be impacted in some form of spill-over effect? Is it possible to harness this natural artifact to develop sustainable agriculture techniques?
 
-These are some of the questions that Pierre Rogy's Master's thesis, under the supervision of [Dr. Diane Srivastava](http://www.zoology.ubc.ca/~srivast/) and [Dr. Edd Hamill](https://www.eddhammill.com/), seeks to answer. The present data was collected between April and July 2017, in orange orchards in and around, Santa Cecilia, Guanacaste, Costa Rica (11°03′51″N 85°25′06″W).
+These are some of the questions that Pierre Rogy's Master's thesis, under the supervision of [Dr. Diane Srivastava](http://www.zoology.ubc.ca/~srivast/) and [Dr. Edd Hammill](https://www.eddhammill.com/), seeks to answer. The present data was collected between April and July 2017, in orange orchards in and around, Santa Cecilia, Guanacaste, Costa Rica (11°03′51″N 85°25′06″W).
 
 ## Aim
 The objective of this repository is to offer open access to code and data for all research items stemming from this project, under Apache 2.0 license. The final, published version of items can be found below. 
