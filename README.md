@@ -12,7 +12,7 @@ The presence of bodies of water in epiphytic tank bromeliads make their study ve
 
 ![A large spider found mooring in an epiphytic tank bromeliad](picspider.JPG)
 
-![Diet and abundance distributions of arthropods in an epiphytic tank bromeliads vs. its support tree](dietplot.JPG)
+![Diet and abundance distributions of arthropods in an epiphytic tank bromeliads vs. its support tree](dietplot.pdf)
 
 So, if bromeliads attract predators, what are the consequences for other arthropods dwelling around the bromeliads? What are the ecological consequences of increased predator habitat and abundance in an arthropod community?
 If the bromeliad grows on a tree, will the tree arthropod community be impacted in some form of spill-over effect? Is it possible to harness this natural artifact to develop sustainable agriculture techniques?
