@@ -1,20 +1,31 @@
-# Epiphytic tank bromeliads and habitat complexity: a new opportunity for sustainable agriculture?
+# Epiphytic tank bromeliads and habitat complexity: what are the consequences of higher predator habitat for arthropod communities?
 
-## Summary
-The advent of the Green Revolution triggered a substantial increase in food production and human development. However, with the exponential increase in land use conversion, new challenges to control pests on vast expanses of resources arose. The main answer to this challenge was the consistent application of chemical control, which has proven effective to a certain extent. In fact, rising resistance to pesticides and negative ecological, economical, and health consequences have been hinting to the limitations of this model. There is thus a need for novel, alternative methods for sustainable pest management. In the Neotropics, tank bromeliads are common epiphytes throughout forest ecosystems, and are often found growing on and around a variety of crop trees. They are known to get obtain nutrients from water and debris falling between their leaves; yet they are consistently removed because traditionally seen as mistletoe-like parasites. Nonetheless, because of the habitat conditions they create, bromeliads are associated with numerous animals, especially arthropods. Those include many predators, such as scorpions, spiders and ants. In 2012, a research article suggested that bromeliads decrease leaf herbivory in their support tree.  As a result, there is potential for bromeliads to be used in biological control, transforming a relationship seen as commensal into a tritrophic mutualism. This research project will present an assessment of the role that bromeliad may play in an agricultural food webs through a [BACI](http://people.stat.sfu.ca/~cschwarz/Stat-650/Notes/PDFbigbook-SAS/SAS-part013.pdf) design.
+![picfield](picfield.JPG)
 
-## (Draft) hypotheses
-(i) bromeliad size and density will have an indirect negative effect on leaf damage, because they increase predator presence in the tree
+## About
+Bromeliads (family Bromeliaceae) are common plants that can be found from Chile to the Southern United States, with some species present 
+in Western Africa. Species of this diverse family display a variety of life strategies, some, like the famous pineapple, are typical terrestrial plants. Other bromeliads have an epiphytic lifestyle, meaning that they do have their roots extracting nutrients from the soil to grow. Instead, epiphytic bromeliads use their roots as anchoring points on a variety of surfaces, for examples trees or electric poles. These plants also show many different life strategies, with some having mutalistic relationships with ants, also called [ant gardens](http://www.antwiki.org/wiki/Ant_gardens), while others, called tank bromeliads, obtain food from debris and water accumulating in their leaf rosette, where specialised hairs extract nutrients. 
 
-(ii) for the same reason, trees with bigger and more numerous bromeliads will have a more abundant predator community
+![Some epiphytic tank bromeliads growing on an orange tree](picbrom.JPG)
 
-(iii) because of consumptive and non-consumptive effects, a higher abundance of predators will result in a lower abundance of herbivores
+The presence of bodies of water in epiphytic tank bromeliads make their study very interesting. Indeed, with each bromeliad comes an independent, replicated  aquatic ecosystem, with a relatively simple food web. The commonness of bromeliads, coupled with their simple aquatic food web, makes manipulation of ecosystem density and conditions relatively easy, making epiphytic tank bromeliads a fruitful area of ecological research, e.g. with the [Bromeliad Working Group](http://www.zoology.ubc.ca/~srivast/bwg/). Although most research on bromeliads has focused on their aquatic ecosystems, their terrestrial ecosystems show promising applicatons for theoretical and applied ecological research. In fact, as water does not accumulate in all leaf wells, a part of the bromeliad rosette remains dry or moist, and is occupied by a variety of arthropods seeking nesting grounds and protection from larger predators. What makes terrestrial bromeliad eosystems particularly interesting is that most of their terrestrial inhabitants, for instance ants, spiders and predatory beetles, are predatory.
 
-(iv) higher herbivore abundance will result in higher leaf damage, because they preferentially say on their food plant
+![A large spider found mooring in an epiphytic tank bromeliad](picspider.JPG)
+
+![Diet and abundance distributions of arthropods in an epiphytic tank bromeliads vs. its support tree](dietplot.JPG)
+
+So, if bromeliads attract predators, what are the consequences for other arthropods dwelling around the bromeliads? What are the ecological consequences of increased predator habitat and abundance in an arthropod community?
+If the bromeliad grows on a tree, will the tree arthropod community be impacted in some form of spill-over effect? Is it possible to harness this natural artifact to develop sustainable agriculture techniques?
+
+These are some of the questions that Pierre Rogy's Master's thesis, under the supervision of [Dr. Diane Srivastava](http://www.zoology.ubc.ca/~srivast/) and [Dr. Edd Hamill](https://www.eddhammill.com/), seeks to answer. The present data was collected between April and July 2017, in orange orchards in and around, Santa Cecilia, Guanacaste, Costa Rica (11°03′51″N 85°25′06″W).
+
+## Aim
+The objective of this repository is to offer open access to code and data for all research items stemming from this project, under Apache 2.0 license. The final, published version of items can be found below. 
+
+*work in progress..*
+
+## Acknowledgements
+
+## Link to thesis/papers
 
 ## Notes on R code
-*lamona* or *mona* refer to vacuum sampling
-
-*Square* means quadrat (i to iv) for each tree
-
-propdamage is damage proportion, bounded between 0 and 1
