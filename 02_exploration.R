@@ -108,7 +108,7 @@ nrow(leafdamage_noNAs %>%
 
 # Bromeliad-Tree community comparisons ----------------------------------
 bromtree_cca <- 
-  vegan::cca(bromtree_comparisoncp ~ loc, 
+  vegan::cca(bromtree_comparison ~ loc, 
            data = whereloc)
 
 anova.cca(bromtree_cca,
@@ -380,32 +380,44 @@ dev.off()
 #Treatment
 pdf("panel_treatment.pdf",
     height = 20,
-    width = 20)
+    width = 15)
 grid.arrange(grobs = list(predsplot_treatment + ggtitle("a") + theme(legend.position = "none",
                                                                      axis.title.x=element_blank(),
                                                                      axis.text.x=element_blank(),
-                                                                     axis.ticks.x=element_blank()), 
-                          brompredplot_treatment+ ggtitle("b")+ theme(axis.title.x=element_blank(),
+                                                                     axis.ticks.x=element_blank(),
+                                                                     axis.title=element_text(size=rel(1.5))), 
+                          brompredplot_treatment+ ggtitle("b")+ theme(legend.title=element_text(size=rel(1.5)), 
+                                                                      legend.text=element_text(size=rel(1.5)),
+                                                                      axis.title.x=element_blank(),
                                                                       axis.text.x=element_blank(),
-                                                                      axis.ticks.x=element_blank()),
+                                                                      axis.ticks.x=element_blank(),
+                                                                      axis.title=element_text(size=rel(1.5))),
                           bromantsplot_treatment+ ggtitle("c")+ theme(legend.position = "none",
                                                                       axis.title.x=element_blank(),
                                                                       axis.text.x=element_blank(),
-                                                                      axis.ticks.x=element_blank()), 
+                                                                      axis.ticks.x=element_blank(),
+                                                                      axis.title=element_text(size=rel(1.5))), 
                           bromhuntspidsplot_treatment+ ggtitle("d")+ theme(legend.position = "none",
                                                                            axis.title.x=element_blank(),
                                                                            axis.text.x=element_blank(),
-                                                                           axis.ticks.x=element_blank()),
+                                                                           axis.ticks.x=element_blank(),
+                                                                           axis.title=element_text(size=rel(1.2))),
                           nobromantsplot_treatment+ ggtitle("e")+ theme(legend.position = "none",
                                                                         axis.title.x=element_blank(),
                                                                         axis.text.x=element_blank(),
-                                                                        axis.ticks.x=element_blank()), 
+                                                                        axis.ticks.x=element_blank(),
+                                                                        axis.title=element_text(size=rel(1.5))), 
                           nobromhuntspidsplot_treatment+ ggtitle("f")+ theme(legend.position = "none",
                                                                              axis.title.x=element_blank(),
                                                                              axis.text.x=element_blank(),
-                                                                             axis.ticks.x=element_blank()),
-                          herbplot_treatment + ggtitle("g")+ theme(legend.position = "none"), 
-                          leafpoolplot_treatment + ggtitle("h")+ theme(legend.position = "none")),
+                                                                             axis.ticks.x=element_blank(),
+                                                                             axis.title=element_text(size=rel(1.2))),
+                          herbplot_treatment + ggtitle("g")+ theme(legend.position = "none",
+                                                                   axis.title=element_text(size=rel(1.5)),
+                                                                   axis.text.x=element_text(size=rel(1.5))), 
+                          leafpoolplot_treatment + ggtitle("h")+ theme(legend.position = "none",
+                                                                       axis.title=element_text(size=rel(1.5)),
+                                                                       axis.text.x=element_text(size=rel(1.5)))),
              ncol = 2)
 dev.off()
 
@@ -2118,8 +2130,8 @@ dev.off()
 # Volume index plot grid --------------------------------------------------
 
 pdf("panel_largeleaf.pdf",
-    height = 20,
-    width = 20)
+    height = 15,
+    width = 5)
 grid.arrange(grobs = list(predsplot_largeleaf + 
                             ggtitle("a") +
                             theme(axis.title.x=element_blank(),
@@ -3004,26 +3016,31 @@ dev.off()
 
 # Intraguild grid ---------------------------------------------------------
 pdf("intraplot_brompreds.pdf",
-    height = 17,
-    width = 8)
-grid.arrange(grobs = list(intraplot_brompara + ggtitle("a") + theme(axis.title.x=element_blank(),
+    height = 15,
+    width = 5)
+grid.arrange(grobs = list(intraplot_brompara + ggtitle("i") + theme(axis.title.x=element_blank(),
                                                                     axis.text.x=element_blank(),
-                                                                    axis.ticks.x=element_blank()),
-                          intraplot_brommobipred + ggtitle("b") + theme(legend.position = "none",
+                                                                    axis.ticks.x=element_blank(),
+                                                                    axis.title=element_text(size=rel(1.5))),
+                          intraplot_brommobipred + ggtitle("ii") + theme(legend.position = "none",
                                                                         axis.title.x=element_blank(),
                                                                         axis.text.x=element_blank(),
-                                                                        axis.ticks.x=element_blank()),
-                          intraplot_bromarbopred + ggtitle("c") + theme(legend.position = "none")),
+                                                                        axis.ticks.x=element_blank(),
+                                                                        axis.title=element_text(size=rel(1.5))),
+                          intraplot_bromarbopred + ggtitle("iii") + theme(legend.position = "none",
+                                                                          axis.title=element_text(size=rel(1.5)))),
                           ncol=1)
 dev.off()
                                                                         
 pdf("intraplot_para.pdf",
-    height = 11,
-    width = 8)
-grid.arrange(grobs = list(intraplot_paraarbopred + ggtitle("a") + theme(axis.title.x=element_blank(),
+    height = 10,
+    width = 5)
+grid.arrange(grobs = list(intraplot_paraarbopred + ggtitle("i") + theme(axis.title.x=element_blank(),
                                                                         axis.text.x=element_blank(),
-                                                                        axis.ticks.x=element_blank()),
-                          intraplot_paramobipred + ggtitle("b") + theme(legend.position = "none")),
+                                                                        axis.ticks.x=element_blank(),
+                                                                        axis.title=element_text(size=rel(1.5))),
+                          intraplot_paramobipred + ggtitle("ii") + theme(legend.position = "none",
+                                                                         axis.title=element_text(size=rel(1.5)))),
              ncol=1)                       
 
 dev.off()
@@ -3031,29 +3048,36 @@ dev.off()
 
 pdf("intraplot_aerial.pdf",
     height = 5,
-    width = 8)
-intraplot_mobiarbopred
+    width = 5)
+intraplot_mobiarbopred + theme(axis.title=element_text(size=rel(1.5)))
 dev.off()
 
 
 # Predators on herbivores grid --------------------------------------------
 pdf("predherbplot_preds.pdf",
     height = 15,
-    width = 15)
+    width = 10)
 grid.arrange(grobs = list(predherbplot_pred + 
+                            theme(legend.position = "none",
+                                  axis.title=element_text(size=rel(1.5))) +
                             ggtitle("a"),
                           predherbplot_brompreds +
                             ggtitle("b") +
-                            theme(legend.position = "none"),
+                            theme(axis.title=element_text(size=rel(1.5))) +
+                            ylab(NULL),
                           predherbplot_treepreds + 
                             ggtitle("c") +
-                            theme(legend.position = "none"),
+                            theme(legend.position = "none",
+                                  axis.title=element_text(size=rel(1.5))),
                           predherbplot_mobipreds  + 
                             ggtitle("d") +
-                            theme(legend.position = "none"),
+                            ylab(NULL) +
+                            theme(legend.position = "none",
+                                  axis.title=element_text(size=rel(1.5))),
                           predherbplot_para + 
                             ggtitle("d") +
-                            theme(legend.position = "none")),
+                            theme(legend.position = "none",
+                                  axis.title=element_text(size=rel(1.5)))),
              ncol =2)
 dev.off()
 
@@ -3117,10 +3141,8 @@ seasonmodel_todo <-
 simulationOutput <- 
   simulateResiduals(fittedModel = seasonmodel_todo, 
                     n = 2000)
-plotSimulatedResiduals(simulationOutput = simulationOutput,
-                       quantreg = F)
-summary(seasonmodel_todo)
-dispersion_glmer(seasonmodel_todo)
+plot(simulationOutput,
+     quantreg = F)
 summary(seasonmodel_todo)
 seasontest_todo <- 
   mixed(I(round(todo^0.25)) ~
@@ -3271,92 +3293,3 @@ write.csv(
         herbadonis_para$aov.tab),
   "predherb_adonis.csv")
 
-# Bargraph draft ----------------------------------------------------------
-
-
-##bromeliad predators
-chart <- 
-  as.data.frame(effect("Treatment:Sampling", 
-                       bromypredmodel_treatment))
-chartwo <- 
-  chart[which(chart$Treatment=="wo"),]
-chartw <- 
-  chart[which(chart$Treatment=="w"),]
-chartwr <- 
-  chart[which(chart$Treatment=="wr"),]
-chartmeanbrompred <- 
-  cbind(chartwo[,3], chartw[,3], chartwr[,3])
-colnames(chartmeanbrompred) <- 
-  c("Without", "With", "Removal")
-rownames(chartmeanbrompred) <- 
-  c("A", "B")
-chartmeanbrompred <- 
-  rbind(chartmeanbrompred[2,], chartmeanbrompred[1,])
-
-chartcibrompred <- 
-  rbind(chartwo[2,5:6],chartwo[1,5:6],
-        chartw[2,5:6], chartw[1,5:6], 
-        chartwr[2,5:6], chartwr[1,5:6])
-barplot <- 
-  barplot(chartmeanbrompred, 
-          beside=T,
-          ylim = c(0,5),
-          ylab = "Bromeliad-associated predator abundance",
-          space = c(0,0.5),
-          col = c("grey30", "grey70"))
-box(bty="l")
-segments(barplot, chartcibrompred$lower, 
-         barplot,chartcibrompred$upper, 
-         lwd = 1.5)
-arrows(barplot, chartcibrompred$lower, 
-       barplot, chartcibrompred$upper, 
-       lwd = 1.5,
-       angle = 90,
-       code = 3, 
-       length = 0.05)
-legend("topright",
-       legend = c("Before", "After"),
-       col = c("grey30", "grey70"),
-       pch = 15,
-       pt.bg =  c("grey30", "grey70")
-)
-##herbivores
-chart <- 
-  as.data.frame(effect("Treatment:Sampling", 
-                       herbmodel_treatment))
-chartwo <- 
-  chart[which(chart$Treatment=="wo"),]
-chartw <- 
-  chart[which(chart$Treatment=="w"),]
-chartwr <- 
-  chart[which(chart$Treatment=="wr"),]
-chartmeanherb <- 
-  cbind(chartwo[,3], chartw[,3], chartwr[,3])
-colnames(chartmeanherb) <- 
-  c("Without", "With", "Removal")
-rownames(chartmeanherb) <- 
-  c("A", "B")
-chartmeanherb <- 
-  rbind(chartmeanherb[2,], chartmeanherb[1,])
-
-chartciherb <- 
-  rbind(chartwo[2,5:6],chartwo[1,5:6],
-        chartw[2,5:6], chartw[1,5:6], 
-        chartwr[2,5:6], chartwr[1,5:6])
-barplot <- 
-  barplot(chartmeanherb, 
-          beside=T,
-          ylim = c(0,5),
-          ylab = "Herbivore abundance",
-          space = c(0,0.5),
-          col = c("grey30", "grey70"))
-box(bty="l")
-segments(barplot, chartciherb$lower, 
-         barplot,chartciherb$upper, 
-         lwd = 1.5)
-arrows(barplot, chartciherb$lower, 
-       barplot, chartciherb$upper, 
-       lwd = 1.5,
-       angle = 90,
-       code = 3, 
-       length = 0.05)

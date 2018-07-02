@@ -20,6 +20,7 @@ library(MASS)
 library(vegan)
 library(ade4)
 library(corrplot)
+library(BiodiversityR)
 
 #Functions
 ##not in

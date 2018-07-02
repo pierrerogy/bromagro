@@ -114,10 +114,10 @@ predsplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -791,7 +791,7 @@ bromypredtest_treatment <-
 ##plot
 ###visreg
 visreg(bromypredmodel_treatment,
-       "Sampling2", by = "Treatment")
+       "Sampling", by = "Treatment")
 ###ggeffect
 brompredeffect_treatment <- 
   ggeffect(bromypredmodel_treatment,
@@ -811,10 +811,10 @@ brompredplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -968,7 +968,7 @@ visreg(bromantsmodel_treatment,
        "Sampling", by = "Treatment")
 ####ggeffect
  bromantseffect_treatment <- 
-  ggeffect( bromantsmodel_treatment,
+  ggeffect(bromantsmodel_treatment,
            type = "re",
            x.as.factor = T,
            terms = c("Sampling", "Treatment"),
@@ -985,10 +985,10 @@ bromantsplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -1087,10 +1087,10 @@ bromhuntspidsplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -1258,10 +1258,10 @@ nobromantsplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -1357,10 +1357,10 @@ nobromhuntspidsplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
@@ -2127,7 +2127,7 @@ intradonis_brompara <-
          data = spread_brompred)
 
 #On tree predators
-##Tree predators on tree predators
+##Bromeliad predators on tree predators
 intradonis_treebrom <- 
   adonis(spread_arbopred[,8:13] ~
            bromcenter*Sampling,
@@ -2165,6 +2165,15 @@ intradonis_mobipredtree <-
 intradonis_mobipredbrom <- 
   adonis(spread_mobipred[,8:11] ~
            bromcenter*Sampling,
+         method = "bray",
+         permutations = 2000,
+         strata = spread_mobipred$Site,
+         data = spread_mobipred)
+
+##parasitoids on mobile predators
+intradonis_mobipredpara <- 
+  adonis(spread_mobipred[,8:11] ~
+           paracenter*Sampling,
          method = "bray",
          permutations = 2000,
          strata = spread_mobipred$Site,

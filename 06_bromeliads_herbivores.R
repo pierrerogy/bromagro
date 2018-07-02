@@ -112,10 +112,10 @@ herbplot_treatment <-
   geom_errorbar(aes(ymin=conf.low, 
                     ymax=conf.high), 
                 width=0.1,
-                lwd = 1,
+                lwd = 2,
                 position = position_dodge(0.3)) +
   geom_point(position = position_dodge(0.3), 
-             lwd =3) +
+             lwd =6) +
   ggtitle("") + 
   xlab("Sampling") +
   scale_x_discrete(limit = c("B", "A"),
