@@ -62,8 +62,13 @@ The experimental design was also much simpler, and did not involve direct manipu
 <p align="center">
 <img src="Pictures/picobs1.JPG" width="600" height="600">
 </p>
+
 <p align="center">
 <img src="Pictures/picobs2.JPG" width="600" height="600">
+</p>
+
+<p align="center">
+<img src="Pictures/picobs3.JPG" width="600" height="450">
 </p>
 
 
