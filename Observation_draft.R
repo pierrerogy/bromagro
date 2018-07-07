@@ -1627,12 +1627,6 @@ noctintertest_pos <-
 visreg(noctintermodel_pos, 
        "Time", 
        by="Bromeliads")
-plot(ggeffect(noctintermodel_pos,
-              terms = c("Bromeliads", "Time"),
-              swap.pred = F,
-              type = "re",
-              ci.level = 0.95))
-
 
 # Model plots -------------------------------------------------------------------
 #Overall pred
@@ -1777,7 +1771,6 @@ noctplot_brompred <-
         axis.line = element_line(colour = "black"))
 
 #Panel plot
-
 pdf("obspredbrompred_overall_time.pdf",
     width = 10,
     height= 10)
@@ -1804,6 +1797,49 @@ gridExtra::grid.arrange(grobs = list(obsplotcp_pred +
                         ncol =2)
 dev.off()
 
+#Positive interactions model
+noctintereffect_pos <- 
+  ggpredict(noctintermodel_pos,
+            terms = c("Bromeliads", "Time", "todo [0, 40, 80, 120, 160, 200]"),
+            swap.pred = F,
+            x.as.factor = T,
+            ci.level = 0.95)
+noctintereffect_pos <- 
+  noctintereffect_pos %>% 
+  rename(broms = x,
+         todo = facet)
+
+pdf("noctinteraction_pos.pdf",
+    height= 5,
+    width = 5)
+ggplot(noctintereffect_pos) + 
+  aes(x=todo,
+      y=predicted, 
+      colour=broms,
+      pch = group) + 
+  geom_point(position = position_dodge(0.3), 
+                  lwd =3) +
+  geom_errorbar(aes(ymin=conf.low, 
+                    ymax=conf.high), 
+                width=0.4,
+                lwd = 1,
+                position = position_dodge(0.3)) +
+       ggtitle("") + 
+       xlab("Number of observed specimens") +
+  scale_shape_manual(name = NULL,
+                     values = c(18, 17)) +
+  scale_color_manual(name = NULL,
+                     labels = c("Bromeliads present", "Bromeliads absent"),
+                     values = c("saddlebrown", "darkgreen")) +
+  ylab("Number of positive interactions") +
+  theme(legend.position = c(0.2,0.8),
+             panel.grid.major = element_blank(), 
+             panel.grid.minor = element_blank(),
+             panel.background = element_blank(), 
+             panel.border = element_blank(),
+             axis.line = element_line(colour = "black"))
+dev.off()
+
 # Overall PCoA with plot--------------------------------------------------------------
 pdf("Observationcp_pcoa.pdf",
     width = 5,
@@ -1811,11 +1847,17 @@ pdf("Observationcp_pcoa.pdf",
 par(mfrow= c(3,1))
 #CP bromeliad diet
 dietcp_pcoa <- 
-  vegan::wcmdscale(vegdist(obsdietcp[,5:14],
+  cmdscale(vegdist(obsdietcp[,5:14],
                            distance = "bray"),
                    add = T,
                    k=2,
                    eig = T)
+dietcp_pcoa <- 
+  add.spec.scores(dietcp_pcoa,
+                  obsdietcp[,5:14],
+                  method="wa.scores",
+                  multi=1,
+                  Rscale=F)
 col <-
   ifelse(obsdietcp$Bromeliads == "present",
          "saddlebrown",
@@ -1839,13 +1881,27 @@ ordihull(dietcp_pcoa,
          draw = "polygon",
          border =  "transparent",
          col = "darkgreen")
+orditorp(dietcp_pcoa$cproj,
+         display = "species",
+         pcex = 0,
+         cex = 1,
+         labels = c("Detritivores", "Herbivores", NA, "Non-feeders",
+                    "Omnivores", "Parasitoids", NA, "Predators",
+                    "Scavengers", "Unknown"),
+         air = 1)
 
 #CP bromeliad- restricted functional groups
 kindcp_sub_pcoa <- 
-  wcmdscale(vegdist(obskindcp_sub[,5:20],
+  cmdscale(vegdist(obskindcp_sub[,5:20],
                            method ="bray"), 
             k=2,
             eig =T)
+kindcp_sub_pcoa <- 
+  add.spec.scores(kindcp_sub_pcoa,
+                  obskindcp_sub[,5:20],
+                  method="wa.scores",
+                  multi=1,
+                  Rscale=F)
 ##plot
 ordiplot(kindcp_sub_pcoa,
          type ="n")
@@ -1870,6 +1926,15 @@ ordihull(kindcp_sub_pcoa,
          draw = "polygon",
          border =  "transparent",
          col = "darkgreen")
+orditorp(kindcp_sub_pcoa$cproj,
+         display = "species",
+         pcex = 0,
+         cex = 1,
+         labels = c("Ants", "Herbivorous beetles", NA, NA, "Hunting spiders", 
+                    "Hoppers", NA, NA, "Orthopterans", "Parasitoids",
+                    NA, NA, "Cockroaches", "Scales/Aphids", "Snails",
+                    NA),
+         air = 0.1)
 
 #CP bromeliad predators-behaviour frequency
 behavfreqcp_nobrompreds_pcoa <- 
@@ -1922,6 +1987,8 @@ orditorp(behavfreqcp_nobrompreds_pcoa$cproj,
          display = "species",
          pcex = 0,
          cex = 1,
+         labels = c("Herbivory", "Mobile", "Predation/Parasitism", "Reproduction",
+                    "Stationary", "Tending", "Transporting"),
          air = 0.01)
 
 dev.off()
@@ -1937,6 +2004,12 @@ noctdiet_pcoa <-
                    distance = "bray"),
            k=2,
            eig = T)
+noctdiet_pcoa <- 
+  add.spec.scores(noctdiet_pcoa,
+                  noctdiet[,6:15],
+                  method="wa.scores",
+                  multi=1,
+                  Rscale=F)
 ##plot
 col <- 
   ifelse(noctdiet$Bromeliads == "present",
@@ -1954,6 +2027,14 @@ title("a",
 points(noctdiet_pcoa$points,
        pch = pch,
        col=col)
+orditorp(noctdiet_pcoa$cproj,
+         display = "species",
+         pcex = 0,
+         cex = 1,
+         labels = c("Detritivores", "Herbivores", NA, "Non-feeders",
+                    "Omnivores", "Parasitoids", NA, "Predators",
+                    "Scavengers", "Unknown"),
+         air = 0.1)
 
 legend ("topright", 
         legend = c("Bromeliads present",
@@ -1968,29 +2049,46 @@ legend ("topleft",
         pt.bg = "black", 
         col = "black")
 
-#kind
-noctkind_pcoa <- 
-  cmdscale(vegdist(noctkind[,6:33],
+#restricted kinds
+noctkind_sub_pcoa <- 
+  cmdscale(vegdist(noctkind_sub[,6:21],
                            distance = "bray"),
                    k=2,
                    eig = T)
+noctkind_sub_pcoa <- 
+  add.spec.scores(noctkind_sub_pcoa,
+                  noctkind_sub[,6:21],
+                  method="wa.scores",
+                  multi=1,
+                  Rscale=F)
+
 ##plot
 col <- 
-  ifelse(noctkind$Bromeliads == "present",
+  ifelse(noctkind_sub$Bromeliads == "present",
          "saddlebrown", 
          "darkgreen")
 pch <-
-  ifelse(noctkind$Time == "Day",
+  ifelse(noctkind_sub$Time == "Day",
          18, 
          17)
 
-ordiplot(noctkind_pcoa,
+ordiplot(noctkind_sub_pcoa,
          type = "n")
 title("b",
       adj =0)
-points(noctkind_pcoa$points,
+points(noctkind_sub_pcoa$points,
        pch = pch,
        col=col)
+orditorp(noctkind_sub_pcoa$cproj,
+         display = "species",
+         pcex = 0,
+         cex = 0.9,
+         labels = c("Ants", "Herbivorous beetles", NA, NA, "Hunting spiders", 
+                    "Hoppers", NA, NA, "Orthopterans", "Parasitoids",
+                    NA, NA, "Cockroaches", "Scales/Aphids", "Snails",
+                    NA),
+         air = 1)
+
 
 #Behaviour frequency
 noctbehavfreq_pcoa <- 
@@ -2083,67 +2181,5 @@ write.csv(
   "noctadonis.csv")
 
 
-
-
-# Testing by date --------------------------------------------------------
-datemodelcp_pred <- 
-  glmer.nb(number ~
-          Day +
-          (1|block/alltrees),
-        control = glmerControl(optimizer ="bobyqa"),
-        data = obspred %>% 
-          filter(Site =="CP"))
-simulationOutput <- 
-  simulateResiduals(fittedModel =datemodelcp_pred, 
-                    n = 2000,
-                    rank = T)
-plot(simulationOutput,
-     asFactor =T,
-     quantreg = F)
-
-
-datedietcp <-
-  observation %>%
-  filter(Site =="CP" & 
-           block %in% c("A", "B", "C")) %>% 
-  dplyr::select(Day, alltrees, block, rep, Observer, obs, Bromeliads, Diet, Specimen,number) %>% 
-  group_by(Day, alltrees, block, rep, Observer, obs, Bromeliads, Diet, Specimen) %>% 
-  summarise_all(funs(mean)) %>% 
-  ungroup() %>% 
-  dplyr::select(-Specimen, -Observer, -obs) %>% 
-  group_by(Day, alltrees, block, rep, Bromeliads, Diet) %>%
-  summarise_all(funs(sum)) %>% 
-  spread(key = Diet, number, fill =0)
-datedietcp <- 
-  datedietcp %>% 
-  left_join(calc_obsbrompred)
-datedietcp$brompred[is.na(datedietcp$brompred)] <- 
-  0
-#model
-datemodelcp_brompred <- 
-  glmer.nb(herb ~
-          log(Day) +
-          (1|block/alltrees),
-        family = "poisson"(link="inverse"),
-        control = glmerControl(optimizer = "bobyqa"),
-        data = datedietcp %>% 
-          filter(herb<200))
-simulationOutput <- 
-  simulateResiduals(fittedModel =datemodelcp_brompred, 
-
-                    n = 2000,
-                    rank = T)
-plot(simulationOutput,
-     asFactor =T,
-     quantreg = F)
-datetestcp_pred <- 
-  mixed(number ~ 
-          Bromeliads +
-          (1|block/alltrees),
-        data =obspred %>% filter(Site == "CP"),
-        family = "negative.binomial"(theta = getME(obsmodelcp_pred,
-                                                   "glmer.nb.theta")),
-        control =glmerControl(optimizer = "bobyqa"),
-        method = "LRT")$anova_table
 
 
