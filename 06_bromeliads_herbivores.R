@@ -61,7 +61,7 @@ herbplot_largeleaf <-
                      values = c("darkorange2", "dodgerblue4")) +
   scale_y_continuous(trans = "log",
                      breaks = c(1,5,20)) +
-  theme(legend.position = "none",
+  theme(legend.position = c(0.9,0.9),
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
         panel.background = element_blank(), 
@@ -117,7 +117,7 @@ herbplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -127,7 +127,7 @@ herbplot_treatment <-
   scale_color_manual(name = "Treatment",
                      labels = c("Wihout", "With", "Removal"),
                      values = c("darkgreen", "saddlebrown", "ivory4")) +
-  theme(legend.position = "none",
+  theme(legend.position = c(0.9,0.9),
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
         panel.background = element_blank(), 
@@ -352,7 +352,7 @@ herbeetleplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -486,7 +486,7 @@ jumpplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -622,7 +622,7 @@ psyllidplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -756,7 +756,7 @@ scaleaphidplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -892,7 +892,7 @@ snailplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+

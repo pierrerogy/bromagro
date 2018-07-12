@@ -24,8 +24,41 @@ leafpooltest_largeleaf <-
         type = afex_options(type = "2"),
         data = poolcenter,
         method = "LRT")$anova_table
+##plot
+###visreg
 visreg(leafpoolmodel_largeleaf,
        "largeleaf", by = "Sampling")
+###ggeffects
+leafmodeleffect_largeleaf <- 
+  ggeffect(leafpoolmodel_largeleaf,
+           terms = c("largeleaf", "Sampling"),
+           swap.pred = T,
+           type = "re",
+           ci.level = 0.95)
+leafmodeleffect_largeleaf$group <- 
+  factor(leafmodeleffect_largeleaf$group, levels = c("B", "A"))
+col <- 
+  ifelse(poolcenter$Sampling == "B",
+         "darkorange2", 
+         "dodgerblue4")
+
+leafpoolplot_largeleaf <-  
+  plot(leafmodeleffect_largeleaf,
+       ci = T) + 
+  geom_point(data = poolcenter,
+             mapping = aes(x = largeleaf, y = jitter(round((propdamage +0.01)*100), 2)), 
+             colour = col, 
+             fill = col) +
+  ggtitle("") + 
+  xlab("Volume proximity index") +
+  ylab("Pooled leaf damage (%)") +
+  scale_color_manual(labels = c("Before", "After"), 
+                     values = c("darkorange2", "dodgerblue4")) +
+  theme(legend.position = c(0.9,0.9),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
 
 #Treatment
@@ -79,7 +112,7 @@ leafpoolplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+

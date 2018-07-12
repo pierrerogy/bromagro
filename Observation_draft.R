@@ -1800,39 +1800,42 @@ dev.off()
 #Positive interactions model
 noctintereffect_pos <- 
   ggpredict(noctintermodel_pos,
-            terms = c("Bromeliads", "Time", "todo [0, 40, 80, 120, 160, 200]"),
-            swap.pred = F,
+            terms = c("Bromeliads", "Time", "todo"),
+            swap.pred =F,
             x.as.factor = T,
             ci.level = 0.95)
-noctintereffect_pos <- 
-  noctintereffect_pos %>% 
-  rename(broms = x,
-         todo = facet)
-
+col <- 
+  ifelse(noctintereffect_pos$x =="present",
+         "saddlebrown",
+         "darkgreen")
 pdf("noctinteraction_pos.pdf",
     height= 5,
     width = 5)
-ggplot(noctintereffect_pos) + 
-  aes(x=todo,
+ggplot(noctintereffect_pos,
+       ci =T) + 
+  aes(x=as.numeric(paste(noctintereffect_pos$facet)),
       y=predicted, 
-      colour=broms,
+      colour=x,
       pch = group) + 
-  geom_point(position = position_dodge(0.3), 
-                  lwd =3) +
-  geom_errorbar(aes(ymin=conf.low, 
-                    ymax=conf.high), 
-                width=0.4,
-                lwd = 1,
-                position = position_dodge(0.3)) +
-       ggtitle("") + 
-       xlab("Number of observed specimens") +
+  geom_ribbon(aes(ymin=conf.low,
+                  ymax=conf.high),
+              fill = ifelse(noctintereffect_pos$x =="present",
+                     "saddlebrown",
+                     "darkgreen"),
+              alpha=ifelse(noctintereffect_pos$group =="Day",
+                           0.3,
+                           0.8),
+              linetype=0) +
+  geom_line() +
+  ggtitle("") + 
+  xlab("Number of observed specimens") +
   scale_shape_manual(name = NULL,
                      values = c(18, 17)) +
   scale_color_manual(name = NULL,
                      labels = c("Bromeliads present", "Bromeliads absent"),
                      values = c("saddlebrown", "darkgreen")) +
   ylab("Number of positive interactions") +
-  theme(legend.position = c(0.2,0.8),
+  theme(legend.position = "",
              panel.grid.major = element_blank(), 
              panel.grid.minor = element_blank(),
              panel.background = element_blank(), 
@@ -1869,6 +1872,12 @@ title("a",
 points(dietcp_pcoa$points,
        pch = 16,
        col=col)
+legend ("topright", 
+        legend = c("Bromeliads present",
+                   "Bromeliads absent"), 
+        pch = 15, 
+        pt.bg = c("saddlebrown", "darkgreen"), 
+        col = c("saddlebrown", "darkgreen"))
 ordihull(dietcp_pcoa,
          groups = obsdietcp$Bromeliads,
          show.groups = "present",

@@ -3197,82 +3197,145 @@ plot(ggeffect(seasonmodel_preds,
 
 
 # Solo plotting -----------------------------------------------------------
-pdf("solo_predtreatment.pdf",
-    width= 5,
-    height = 5)
-predsplot_treatment
+jpeg("solo_predtreatment.jpg",
+    width= 700,
+    height = 700)
+predsplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
 pdf("solo_brompredlargeleaf.pdf",
-    width= 8,
+    width= 5,
     height = 5)
 brompredplot_largeleaf
 dev.off()
 
-pdf("solo_brompredtreatment.pdf",
-    width= 5,
-    height = 5)
-brompredplot_treatment 
+jpeg("solo_brompredtreatment.jpg",
+     width= 700,
+     height = 700)
+brompredplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_mobipredtreatment.pdf",
-    width= 5,
-    height = 5)
-mobipredplot_treatment
+jpeg("solo_mobipredtreatment.jpg",
+     width= 700,
+     height = 700)
+mobipredplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
 pdf("solo_leafpoolherb.pdf",
-    width= 8,
+    width= 5,
     height = 5)
-leafmodelplot_herb
+leafpoolplot_herb
+dev.off()
+
+pdf("solo_leafpoollargeleaf.pdf",
+    width= 5,
+    height = 5)
+leafpoolplot_largeleaf+
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)))
 dev.off()
 
 pdf("solo_herblargeleaf.pdf",
-    width= 8,
+    width= 5,
     height = 5)
 herbplot_largeleaf
 dev.off()
 
 pdf("solo_brompredherb.pdf",
-    width= 8,
+    width= 5,
     height = 5)
 predherbplot_brompreds
 dev.off()
 
-pdf("solo_herbtreatment.pdf",
-    width= 5,
-    height = 5)
-herbplot_treatment
+jpeg("solo_herbtreatment.jpg",
+     width= 700,
+     height = 700)
+herbplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_bromanttreatment.pdf",
-    width= 5,
-    height = 5)
-bromantsplot_treatment
+
+jpeg("solo_bromanttreatment.jpg",
+     width= 700,
+     height = 700)
+bromantsplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_nobromantplottreatment.pdf",
-    width= 5,
-    height = 5)
-nobromantsplot_treatment
+jpeg("solo_nobromanttreatment.jpg",
+     width= 700,
+     height = 700)
+nobromantsplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_bromhuntspidstreatment.pdf",
-    width= 5,
-    height = 5)
-bromhuntspidsplot_treatment
+jpeg("solo_bromhuntspidstreatment.jpg",
+     width= 700,
+     height = 700)
+bromhuntspidsplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_nobromhuntspidsplottreatment.pdf",
-    width= 5,
-    height = 5)
-nobromhuntspidsplot_treatment
+jpeg("solo_nobromhuntspidstreatment.jpg",
+     width= 700,
+     height = 700)
+nobromhuntspidsplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 
-pdf("solo_leafpooltreatment.pdf",
-    width= 5,
-    height = 5)
-leafpoolplot_treatment 
+jpeg("solo_leafpooltreatment.jpg",
+     width= 700,
+     height = 700)
+leafpoolplot_treatment + 
+  geom_point(position = position_dodge(0.3), 
+             lwd=10) +
+  theme(axis.title=element_text(size=rel(2)),
+        axis.text=element_text(size=rel(2)),
+        legend.title=element_text(size=rel(2)),
+        legend.text=element_text(size=rel(2)))
 dev.off()
 # Adonis frame (run #04 and #06 beforehand) --------------------------------
 #bromeliad parameters in categories

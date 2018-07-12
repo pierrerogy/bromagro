@@ -119,7 +119,7 @@ predsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -226,7 +226,7 @@ antsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -400,7 +400,7 @@ huntspidsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -816,7 +816,7 @@ brompredplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -990,7 +990,7 @@ bromantsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -1092,7 +1092,7 @@ bromhuntspidsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -1263,7 +1263,7 @@ nobromantsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -1362,7 +1362,7 @@ nobromhuntspidsplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =6) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
@@ -1539,7 +1539,7 @@ mobipredplot_treatment <-
   geom_point(position = position_dodge(0.3), 
              lwd =3) +
   ggtitle("") + 
-  xlab("Sampling") +
+  xlab("Sampling period") +
   scale_x_discrete(limit = c("B", "A"),
                    labels = c("Before", "After"),
                    expand = expand_scale(add = c(0.6)))+
