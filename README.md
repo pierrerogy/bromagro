@@ -1,5 +1,3 @@
-*work in progress..*
-
 # Epiphytic tank bromeliads and habitat complexity: what are the consequences of higher predator habitat for arthropod communities?
 
 ![picfield](Pictures/picfield.JPG)
@@ -32,13 +30,15 @@ In the observational survey, I found that bromeliads had subtle effects on the t
 These studies are interesting because they seem to contradict a [study](https://onlinelibrary.wiley.com/doi/full/10.1111/btp.12073) led by my co-supervisor [Dr. Edd Hammill](https://www.eddhammill.com/), in which the presence of bromeliads in a tree effectively reduced leaf damage when compared to trees without bromeliads. Here, the main difference lied in the identity of the most common ant species, which tend to be the most common predators in tropical systems. This therefore implies that the same ecological system can behave differently depending on the identity of common species. Such results are relevant in sustainable agricultural practices that aim at establishing natural enemies populations to control pest species.
 
 ## Project outputs
+### Metadata
+[Data](https://doi.org/10.5061/dryad.b4c364r) and [metadata](https://github.com/pierrerogy/bromagro/tree/master/Metadata_manipulative_experiment) are presently available for the manipulative experiment.
+
 ### Thesis
 To have a look at the thesis, please follow [this link](https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0371615).
 
 ### Papers
 Rogy, P., Hammill, E., & Srivastava, D. S. (2019). Complex indirect effects of epiphytic bromeliads on the invertebrate food webs of their support tree. Biotropica, 51(4), 549–561. 
-Links to [paper](https://doi.org/10.1111/btp.12672), [data](https://doi.org/10.5061/dryad.b4c364r)
-
+Links to: [paper](https://doi.org/10.1111/btp.12672), [data](https://doi.org/10.5061/dryad.b4c364r), [code](https://github.com/pierrerogy/bromagro/tree/master/Rogy_et_al_2019)
 
 
 ### If you're interested in learning more about bromeliad research, have a look at the [Bromeliad Working Group](http://www.zoology.ubc.ca/~srivast/bwg/)!
