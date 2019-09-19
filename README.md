@@ -12,11 +12,11 @@ Epiphytic tank bromeliads of tropical Central America offer a great system to st
 </p>
 
 <p align="center">
-<img src="Pictures/picbrom2.JPG" width="600" height="600">
+<img src="Pictures/picbrom2.jpg" width="600" height="600">
 </p>
 
 <p align="center">
-<img src="Pictures/dietplot.JPG" width ="600" height = "450">
+<img src="Pictures/dietplot.jpg" width ="600" height = "450">
 </p>
 
 I examined two different ways in which bromeliads may impact herbivores on their support tree:
