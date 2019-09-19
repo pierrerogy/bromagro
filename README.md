@@ -8,7 +8,7 @@ How the diversity of habitats of an ecosystem, or habitat heterogeneity, may aff
 Epiphytic tank bromeliads of tropical Central America offer a great system to study these questions. As epiphytes, they grow on a variety of substrates, including trees, and collect debris in wells formed by their leaf rosette. Bromeliads thus create a particular kind of terrestrial habitat, one that is mainly occupied by arthropod predators, such as ants or spiders. Because predators inhabiting bromeliads also forage around the bromeliad, it is hypothesized that greater bromeliads abundance on a tree would increase the density of predators foraging on that tree, thereby reducing herbivores feeding off the tree. 
 
 <p align="center">
-<img src="Pictures/picbrom1.JPG" width="450" height="600">
+<img src="Pictures/picbrom1.jpg" width="450" height="600">
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@ Epiphytic tank bromeliads of tropical Central America offer a great system to st
 </p>
 
 <p align="center">
-<img src="Pictures/dietplot.jpg" width ="600" height = "450">
+<img src="Pictures/dietplot.JPG" width ="600" height = "450">
 </p>
 
 I examined two different ways in which bromeliads may impact herbivores on their support tree:
