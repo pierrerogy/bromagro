@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:dataset xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" system="uuid">
+  <title>Epiphytic bromeliads indirectly affect invertebrate food webs on their support tree</title>
+  <creator>
+    <individualName>
+      <givenName>Pierre</givenName>
+      <surName>Rogy</surName>
+    </individualName>
+    <electronicMailAddress>rogy@zoology.ubc.ca</electronicMailAddress>
+  </creator>
+  <abstract>Ecosystem engineers are species that affect others through the provision of habitat rather than consumptive resources. The extent to which ecosystem engineers can indirectly affect entire food webs, however, is poorly understood. Epiphytic tank bromeliads (Bromeliaceae) are ecosystem engineers that are common throughout the Neotropics, and are associated with a variety of predatory arthropods. Here, we examine if bromeliads, by increasing predator densities, indirectly benefit their support tree through reduction in herbivorous insects and leaf damage. We observed and manipulated bromeliad densities in Costa Rican orange orchards, and measured impacts on leaf damage and arboreal and bromeliad invertebrate communities in two different seasons. Our results show that bromeliads are associated with predatory and herbivorous invertebrates but not leaf damage. Bromeliads were correlated with increased densities of their associated predators, especially ants and hunting spiders, but we could not confirm a causal link. Associations with bromeliads changed over time, with seasonal shifts interfering with responses to our manipulations. Bromeliads had a reduced association with predators in the dry season, and a null association between bromeliads and herbivorous invertebrates in the dry season unexpectedly became positive in the wet season. In summary, we have only limited evidence that bromeliads indirectly promote the top-down control of arboreal herbivores; instead, our manipulations suggest that bromeliads increase herbivore densities in the wet season. This research suggests that although bromeliads may act as ecosystem engineers, indirectly influencing the invertebrate food web on support trees, their effects are trophically complex and seasonally dependent.</abstract>
+  <dataTable>
+    <entityName>dissection.csv</entityName>
+    <entityDescription>Dissection samples</entityDescription>
+    <physical>
+      <objectName>dissection.csv</objectName>
+      <size unit="bytes"/>
+      <dataFormat>
+        <textFormat>
+          <recordDelimiter>\n\r</recordDelimiter>
+          <attributeOrientation>column</attributeOrientation>
+          <simpleDelimited>
+            <fieldDelimiter>,</fieldDelimiter>
+          </simpleDelimited>
+        </textFormat>
+      </dataFormat>
+    </physical>
+    <attributeList>
+      <attribute>
+        <attributeName>Subphylum</attributeName>
+        <attributeDefinition>Subphylum of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Order</attributeName>
+        <attributeDefinition>Order of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Suborder</attributeName>
+        <attributeDefinition>Suborder of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Family</attributeName>
+        <attributeDefinition>Family of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Subfamily</attributeName>
+        <attributeDefinition>Subfamily of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Genus</attributeName>
+        <attributeDefinition>Genus of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Species</attributeName>
+        <attributeDefinition>Binomial species name</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Morphopecies</attributeName>
+        <attributeDefinition>Current morphospecies ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Species_old_name</attributeName>
+        <attributeDefinition>Original name of the morphospecies, includes duplicates</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Diet</attributeName>
+        <attributeDefinition>Diet of the morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>detr</code>
+                  <definition>Detritivore</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>gran</code>
+                  <definition>Seed predator</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>hema</code>
+                  <definition>Blood feeder</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>herb</code>
+                  <definition>Herbivore</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>klep</code>
+                  <definition>Kleptoparasite</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>myco</code>
+                  <definition>Mycophagous</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>nada</code>
+                  <definition>Non-feeder</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>nect</code>
+                  <definition>Nectar feeder, later collapsed with poll and poll/nect</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>omni</code>
+                  <definition>Omnivore</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>poll</code>
+                  <definition>Palynivore, later collapsed with nect and poll/nect</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>poll/nect</code>
+                  <definition>Nectar feeder and palynivore, later collapsed with poll and nect</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>pred</code>
+                  <definition>Predator</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>scav</code>
+                  <definition>Scavenger, chiefly cockroaches</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>unkn</code>
+                  <definition>Unknown feeding behaviour</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>xylo</code>
+                  <definition>Xylophagous</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Site</attributeName>
+        <attributeDefinition>Site ID</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>CP</code>
+                  <definition>One of the individually owned plantations, named after the owners Calixto and Petrona Moraga-Ríos</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>DO</code>
+                  <definition>The commercial plantation, property of Del Oro S.A.</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>ER</code>
+                  <definition>One of the individually owned plantations, named after the owner Ernesto Rodriguez</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Sampling</attributeName>
+        <attributeDefinition>Sampling period</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>A</code>
+                  <definition>After sampling period (wet season)</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>B</code>
+                  <definition>Before sampling period (dry season)</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Day</attributeName>
+        <attributeDefinition>Day of collection</attributeDefinition>
+        <storageType>date</storageType>
+        <measurementScale>
+          <dateTime>
+            <formatString>dd.mm.yyyy</formatString>
+          </dateTime>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Tree</attributeName>
+        <attributeDefinition>Tree ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Treatment</attributeName>
+        <attributeDefinition>More appropriately called 'tree type', if bromeliads were naturally present, absent, or removed after the first sampling period</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>w</code>
+                  <definition>Trees naturally with bromeliads in both sampling periods</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>wo</code>
+                  <definition>Trees naturally without bromeliads in both sampling periods</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>wr</code>
+                  <definition>Trees naturally with bromeliads in the 'Before' sampling period, bromliads subsequently removed (manipulative treatment)</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Bromeliad</attributeName>
+        <attributeDefinition>Bromeliad ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Abundance</attributeName>
+        <attributeDefinition>Number of collected specimens</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>dimensionless</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>integer</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+    </attributeList>
+  </dataTable>
+</eml:dataset>

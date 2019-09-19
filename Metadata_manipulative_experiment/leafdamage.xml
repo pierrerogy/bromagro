@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:dataset xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" system="uuid">
+  <title>Epiphytic bromeliads indirectly affect invertebrate food webs on their support tree</title>
+  <creator>
+    <individualName>
+      <givenName>Pierre</givenName>
+      <surName>Rogy</surName>
+    </individualName>
+    <electronicMailAddress>rogy@zoology.ubc.ca</electronicMailAddress>
+  </creator>
+  <abstract>Ecosystem engineers are species that affect others through the provision of habitat rather than consumptive resources. The extent to which ecosystem engineers can indirectly affect entire food webs, however, is poorly understood. Epiphytic tank bromeliads (Bromeliaceae) are ecosystem engineers that are common throughout the Neotropics, and are associated with a variety of predatory arthropods. Here, we examine if bromeliads, by increasing predator densities, indirectly benefit their support tree through reduction in herbivorous insects and leaf damage. We observed and manipulated bromeliad densities in Costa Rican orange orchards, and measured impacts on leaf damage and arboreal and bromeliad invertebrate communities in two different seasons. Our results show that bromeliads are associated with predatory and herbivorous invertebrates but not leaf damage. Bromeliads were correlated with increased densities of their associated predators, especially ants and hunting spiders, but we could not confirm a causal link. Associations with bromeliads changed over time, with seasonal shifts interfering with responses to our manipulations. Bromeliads had a reduced association with predators in the dry season, and a null association between bromeliads and herbivorous invertebrates in the dry season unexpectedly became positive in the wet season. In summary, we have only limited evidence that bromeliads indirectly promote the top-down control of arboreal herbivores; instead, our manipulations suggest that bromeliads increase herbivore densities in the wet season. This research suggests that although bromeliads may act as ecosystem engineers, indirectly influencing the invertebrate food web on support trees, their effects are trophically complex and seasonally dependent.</abstract>
+  <dataTable>
+    <entityName>leafdamage.csv</entityName>
+    <entityDescription>Leaf damage file</entityDescription>
+    <physical>
+      <objectName>leafdamage.csv</objectName>
+      <size unit="bytes"/>
+      <dataFormat>
+        <textFormat>
+          <recordDelimiter>\n\r</recordDelimiter>
+          <attributeOrientation>column</attributeOrientation>
+          <simpleDelimited>
+            <fieldDelimiter>,</fieldDelimiter>
+          </simpleDelimited>
+        </textFormat>
+      </dataFormat>
+    </physical>
+    <attributeList>
+      <attribute>
+        <attributeName>Analyst</attributeName>
+        <attributeDefinition>Name of analyst</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Site</attributeName>
+        <attributeDefinition>Site ID</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>CP</code>
+                  <definition>One of the individually owned plantations, named after the owners Calixto and Petrona Moraga-Ríos</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>DO</code>
+                  <definition>The commercial plantation, property of Del Oro S.A.</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>ER</code>
+                  <definition>One of the individually owned plantations, named after the owner Ernesto Rodriguez</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Sampling</attributeName>
+        <attributeDefinition>Sampling period</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>A</code>
+                  <definition>After sampling period (wet season)</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>B</code>
+                  <definition>Before sampling period (dry season)</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Day</attributeName>
+        <attributeDefinition>Day of collection</attributeDefinition>
+        <storageType>date</storageType>
+        <measurementScale>
+          <dateTime>
+            <formatString>dd.mm.yyyy</formatString>
+          </dateTime>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Tree</attributeName>
+        <attributeDefinition>Tree ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Treatment</attributeName>
+        <attributeDefinition>More appropriately called 'tree type', if bromeliads were naturally present, absent, or removed after the first sampling period</attributeDefinition>
+        <storageType>string</storageType>
+        <measurementScale>
+          <nominal>
+            <nonNumericDomain>
+              <enumeratedDomain>
+                <codeDefinition>
+                  <code>w</code>
+                  <definition>Trees naturally with bromeliads in both sampling periods</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>wo</code>
+                  <definition>Trees naturally without bromeliads in both sampling periods</definition>
+                </codeDefinition>
+                <codeDefinition>
+                  <code>wr</code>
+                  <definition>Trees naturally with bromeliads in the 'Before' sampling period, bromliads subsequently removed (manipulative treatment)</definition>
+                </codeDefinition>
+              </enumeratedDomain>
+            </nonNumericDomain>
+          </nominal>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Square</attributeName>
+        <attributeDefinition>In roman numerals, quadrat ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Leaf</attributeName>
+        <attributeDefinition>Leaf ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Original_area</attributeName>
+        <attributeDefinition>Estimated area of the leaf</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>squareCentimeters</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>decimal</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Actal_area</attributeName>
+        <attributeDefinition>Original area minus area removed by leaf chewers</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>squareCentimeters</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>decimal</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Miner</attributeName>
+        <attributeDefinition>Area damaged by leaf miners</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>squareCentimeters</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>decimal</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Hemiptera</attributeName>
+        <attributeDefinition>Area damaged by sap feeders</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>squareCentimeters</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>decimal</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+    </attributeList>
+  </dataTable>
+</eml:dataset>

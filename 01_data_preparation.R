@@ -7,20 +7,19 @@ library(dplyr)
 library(tidyr)
 ##Modelling
 library(lme4)
+library(afex)
+library(DHARMa)
+library(car)
+library(MASS)
+##Visualising
+library(visreg)
 library(effects)
 library(ggeffects)
 library(ggplot2)
-library(afex)
-library(DHARMa)
-library(visreg)
-library(car)
 library(gridExtra)
-library(MASS)
+library(gridGraphics)
 ##Diversity
 library(vegan)
-library(ade4)
-library(corrplot)
-library(BiodiversityR)
 
 #Functions
 ##not in
@@ -28,29 +27,29 @@ library(BiodiversityR)
   Negate('%in%')
 
 #Load and check data
-distance <- read.csv("C://Users/pierr/OneDrive/Projects/bromagro/Data/Distance.csv",
+distance <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/distance.csv",
                      sep = ";")
 str(distance)
-damage <- read.csv("C://Users/pierr/OneDrive/Projects/bromagro/Data/LeafDamage.csv",
+damage <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/leafdamage.csv",
                    sep = ";")
 str(damage)
-lamona <- read.csv("C://Users/pierr/OneDrive/Projects/bromagro/Data/LaMona.csv",
+vacuum <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/vacuum.csv",
                    sep = ";")
-str(lamona)
-bromzy <- read.csv("C://Users/pierr/OneDrive/Projects/bromagro/Data/Bromzy.csv", 
+str(vacuum)
+dissection <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/dissection.csv", 
                    sep = ";")
-str(bromzy)
+str(dissection)
 
 
-#Distance and index--------------------------------------------------
-#Tidying and assertions
+# Distance and index--------------------------------------------------
+#Tidying 
 str(distance)
-##Remove the weird column
+##Remove the extra columns
 distance <- 
   distance[,1:10]
 str(distance)
 
-##Missing bromeliad.
+##Add missing bromeliad
 si <- 
   c("ER", "ER", "ER", "ER")
 sa <- 
@@ -71,12 +70,12 @@ dia <-
   c(NA, NA, NA, NA)
 lo <- 
   c(NA, NA, NA, NA)
-missing_tree <- 
+missing_brom <- 
   data.frame(si, sa, da, tree, trea, sq, br, dis, dia, lo)
-names(missing_tree) <- 
+names(missing_brom) <- 
   names(distance)
 distance <- 
-  rbind(distance, missing_tree)
+  rbind(distance, missing_brom)
 
 ##Correct wrong  quadrat distance
 distance$Square[distance$Site == "DO" 
@@ -91,15 +90,14 @@ distance$Square[distance$Site == "ER"
   "iii"
 
 #Add new variables
-##height and volume
+##Height and volume
 distance <- 
   distance %>% 
   unite(alltrees, Site, Tree, sep = "_", remove = F) %>% 
   unite(quadrats, alltrees, Square, sep = "_", remove = F) %>% 
   mutate(height = (Longest_leaf_length^2- (Diameter/2)^2)^0.5) %>% 
   mutate(volume = pi*((Diameter/2)^2)*height/3) 
-##density index
-###Create
+##Proximity index based on volume
 calc_index <- 
   distance %>% 
   mutate(largeleaf = Longest_leaf_length/Distance) %>% 
@@ -107,11 +105,12 @@ calc_index <-
   group_by(alltrees, quadrats) %>% 
   summarise_all(funs(sum))
 
-###Bind and tweak
+###Bind and change to appropriate names
 distance <- 
   distance %>%
   left_join(calc_index) %>% 
-  rename(Bromeliad = Bromeliad_.)
+  rename(Bromeliad = Bromeliad_.) %>% 
+  rename(treetype = Treatment)
 
 
 
@@ -121,10 +120,10 @@ distance <-
 
 
 
-#Damage and bromeliad parameters------------------------------------------------------
-#Tidying & Assertions
+# Damage and bromeliad parameters------------------------------------------------------
+#Tidying
 str(damage)
-##Coerce variables into their actual category
+##Coerce leaf ID into character
 damage$Leaf <- 
   as.character(damage$Leaf)
 str(damage)
@@ -152,19 +151,20 @@ damage$Treatment[damage$Site == "CP"
                  & damage$Tree == "G6"] <- 
   "w"
 
-#Bringing in new values
+#Bring in new values
 ##Percentages
 leafdamage <- 
   damage %>% 
   rename(actual = Actual_area) %>% 
   rename(original = Original_area) %>% 
-  mutate(okarea = actual - Miner - Hemiptera_scraper) %>% 
+  mutate(okarea = actual - Miner - Hemiptera) %>% 
   mutate(propdamage = 1- okarea/original) %>% 
-  dplyr::select(-Analyst, -Day, -Miner, -Hemiptera_scraper) %>% 
+  dplyr::select(-Analyst, -Day, -Miner, -Hemiptera) %>% 
   unite(alltrees, Site, Tree, sep = "_", remove = F) %>% 
-  unite(quadrats, alltrees, Square, sep = "_", remove = F)
- 
-###Checking
+  unite(quadrats, alltrees, Square, sep = "_", remove = F) %>% 
+  rename(treetype = Treatment)
+
+###Convert to factors
 table(leafdamage$Square)
 str(leafdamage)
 leafdamage$alltrees <-
@@ -173,8 +173,8 @@ leafdamage$quadrats <-
   as.factor(leafdamage$quadrats)
 leafdamage$Tree <-
   as.factor(leafdamage$Tree)
-leafdamage$Treatment <-
-  as.factor(leafdamage$Treatment)
+leafdamage$treetype <-
+  as.factor(leafdamage$treetype)
 
 ##Bromeliad number and size
 calc_bromnumber <- 
@@ -192,88 +192,93 @@ calc_bromnumber <-
   rename(totalvolume = Longest_leaf_length) %>% 
   rename(broms = Bromeliad)
 
-  
-##Rechecking everything
+
+##Convert to factors
 str(leafdamage)
 leafdamage$alltrees <-
   as.factor(leafdamage$alltrees)
 
-##pool per quadrat
+##Pool per quadrat
 calc_leafdamage <- 
   na.exclude(leafdamage) %>% 
   dplyr::select(alltrees, quadrats, Sampling, propdamage) %>% 
   group_by(alltrees, quadrats, Sampling) %>% 
   summarise_all(funs(mean))
 
-#Adding ipresence to leafdamage
+#Add bromeliead presence variable to leafdamage
 leafdamage$presence <- 
   "no"
-leafdamage$presence[which(leafdamage$Treatment == "wr" 
-                        & leafdamage$Sampling == "B")] <- 
+leafdamage$presence[which(leafdamage$treetype == "wr" 
+                          & leafdamage$Sampling == "B")] <- 
   "yes"
-leafdamage$presence[which(leafdamage$Treatment == "w")] <- 
+leafdamage$presence[which(leafdamage$treetype == "w")] <- 
   "yes"
 leafdamage$presence <- 
   as.factor(leafdamage$presence)
-#Vacuum sampling ----------------------------------------------------
+# Vacuum sampling ----------------------------------------------------
 #Tidying
-str(lamona)
-##Removing weird column
-lamona <-  
-  lamona[,1:17]
-##Remove things that have nothing to do with the analysis, eg mozzies, blackflies....
-lamona <- 
-  lamona[!lamona$Species == "Remove",]
-lamona <- 
-  lamona[!lamona$Species == "Remove?",]
-##Just add nada for ootheca feeding behaviour
-lamona$Diet[which(lamona$Subfamily == "Ootheca")] <- 
+str(vacuum)
+##Change tretament to tree type
+vacuum <- 
+  vacuum %>% 
+  rename(treetype = Treatment)
+##Remove extra columns
+vacuum <-  
+  vacuum[,1:17]
+##Remove invertebrates that will be excluded from analyses (e.g. mosquitoes and blackflies harassing the researchers)
+vacuum <- 
+  vacuum[!vacuum$Species == "Remove",]
+vacuum <- 
+  vacuum[!vacuum$Species == "Remove?",]
+##Contrast between feeding behaviour of cockroaches and oothecas
+vacuum$Diet[which(vacuum$Subfamily == "Ootheca")] <- 
   "nada"
-lamona$Diet <- 
-  droplevels(lamona$Diet)
+vacuum$Diet <- 
+  droplevels(vacuum$Diet)
 ##Remove the recheck indication for ants to double-check
-lamona$Suborder[which(lamona$Family == "Formicidae")] <- 
+vacuum$Suborder[which(vacuum$Family == "Formicidae")] <- 
   "Apocrita"
-lamona$Suborder <- 
-  droplevels(lamona$Suborder)
-##Putting Acari as Order name for mites, even though it is not
-levels(lamona$Order) <- 
-  c(levels(lamona$Order), "Acari")
-lamona$Order[which(lamona$Order == "")] <- 
+vacuum$Suborder <- 
+  droplevels(vacuum$Suborder)
+##Add Acari as Order name for mites, even though it is not
+levels(vacuum$Order) <- 
+  c(levels(vacuum$Order), "Acari")
+vacuum$Order[which(vacuum$Order == "")] <- 
   "Acari"
-lamona$Order <- 
-  droplevels(lamona$Order)
+vacuum$Order <- 
+  droplevels(vacuum$Order)
 ##Add 1 where I forgot to
-lamona$Abundance[which(is.na(lamona$Abundance))] <-
+vacuum$Abundance[which(is.na(vacuum$Abundance))] <-
   1
-##recheck
-str(lamona)
+##Double-check
+str(vacuum)
 ##One tree with two treatments
-lamona$Treatment[which(lamona$Tree == "D18")] <- 
+vacuum$treetype[which(vacuum$Tree == "D18")] <- 
   "wo"
 
 
+
 #Combine specimens per quadrat based on morphospecies
-puramona <- 
-  lamona %>% 
-  dplyr::select(Order, Suborder, Family, Morphospecies, Diet, Site, Sampling, Tree, Treatment, Square, Abundance) %>% 
+clean_vacuum <- 
+  vacuum %>% 
+  dplyr::select(Order, Suborder, Family, Morphospecies, Diet, Site, Sampling, Tree, treetype, Square, Abundance) %>% 
   unite(alltrees, Site, Tree, sep ="_", remove =F) %>% 
   unite(quadrats, alltrees, Square, sep ="_", remove = F) %>% 
-  group_by(Order, Suborder, Family, Morphospecies, Diet, Site, alltrees, quadrats, Sampling, Tree, Treatment, Square) %>% 
+  group_by(Order, Suborder, Family, Morphospecies, Diet, Site, alltrees, quadrats, Sampling, Tree, treetype, Square) %>% 
   summarise_all(funs(sum)) 
 
 #Add proximity index
-puramona <- 
-  puramona %>% 
+clean_vacuum <- 
+  clean_vacuum %>% 
   left_join(calc_index)
-puramona$largeleaf[puramona$Treatment == "wo"] <- 
+clean_vacuum$largeleaf[clean_vacuum$treetype == "wo"] <- 
   0
-puramona$largeleaf[which(puramona$Treatment == "wr" 
-                       & puramona$Sampling == "A")] <- 
+clean_vacuum$largeleaf[which(clean_vacuum$treetype == "wr" 
+                         & clean_vacuum$Sampling == "A")] <- 
   0
 
 
-#Missing sample vector
+#Empty sample vector
 Site <- 
   c("CP", "CP", "CP", "CP", "CP", "DO", "DO", "DO", "DO", "DO", "DO", "DO", "DO", "DO", "DO", "DO", "ER", "ER", "ER", "ER", "ER", "ER", "ER", "ER")
 Sampling <- 
@@ -293,50 +298,52 @@ empty_samples <-
 str(empty_samples)
 
 
-#Bromeliad dissection ----------------------------------------------------
-str(bromzy)
-#Remove things that have nothing to do with the analysis, eg aquatic stuff
-bromzy <- 
-  bromzy[!bromzy$Species == "Remove",]
-bromzy <- 
-  bromzy[!bromzy$Species == "Remove?",]
-##Just add nada for ootheca feeding behaviour
-bromzy$Diet[which(bromzy$Subfamily == "Ootheca")] <- 
+# Bromeliad dissection ----------------------------------------------------
+str(dissection)
+#Change treatment to tree type
+dissection <- 
+  dissection %>% 
+  rename(treetype = Treatment)
+#Remove invertebrates that will be excluded from analyses (e.g. aquatic ones)
+dissection <- 
+  dissection[!dissection$Species == "Remove",]
+dissection <- 
+  dissection[!dissection$Species == "Remove?",]
+##Contrast between feeding behaviour of cockroaches and oothecas
+dissection$Diet[which(dissection$Subfamily == "Ootheca")] <- 
   "nada"
-bromzy$Diet <- 
-  droplevels(bromzy$Diet)
+dissection$Diet <- 
+  droplevels(dissection$Diet)
 ##Additional level in nest factor
-levels(bromzy$Abundance)
-bromzy$Abundance[which(bromzy$Abundance == "nest ")] <- 
+levels(dissection$Abundance)
+dissection$Abundance[which(dissection$Abundance == "nest ")] <- 
   "nest"
-bromzy$Abundance <- 
-  droplevels(bromzy$Abundance)
+dissection$Abundance <- 
+  droplevels(dissection$Abundance)
 ##Add 1 where I forgot to
-bromzy$Abundance[bromzy$Abundance == ""] <- 
+dissection$Abundance[dissection$Abundance == ""] <- 
   1
-bromzy$Abundance[bromzy$Abundance == " "] <- 
+dissection$Abundance[dissection$Abundance == " "] <- 
   1
-bromzy$Abundance <- 
-  droplevels(bromzy$Abundance)
-##recheck
-str(bromzy)
-levels(bromzy$Tree)
-levels(bromzy$Tree) <- 
-  c(levels(bromzy$Tree), "J5")
-bromzy$Tree[bromzy$Tree == "J5 "] <- 
+dissection$Abundance <- 
+  droplevels(dissection$Abundance)
+##Double-check
+str(dissection)
+levels(dissection$Tree)
+levels(dissection$Tree) <- 
+  c(levels(dissection$Tree), "J5")
+dissection$Tree[dissection$Tree == "J5 "] <- 
   "J5"
-bromzy$Tree <- droplevels(bromzy$Tree)
+dissection$Tree <- droplevels(dissection$Tree)
 ##Removing rows with individual ant counts when nest has already been counted
-###probably a morphospecies oversplit
-bromzy <- 
-  bromzy[!(bromzy$Abundance== 16 & bromzy$Tree== "B3" & bromzy$Morphospecies =="Ant_A"),]
-bromzy <- 
-  bromzy[!(bromzy$Abundance== 1 & bromzy$Tree== "E8" & bromzy$Morphospecies =="Ant_X"),]
-bromzy <- 
-  bromzy[!(bromzy$Abundance== 1 & bromzy$Tree== "O18" & bromzy$Morphospecies =="Ant_X"),]
+dissection <- 
+  dissection[!(dissection$Abundance== 16 & dissection$Tree== "B3" & dissection$Morphospecies =="Ant_A"),]
+dissection <- 
+  dissection[!(dissection$Abundance== 1 & dissection$Tree== "E8" & dissection$Morphospecies =="Ant_X"),]
+dissection <- 
+  dissection[!(dissection$Abundance== 1 & dissection$Tree== "O18" & dissection$Morphospecies =="Ant_X"),]
 
-
-###Creating frame for empty ones
+###Create vector for empty bromeliads
 ####F14a NA because fell from tree
 sit <- 
   c("DO", "ER", "CP", "CP", "DO")
@@ -356,365 +363,295 @@ empty_broms <-
 #Final frame
 ##Add nest category
 ###Create column and add approximate nest size levels
-bromzy$nestcat <- 
+dissection$nestcat <- 
   NA
-levels(bromzy$Abundance) <- 
-  c(levels(bromzy$Abundance), 0)
-bromzy$Abundance[bromzy$Abundance == "nest "] <- 
+levels(dissection$Abundance) <- 
+  c(levels(dissection$Abundance), 0)
+dissection$Abundance[dissection$Abundance == "nest "] <- 
   "nest"
-levels(bromzy$Abundance) <-  
-  c(levels(bromzy$Abundance), 50, 100, 200, 1000)
+levels(dissection$Abundance) <-  
+  c(levels(dissection$Abundance), 50, 100, 200, 1000)
 ###Approximate nest size
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_X")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_X")] <- 
   "50"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_E")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_E")] <- 
   "50"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_AA")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_AA")] <- 
   "50"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_BF")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_BF")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_AK")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_AK")] <- 
   "50"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_AB")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_AB")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_AS")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_AS")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_H")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_H")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_F")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_F")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_AH")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_AH")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_BD")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_BD")] <- 
   "100"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_A")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_A")] <- 
   "200"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_G")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_G")] <- 
   "200"
-bromzy$Abundance[which(bromzy$Abundance == "nest" 
-                       & bromzy$Morphospecies == "Ant_Z")] <- 
+dissection$Abundance[which(dissection$Abundance == "nest" 
+                       & dissection$Morphospecies == "Ant_Z")] <- 
   "200"
-bromzy$Abundance[which(bromzy$Abundance == "100" 
-                       & bromzy$Morphospecies == "Ant_AH" 
-                       & bromzy$Tree =="G11" 
-                       & bromzy$Bromeliad == "c")] <- 
+dissection$Abundance[which(dissection$Abundance == "100" 
+                       & dissection$Morphospecies == "Ant_AH" 
+                       & dissection$Tree =="G11" 
+                       & dissection$Bromeliad == "c")] <- 
   "1000"
-###add nest category
-bromzy$nestcat[which(bromzy$Abundance == "50")] <- 
+###Add nest category
+dissection$nestcat[which(dissection$Abundance == "50")] <- 
   "A"
-bromzy$nestcat[which(bromzy$Abundance == "100")] <- 
+dissection$nestcat[which(dissection$Abundance == "100")] <- 
   "B"
-bromzy$nestcat[which(bromzy$Abundance == "200")] <- 
+dissection$nestcat[which(dissection$Abundance == "200")] <- 
   "C"
-bromzy$nestcat[which(bromzy$Abundance == "1000")] <- 
+dissection$nestcat[which(dissection$Abundance == "1000")] <- 
   "W"
-##finishing it
-bromzy$Abundance <-  
-  as.numeric(as.character(bromzy$Abundance))
-bromzy$nestcat <-  
-  as.factor(bromzy$nestcat)
-str(bromzy)
-##Frame and correct alter ego nests
-purabromzy <- 
-  bromzy %>% 
+##Finish and double-check
+dissection$Abundance <-  
+  as.numeric(as.character(dissection$Abundance))
+dissection$nestcat <-  
+  as.factor(dissection$nestcat)
+str(dissection)
+##Combine frames
+clean_dissection <- 
+  dissection %>% 
   unite(alltrees, Site, Tree, sep ="_", remove =F) %>% 
-  dplyr::select(Order, Suborder, Family, Site, Sampling, alltrees, Tree, Treatment, Bromeliad, nestcat,Morphospecies, Diet, Abundance) %>% 
-  group_by(Order, Suborder, Family, Site, Sampling, alltrees, Tree, Treatment, Bromeliad, nestcat, Morphospecies, Diet) %>% 
+  dplyr::select(Order, Suborder, Family, Site, Sampling, alltrees, Tree, treetype, Bromeliad, nestcat,Morphospecies, Diet, Abundance) %>% 
+  group_by(Order, Suborder, Family, Site, Sampling, alltrees, Tree, treetype, Bromeliad, nestcat, Morphospecies, Diet) %>% 
   summarise_all(funs(sum))
-purabromzy$Abundance[purabromzy$Abundance == 600] <- 
+##Error in original species name
+clean_dissection$Abundance[clean_dissection$Abundance == 600] <- 
   400
 
-##add kinds
+##Add functional groups (hereafter 'kinds')
 ###Create a column for kind
-purabromzy$kind <- 
+clean_dissection$kind <- 
   NA
 ###Add categories, based on taxonomy/behavior
-purabromzy$kind <- 
+clean_dissection$kind <- 
   ifelse(
-    ##herbivores
-    purabromzy$Order == "Gastropoda" & 
-      purabromzy$Diet == "herb",  "snail",
+    ##Herbivores
+    clean_dissection$Order == "Gastropoda" & 
+      clean_dissection$Diet == "herb",  "snail",
     ifelse(
-      purabromzy$Order == "Lepidoptera"& 
-        purabromzy$Diet == "herb",  "lepi",
+      clean_dissection$Order == "Lepidoptera"& 
+        clean_dissection$Diet == "herb",  "lepi",
       ifelse(
-        purabromzy$Order == "Coleoptera" &
-          purabromzy$Diet %in% c("herb", "poll"),  "herbeetle",
+        clean_dissection$Order == "Coleoptera" &
+          clean_dissection$Diet %in% c("herb", "poll"),  "herbeetle",
         ifelse(
-          purabromzy$Morphospecies %in% c("Hemiptera_BI", "Hemiptera_BP", "Homoptera_CF","Homoptera_CG",
-                                        "Homoptera_CJ", "Hemiptera_F"),"jump",
+          clean_dissection$Morphospecies %in% c("Hemiptera_BI", "Hemiptera_BP", "Homoptera_CF","Homoptera_CG",
+                                          "Homoptera_CJ", "Hemiptera_F"),"jump",
           ifelse(
-            purabromzy$Family == "Aphididae", "scaleaphid",
+            clean_dissection$Family == "Aphididae", "scaleaphid",
             ifelse(
-              purabromzy$Morphospecies %in% c("Scale_K", "Scale_I", "Scale_H", "Scale_G", "Scale_E", 
-                                            "Scale_D", "Scale_C", "Scale_B", "Scale_A", "Aphid_A"),  "scaleaphid",
+              clean_dissection$Morphospecies %in% c("Scale_K", "Scale_I", "Scale_H", "Scale_G", "Scale_E", 
+                                              "Scale_D", "Scale_C", "Scale_B", "Scale_A", "Aphid_A"),  "scaleaphid",
               ifelse(
-                purabromzy$Suborder == "Auchenorrhyncha",  "jump",
+                clean_dissection$Suborder == "Auchenorrhyncha",  "jump",
                 ifelse(
-                  purabromzy$Suborder == "Heteroptera" &
-                    purabromzy$Diet == "herb",  "heteroherb",
+                  clean_dissection$Suborder == "Heteroptera" &
+                    clean_dissection$Diet == "herb",  "heteroherb",
                   ifelse(
-                    purabromzy$Order == "Orthoptera" &
-                      purabromzy$Diet == "herb",  "ortho",
-                    ##predators
+                    clean_dissection$Order == "Orthoptera" &
+                      clean_dissection$Diet == "herb",  "ortho",
+                    ##Predators
                     ifelse(
-                      purabromzy$Family =="Formicidae",  "ants",
+                      clean_dissection$Family =="Formicidae",  "ants",
                       ifelse(
-                        purabromzy$Family == "Vespidae",  "wasps",
+                        clean_dissection$Family == "Vespidae",  "wasps",
                         ifelse(
-                          purabromzy$Order == "Blattodea" &
-                            purabromzy$Diet =="scav",  "roaches",
+                          clean_dissection$Order == "Blattodea" &
+                            clean_dissection$Diet =="scav",  "roaches",
                           ifelse(
-                            purabromzy$Order == "Neuroptera",  "lacewings",
+                            clean_dissection$Order == "Neuroptera",  "lacewings",
                             ifelse(
-                              purabromzy$Order == "Coleoptera" &
-                                purabromzy$Diet == "pred",  "predbeetle",
+                              clean_dissection$Order == "Coleoptera" &
+                                clean_dissection$Diet == "pred",  "predbeetle",
                               ifelse(
-                                purabromzy$Suborder == "Heteroptera" &
-                                  purabromzy$Diet == "pred",  "heteropred",
+                                clean_dissection$Suborder == "Heteroptera" &
+                                  clean_dissection$Diet == "pred",  "heteropred",
                                 ifelse(
-                                  purabromzy$Order == "Opiliones",  "opilio",
+                                  clean_dissection$Order == "Opiliones",  "opilio",
                                   ifelse(
-                                    purabromzy$Order == "Diptera" &
-                                      purabromzy$Diet == "pred",  "predflies",
+                                    clean_dissection$Order == "Diptera" &
+                                      clean_dissection$Diet == "pred",  "predflies",
                                     ifelse(
-                                      purabromzy$Order == "Diptera" &
-                                        purabromzy$Diet == "herb",  "herbflies",
+                                      clean_dissection$Order == "Diptera" &
+                                        clean_dissection$Diet == "herb",  "herbflies",
                                       ifelse(
-                                        purabromzy$Order == "Dermaptera", "earwig",
+                                        clean_dissection$Order == "Dermaptera", "earwig",
                                         ifelse(
-                                          purabromzy$Order == "Mantodea", "mantid",
+                                          clean_dissection$Order == "Mantodea", "mantid",
                                           ifelse(
-                                            purabromzy$Order == "Araneae" &
-                                              purabromzy$Morphospecies %in% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
-                                                                            "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
-                                                                            "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
-                                                                            "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
-                                                                            "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
-                                                                            "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
-                                                                            "Spider_FK", "Spider_FM", "Spider_GB"),  "webspids", 
+                                            clean_dissection$Order == "Araneae" &
+                                              clean_dissection$Morphospecies %in% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
+                                                                              "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
+                                                                              "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
+                                                                              "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
+                                                                              "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
+                                                                              "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
+                                                                              "Spider_FK", "Spider_FM", "Spider_GB"),  "webspids", 
                                             ifelse(
-                                              purabromzy$Order == "Araneae" &
-                                                purabromzy$Morphospecies %notin% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
-                                                                                 "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
-                                                                                 "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
-                                                                                 "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
-                                                                                 "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
-                                                                                 "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
-                                                                                 "Spider_FK", "Spider_FM", "Spider_GB"), "huntspids", 
+                                              clean_dissection$Order == "Araneae" &
+                                                clean_dissection$Morphospecies %notin% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
+                                                                                   "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
+                                                                                   "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
+                                                                                   "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
+                                                                                   "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
+                                                                                   "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
+                                                                                   "Spider_FK", "Spider_FM", "Spider_GB"), "huntspids", 
                                               ifelse(
-                                                purabromzy$Diet =="para", "para", 
+                                                clean_dissection$Diet =="para", "para", 
                                                 ifelse(
-                                                  purabromzy$Suborder != "", as.character(purabromzy$Suborder), as.character(purabromzy$Order)
+                                                  clean_dissection$Suborder != "", as.character(clean_dissection$Suborder), as.character(clean_dissection$Order)
                                                 ))))))))))))))))))))))))
 
-
-
-#Bromeliad predator indices--------------------------
-#Per bromeliad
-##without ants
-calc_noant <- 
-  purabromzy %>% 
-  ungroup() %>% 
-  filter(Diet %in% c("pred", "scav", "omni")) %>% 
-  ###Removing irrelevant families
-  filter(Family %notin% c("Formicidae", "Gryllidae", "Anthicidae", "Aderidae", "Tenebrionidae")) %>% 
-  dplyr::select(Site, Tree, Bromeliad, Abundance) %>%
-  group_by(Site, Tree, Bromeliad) %>%
-  summarise_all(funs(sum)) %>% 
-  rename(noantabund = Abundance)
-##Ant nests
-calc_nest <- 
-  purabromzy %>% 
-  ungroup() %>% 
-  filter(Abundance >20) %>%
-  dplyr::select(Site, Tree, Bromeliad, Abundance) %>%
-  group_by(Site, Tree, Bromeliad) %>%
-  summarise_all(funs(sum)) %>% 
-  rename(nestabund = Abundance)
-
-#Per tree
-calc_noantabund <- 
-  purabromzy %>% 
-  ungroup() %>% 
-  filter(Diet %in% c("pred", "scav", "omni")) %>% 
-  ###Removing irrelevant families
-  filter(Family %notin% c("Formicidae", "Gryllidae", "Anthicidae", "Aderidae", "Tenebrionidae")) %>% 
-  dplyr::select(Site, Tree, Abundance) %>%
-  group_by(Site, Tree) %>%
-  summarise_all(funs(sum)) %>% 
-  rename(treenoantabund = Abundance)
-
-calc_nestabund <- 
-  purabromzy %>% 
-  ungroup() %>% 
-  filter(Abundance >20) %>%
-  dplyr::select(Site, Tree, Abundance) %>%
-  group_by(Site, Tree) %>%
-  summarise_all(funs(sum)) %>% 
-  rename(treenestabund = Abundance)
-
-#Create dataframe and add up the two
-calc_insidepred <-
-  distance %>% 
-  left_join(calc_noant) %>% 
-  left_join(calc_noantabund) %>% 
-  left_join(calc_nest) %>% 
-  left_join(calc_nestabund)
-##Removing NAs
-calc_insidepred[,16:19][is.na(calc_insidepred[,16:19])]   <- 
-  0
-
-##Get back to it
-calc_insidepred <- 
-  calc_insidepred %>% 
-  ungroup() %>% 
-  mutate(predabund = noantabund + nestabund) %>% 
-  mutate(treepredabund = treenoantabund + treenestabund) %>% 
-  mutate(noantindex = noantabund/Distance) %>% 
-  mutate(nestindex = nestabund/Distance) %>% 
-  mutate(predindex = predabund/Distance) %>%   
-  dplyr::select(alltrees, quadrats, treepredabund, treenoantabund, treenestabund, noantindex, nestindex, predindex) %>% 
-  group_by(alltrees, quadrats, treepredabund, treenoantabund, treenestabund) %>% 
-  summarise_all(funs(sum))
-
-#Kinds of herbivores and predators, and other arthropods ---------------------------------------
+# Kinds of herbivores and predators, and other arthropods ---------------------------------------
 #Create a column for kind
-puramona$kind <- 
+clean_vacuum$kind <- 
   NA
 ##Add categories, based on taxonomy/behavior
-puramona$kind <- 
+clean_vacuum$kind <- 
   ifelse(
-    ##herbivores
-    puramona$Order == "Gastropoda" & 
-      puramona$Diet == "herb",  "snail",
+    ##Herbivores
+    clean_vacuum$Order == "Gastropoda" & 
+      clean_vacuum$Diet == "herb",  "snail",
     ifelse(
-      puramona$Order == "Lepidoptera"& 
-        puramona$Diet == "herb",  "lepi",
+      clean_vacuum$Order == "Lepidoptera"& 
+        clean_vacuum$Diet == "herb",  "lepi",
       ifelse(
-        puramona$Order == "Coleoptera" &
-          puramona$Diet %in% c("herb", "poll"),  "herbeetle",
+        clean_vacuum$Order == "Coleoptera" &
+          clean_vacuum$Diet %in% c("herb", "poll"),  "herbeetle",
         ifelse(
-          puramona$Morphospecies %in% c("Hemiptera_BI", "Hemiptera_BP", "Homoptera_CF","Homoptera_CG",
+          clean_vacuum$Morphospecies %in% c("Hemiptera_BI", "Hemiptera_BP", "Homoptera_CF","Homoptera_CG",
                                         "Homoptera_CJ", "Hemiptera_F"),"jump",
           ifelse(
-            puramona$Family == "Aphididae", "scaleaphid",
+            clean_vacuum$Family == "Aphididae", "scaleaphid",
             ifelse(
-              puramona$Morphospecies %in% c("Scale_K", "Scale_I", "Scale_H", "Scale_G", "Scale_E", 
+              clean_vacuum$Morphospecies %in% c("Scale_K", "Scale_I", "Scale_H", "Scale_G", "Scale_E", 
                                             "Scale_D", "Scale_C", "Scale_B", "Scale_A", "Aphid_A"),  "scaleaphid",
               ifelse(
-                puramona$Suborder == "Auchenorrhyncha",  "jump",
+                clean_vacuum$Suborder == "Auchenorrhyncha",  "jump",
                 ifelse(
-                  puramona$Suborder == "Heteroptera" &
-                    puramona$Diet == "herb",  "heteroherb",
+                  clean_vacuum$Suborder == "Heteroptera" &
+                    clean_vacuum$Diet == "herb",  "heteroherb",
                   ifelse(
-                    puramona$Order == "Orthoptera" &
-                      puramona$Diet == "herb",  "ortho",
-                    ##predators
+                    clean_vacuum$Order == "Orthoptera" &
+                      clean_vacuum$Diet == "herb",  "ortho",
+                    ##Predators
                     ifelse(
-                      puramona$Family =="Formicidae",  "ants",
+                      clean_vacuum$Family =="Formicidae",  "ants",
                       ifelse(
-                        puramona$Family == "Vespidae",  "wasps",
+                        clean_vacuum$Family == "Vespidae",  "wasps",
                         ifelse(
-                          puramona$Order == "Blattodea" &
-                            puramona$Diet =="scav",  "roaches",
+                          clean_vacuum$Order == "Blattodea" &
+                            clean_vacuum$Diet =="scav",  "roaches",
                           ifelse(
-                            puramona$Order == "Neuroptera",  "lacewings",
+                            clean_vacuum$Order == "Neuroptera",  "lacewings",
                             ifelse(
-                              puramona$Order == "Coleoptera" &
-                                puramona$Diet == "pred",  "predbeetle",
+                              clean_vacuum$Order == "Coleoptera" &
+                                clean_vacuum$Diet == "pred",  "predbeetle",
                               ifelse(
-                                puramona$Suborder == "Heteroptera" &
-                                  puramona$Diet == "pred",  "heteropred",
+                                clean_vacuum$Suborder == "Heteroptera" &
+                                  clean_vacuum$Diet == "pred",  "heteropred",
                                 ifelse(
-                                  puramona$Order == "Opiliones",  "opilio",
+                                  clean_vacuum$Order == "Opiliones",  "opilio",
                                   ifelse(
-                                    puramona$Order == "Diptera" &
-                                      puramona$Diet == "pred",  "predflies",
+                                    clean_vacuum$Order == "Diptera" &
+                                      clean_vacuum$Diet == "pred",  "predflies",
                                     ifelse(
-                                      puramona$Order == "Diptera" &
-                                        puramona$Diet == "herb",  "herbflies",
+                                      clean_vacuum$Order == "Diptera" &
+                                        clean_vacuum$Diet == "herb",  "herbflies",
                                       ifelse(
-                                        puramona$Order == "Dermaptera", "earwig",
+                                        clean_vacuum$Order == "Dermaptera", "earwig",
                                         ifelse(
-                                          puramona$Order == "Mantodea", "mantid",
+                                          clean_vacuum$Order == "Mantodea", "mantid",
                                           ifelse(
-                                            puramona$Order == "Araneae" &
-                                              puramona$Morphospecies %in% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
+                                            clean_vacuum$Order == "Araneae" &
+                                              clean_vacuum$Morphospecies %in% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
                                                                             "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
                                                                             "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
                                                                             "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
                                                                             "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
                                                                             "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
-                                                                            "Spider_FK", "Spider_FM", "Spider_GB"),  "webspids", 
+                                                                            "Spider_FK", "Spider_FM", "Spider_GB", "Spider_L"),  "webspids", 
                                             ifelse(
-                                              puramona$Order == "Araneae" &
-                                                puramona$Morphospecies %notin% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
+                                              clean_vacuum$Order == "Araneae" &
+                                                clean_vacuum$Morphospecies %notin% c("Spider_A", "Spider_X", "Spider_Z", "Spider_AC", "Spider_AD", "Spider_AL",
                                                                                  "Spider_AU", "Spider_AW", "Spider_AZ", "Spider_BA", "Spider_BF", "Spider_BO",
                                                                                  "Spider_BG", "Spider_BR", "Spider_BU", "Spider_BV", "Spider_BW", "Spider_G",
                                                                                  "Spider_BZ", "Spider_CI", "Spider_CJ", "Spider_CQ", "Spider_CW", "Spider_DD",
                                                                                  "Spider_DI", "Spider_DO", "Spider_DQ", "Spider_DU", "Spider_DV", "Spider_I",
                                                                                  "Spider_DY", "Spider_EL", "Spider_EQ", "Spider_EM", "Spider_EY", "Spider_S",
-                                                                                 "Spider_FK", "Spider_FM", "Spider_GB"), "huntspids", 
+                                                                                 "Spider_FK", "Spider_FM", "Spider_GB", "Spider_L"), "huntspids", 
                                               ifelse(
-                                                puramona$Diet =="para", "para", 
+                                                clean_vacuum$Diet =="para", "para", 
                                                 ifelse(
-                                                  puramona$Suborder != "", as.character(puramona$Suborder), as.character(puramona$Order)
+                                                  clean_vacuum$Suborder != "", as.character(clean_vacuum$Suborder), as.character(clean_vacuum$Order)
                                                 ))))))))))))))))))))))))
 
 
 
 
-#Predators and herbivores by quadrat -------------------------------------
+# Predators and herbivores by quadrat -------------------------------------
 #Reduce per quadrat and combining everything
 calc_quadrats <- 
   leafdamage %>% 
-  dplyr::select(Site, alltrees, quadrats, Treatment, Sampling) %>% 
+  dplyr::select(Site, alltrees, quadrats, treetype, Sampling) %>% 
   unique()
-##adding presence column
-##Presence/absence
+##Add presence column
 calc_quadrats$presence <- 
   "no"
-calc_quadrats$presence[which(calc_quadrats$Treatment == "wr" 
+calc_quadrats$presence[which(calc_quadrats$treetype == "wr" 
                              & calc_quadrats$Sampling == "B")] <- 
   "yes"
-calc_quadrats$presence[which(calc_quadrats$Treatment == "w")] <- 
+calc_quadrats$presence[which(calc_quadrats$treetype == "w")] <- 
   "yes"
 
 
-#Make something with everything
+#Build frame with everything
 calc_dichos <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   dplyr::select(alltrees, quadrats, Sampling, Abundance) %>% 
   group_by(alltrees, quadrats, Sampling) %>% 
   summarise_all(funs(sum)) %>% 
   rename(todo = Abundance)
-  
-#Get the psyllids out
+
+#Isolate Asian citrus psyllid (only identified Liviidae)
 calc_psyllid <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(Family == "Liviidae") %>% 
   dplyr::select(quadrats, Sampling, Abundance) %>% 
   rename(psyllid = Abundance)
 
-#All preds, parasitoids and herbivores
+#All predators, parasitoids and herbivores
 calc_predherb <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(Diet %in% c("pred", "scav", "omni", "para", "herb")) %>% 
   ##Removing irrelevant families
@@ -730,25 +667,25 @@ calc_predherb <-
 
 
 #Contrast between bromeliad predators, tree and mobile predators
-##Did not check for bromeliad non-predatory occupants
-##First check what is inside
 calc_bromstuff <- 
-  purabromzy %>% 
+  clean_dissection %>% 
   ungroup() %>% 
-  ###Filter tourist taxa, based on observation
-  ###flies
+  ###Filter tourist taxa, based on observation and published literature
+  ###Mantids
+  filter(Order != "Mantodea") %>% 
+  ###Flies
   filter(Order != "Diptera") %>% 
-  ###social wasps
+  ###Social wasps
   filter(Family != "Vespidae") %>% 
-  ###one parasitoid
+  ###One parasitoid
   filter(Morphospecies != "Wasp_N") %>% 
-  ##neuroptera larvae
+  ##Neuroptera larvae
   filter(Order != "Neuroptera") %>% 
-  ###scales, likely associated with ants, but we found only 4
+  ###Scales, likely associated with ants, but we found only 4
   filter(Suborder != "Sternorrhyncha") %>% 
   ##Spider CJ
   filter(Morphospecies != "Spider_CJ") %>% 
-  ###bees
+  ###Bees
   filter(Morphospecies != "Bee_B") %>% 
   ###Vagrant ants, not flying ants, because likely to look for nesting ground there
   filter(Morphospecies %notin% c("Ant_AJ", "Ant_AL", "Ant_BA", "Ant_BE",
@@ -756,39 +693,39 @@ calc_bromstuff <-
   dplyr::select(Morphospecies) %>% 
   unique() %>% 
   mutate(where = "brom")
-puramona <- 
-  puramona %>% 
+clean_vacuum <- 
+  clean_vacuum %>% 
   left_join(calc_bromstuff)
 ##Add mobile and tree predators
-puramona$where <- 
+clean_vacuum$where <- 
   ifelse(
-    is.na(puramona$where) & puramona$Diet %in% c("pred","omni", "scav", "para") & 
-      puramona$Family %in% c("Coccinellidae", "Lampyridae", "Cleridae", "Geocoridae", "Nabidae", "Vespidae") | 
-      is.na(puramona$where) & puramona$Order == "Mantodea" | 
-      is.na(puramona$where) & puramona$Order == "Neuroptera" & puramona$Morphospecies != "Neurolarva_A" |
-      is.na(puramona$where) & puramona$kind %in% c("predflies", "para"), "mobi",
+    is.na(clean_vacuum$where) & clean_vacuum$Diet %in% c("pred","omni", "scav", "para") & 
+      clean_vacuum$Family %in% c("Coccinellidae", "Lampyridae", "Cleridae", "Geocoridae", "Nabidae", "Vespidae") | 
+      is.na(clean_vacuum$where) & clean_vacuum$Order == "Mantodea" | 
+      is.na(clean_vacuum$where) & clean_vacuum$Order == "Neuroptera" & clean_vacuum$Morphospecies != "Neurolarva_A" |
+      is.na(clean_vacuum$where) & clean_vacuum$kind %in% c("predflies", "para"), "mobi",
     ifelse(
-      is.na(puramona$where) & puramona$Diet %in% c("pred","omni", "scav", "para") &
-        puramona$Family %notin% c("Gryllidae", "Anthicidae", "Aderidae", "Tenebrionidae","Coccinellidae", 
+      is.na(clean_vacuum$where) & clean_vacuum$Diet %in% c("pred","omni", "scav", "para") &
+        clean_vacuum$Family %notin% c("Gryllidae", "Anthicidae", "Aderidae", "Tenebrionidae","Coccinellidae", 
                                   "Lampyridae", "Cleridae", "Geocoridae", "Nabidae", "Vespidae") & 
-        puramona$Order %notin% c("Mantodea", "Neuroptera") & puramona$kind %notin% c("predflies", "para") | 
-        is.na(puramona$where) & puramona$Morphospecies == "Neurolarva_A", "tree", puramona$where
+        clean_vacuum$Order %notin% c("Mantodea", "Neuroptera") & clean_vacuum$kind %notin% c("predflies", "para") | 
+        is.na(clean_vacuum$where) & clean_vacuum$Morphospecies == "Neurolarva_A", "tree", clean_vacuum$where
     ))
-puramona$where[is.na(puramona$where)] <- 
+clean_vacuum$where[is.na(clean_vacuum$where)] <- 
   "tbd"
 
 ##Bind to vacuum samples and make small dataframe to see which are found in trees
-calc_bromzytree <- 
-  puramona %>% 
+calc_dissectiontree <- 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(where == "brom") %>% 
   dplyr::select(Order, Family, Morphospecies, Abundance) %>% 
   group_by(Order, Family, Morphospecies) %>% 
   summarise_all(funs(sum))
-##now make dataframes
-###bromeliads
+##Now make dataframes
+###Bromeliad-associated predators
 calc_brompred <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(where == "brom") %>% 
   filter(Diet %in% c("pred","omni","scav")) %>% 
@@ -796,26 +733,11 @@ calc_brompred <-
   dplyr::select(Sampling, alltrees, quadrats,Abundance) %>% 
   group_by(Sampling, alltrees, quadrats) %>% 
   summarise_all(funs(sum)) %>% 
-  rename(bromypred = Abundance)
-###without ants
-calc_bromantless <- 
-  puramona %>% 
-  ungroup() %>% 
-  filter(where == "brom") %>% 
-  filter(Diet %in% c("pred","omni","scav")) %>% 
-  filter(Family %notin% c("Gryllidae", "Anthicidae", "Aderidae", "Tenebrionidae", "Formicidae")) %>% 
-  dplyr::select(Sampling, alltrees, quadrats,Abundance) %>% 
-  group_by(Sampling, alltrees, quadrats) %>% 
-  summarise_all(funs(sum)) %>% 
-  rename(bromantless = Abundance)
-calc_brompred <- 
-  calc_brompred %>% 
-  left_join(calc_bromantless)
-is.na(calc_brompred$bromantless) <- 
-  0
-###mobile
+  rename(brompred = Abundance)
+
+###Aerial predators
 calc_mobipred <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(where == "mobi" & Diet != "para") %>% 
   dplyr::select(Sampling, alltrees, quadrats,Abundance) %>% 
@@ -823,9 +745,9 @@ calc_mobipred <-
   summarise_all(funs(sum)) %>% 
   rename(mobipred = Abundance)
 
-###tree
+###Tree-associated predators
 calc_arbopred <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(where == "tree") %>% 
   dplyr::select(Sampling, alltrees, quadrats,Abundance) %>% 
@@ -833,18 +755,35 @@ calc_arbopred <-
   summarise_all(funs(sum)) %>% 
   rename(arbopred = Abundance)
 
+##Divide bromeliad-associated predators divided into kinds
+calc_brompred_kinds <- 
+  clean_vacuum %>% 
+  ungroup() %>% 
+  filter(where == "brom") %>% 
+  ##not including low abundance kinds webspids and heteropreds
+  filter(kind %in% c("predbeetle", "huntspids", "predflies","roaches", "opilio", "lacewings", "ants", "para")) %>% 
+  dplyr::select(kind, Site, alltrees, quadrats, Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, quadrats, Sampling, treetype) %>% 
+  summarise_all(funs(sum)) %>% 
+  spread(key = kind, Abundance, fill =0) %>% 
+  rename(bromants = ants,
+         bromhuntspids = huntspids,
+         bromopilio = opilio,
+         brompredbeetle = predbeetle,
+         bromroaches = roaches)
+
 #Now make a clean data frame to bind anywhere
 ##Make sure that the rows to put NAs in belong to alltrees = CP_A2
 ##this tree was not vacuumed, but we have leaf damage for it
 calc_kind <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   dplyr::select(Sampling, alltrees, quadrats, kind, Abundance) %>% 
   group_by(Sampling, alltrees, quadrats, kind) %>% 
   summarise_all(funs(sum)) %>% 
   spread(key= kind, Abundance, fill = 0)
 
-##bind all abundances together
+##Bind all abundances together
 calc_dichos <- 
   calc_quadrats[, c(2,3,5)] %>% 
   filter(alltrees != "CP_A2") %>% 
@@ -855,16 +794,16 @@ calc_dichos <-
   left_join(calc_arbopred) %>% 
   left_join(calc_kind) %>% 
   left_join(calc_psyllid) %>% 
-  mutate(herbsnailless = herb-snail) %>% 
-  ##reordering
-  dplyr::select(alltrees:arbopred, herbsnailless,  herbeetle, herbflies, heteroherb, jump, lepi, 
+  left_join(calc_brompred_kinds) %>% 
+  ##Reorder
+  dplyr::select(alltrees:arbopred,  herbeetle, herbflies, heteroherb, jump, lepi, 
                 ortho, psyllid, scaleaphid, snail, ants, earwig, heteropred, 
                 huntspids, lacewings, mantid, predbeetle, predflies, opilio,
-                roaches, wasps,  webspids, para)
-calc_dichos[,4:34][is.na(calc_dichos[,4:34])] <- 
+                roaches, wasps,  webspids, para, bromants:bromroaches)
+calc_dichos[,4:37][is.na(calc_dichos[,4:37])] <- 
   0
 ##Check column sums and remove the rare ones
-colSums(calc_dichos[,7:34])
+colSums(calc_dichos[,7:37])
 ##earwigs, mantids, wasps with less than 10 in abundance
 calc_dichos <- 
   calc_dichos %>% 
@@ -872,285 +811,281 @@ calc_dichos <-
 
 
 
-#Checking correlations between bromeliad parameters ----------------------
 
-#Merging all variables
-correl_bromvars<- 
-  calc_quadrats %>% 
-  left_join(calc_bromnumber) %>% 
-  left_join(calc_index) %>% 
-  left_join(calc_insidepred) %>% 
-  unique()
-##Could not figure easier way
-correl_bromvars$nestindex[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$noantindex[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$predindex[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$treenestabund[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$treenoantabund[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$treepredabund[correl_bromvars$presence == "no"] <-
-  0
-correl_bromvars$broms[which(correl_bromvars$presence == "no")] <- 
-  0
-correl_bromvars$meanvolume[correl_bromvars$presence == "no"] <- 
-  0
-correl_bromvars$totalvolume[correl_bromvars$presence == "no"] <- 
-  0
-correl_bromvars$largeleaf[which(correl_bromvars$presence == "no")] <- 
-  0 
-correl_bromvars <- 
-  correl_bromvars %>% 
-  filter(presence == "yes") %>% 
-  dplyr::select(-Site:-presence, -meanvolume) %>% 
-  na.omit()
-
-##PCA to vixualize uncorrelated variables, or relatively so
-brompca <- dudi.pca(correl_bromvars,
-                    scannf = FALSE, 
-                    nf = 2)
-brompca$eig/sum(brompca$eig)
-s.corcircle(brompca$co, 
-            clabel = 0.5)
-##quick test
-cor.test(correl_bromvars$largeleaf,
-         correl_bromvars$predindex)
-
-##Make a simplified frame with largeleaf and predindex
-calc_bromvars <- 
-  calc_quadrats %>% 
-  left_join(calc_index) %>% 
-  left_join(calc_insidepred) %>% 
-  dplyr::select(Site:presence, largeleaf, predindex)
-calc_bromvars$largeleaf[calc_bromvars$presence == "no"] <-
-  0
-calc_bromvars$predindex[calc_bromvars$presence == "no"] <-
-  0
-
-
-#Binding to frames---------------------------
-#Pooling leaf damage by quadrat
+# Combine frames---------------------------
 pooldamage <- 
   calc_quadrats %>% 
   left_join(calc_leafdamage) %>% 
-  left_join(calc_bromvars[,c(3,5,7,8)]) %>% 
+  left_join(calc_index) %>% 
   left_join(calc_dichos)
 str(pooldamage)
-##For the NA-intolerant adonis
-pooldamage_noNAS <- 
-  na.omit(pooldamage)
+#Change proximity index to 0 post-removal
+pooldamage$largeleaf[pooldamage$presence == "no"] <-
+  0
 
-#Leaf damage
-leafdamage<- 
-  leafdamage %>% 
-  left_join(calc_bromvars[,c(3,5,7,8)]) %>% 
-  left_join(calc_dichos)
-
-#Vacuum samples
-puramona <- 
-  puramona %>% 
-  left_join(calc_bromvars[,c(3,5,7,8)])
-  
-#Re-centering data based on site means -----------------------------------
+# Transformation and centering of independent variable - quadrat level -------------------------------------------------
+# Poolcenter
 poolcenter <- 
   na.omit(pooldamage) %>% 
+  dplyr::select( -predpara) %>% 
+  ##Add phloem suckers and leaf chewers
+  mutate(phloem = heteroherb + jump + scaleaphid,
+         chewer = herbeetle + lepi + ortho + snail) %>% 
+  ##Square root future predictor values
+  mutate(largeleaf = sqrt(largeleaf),
+         predcenter = preds^(1/3),
+         bromcenter = brompred^(1/3),
+         mobicenter = mobipred^(1/3),
+         arbocenter = arbopred^(1/3),
+         paracenter = para^(1/3),
+         antscenter = sqrt(ants),
+         heteropredcenter = sqrt(heteropred),
+         huntspidscenter = sqrt(huntspids),
+         lacewingscenter = sqrt(lacewings),
+         predbeetlecenter = sqrt(predbeetle),
+         predfliescenter = sqrt(predflies),
+         opiliocenter = sqrt(opilio),
+         roachescenter = sqrt(roaches),
+         webspidscenter = sqrt(webspids),
+         herbcenter = sqrt(herb),
+         phloemcenter = sqrt(phloem),
+         chewercenter = sqrt(chewer),
+         bromant_center = sqrt(bromants),
+         bromhuntspids_center = sqrt(bromhuntspids),
+         bromopilio_center = sqrt(bromopilio),
+         brompredbeetle_center = sqrt(brompredbeetle),
+         bromroaches_center = sqrt(bromroaches)) %>% 
+  ##Center around site means
   group_by(Site) %>% 
   mutate(largeleaf= largeleaf - mean(largeleaf),
-         predindex = predindex - mean(predindex),
-         herbcenter = herb - mean(herb),
-         herbsnaillesscenter = (herb-snail) - mean(herb-snail),
-         predparacenter = predpara - mean(predpara),
-         predcenter = preds - mean(preds),
-         paracenter = para - mean(para),
-         bromcenter = bromypred - mean(bromypred),
-         bromantlesscenter = bromantless - mean(bromantless),
-         arbocenter = arbopred - mean(arbopred),
-         mobicenter = mobipred - mean(mobipred))
+         herbcenter = herbcenter - mean(herbcenter),
+         phloemcenter = phloemcenter - mean(phloemcenter),
+         chewercenter = chewercenter - mean(chewercenter),
+         predcenter = predcenter - mean(predcenter),
+         paracenter = paracenter - mean(paracenter),
+         bromcenter = bromcenter - mean(bromcenter),
+         arbocenter = arbocenter - mean(arbocenter),
+         mobicenter = mobicenter - mean(mobicenter),
+         antscenter = antscenter - mean(antscenter),
+         heteropredcenter = heteropredcenter - mean(heteropredcenter),
+         huntspidscenter = huntspidscenter - mean(huntspidscenter),
+         lacewingscenter = lacewingscenter - mean(lacewingscenter),
+         predbeetlecenter = predbeetlecenter - mean(predbeetlecenter),
+         predfliescenter = predfliescenter - mean(predfliescenter),
+         opiliocenter = opiliocenter - mean(opiliocenter),
+         roachescenter = roachescenter - mean(roachescenter),
+         webspidscenter = webspidscenter - mean(webspidscenter),
+         bromant_center = bromant_center - mean(bromant_center),
+         bromhuntspids_center = bromhuntspids_center - mean(bromhuntspids_center),
+         bromopilio_center = bromopilio_center - mean(bromopilio_center),
+         brompredbeetle_center = brompredbeetle_center - mean(brompredbeetle_center),
+         bromroaches_center = bromroaches_center - mean(bromroaches_center))
 
-leafcenter <- 
-  na.omit(leafdamage) %>% 
-  group_by(Site) %>% 
-  mutate(largeleaf= largeleaf - mean(largeleaf),
-         predindex = predindex - mean(predindex)) %>% 
-  group_by(Site) %>% 
-  mutate(herbcenter= herb - mean(herb),
-         herbsnaillesscenter = herbsnailless - mean(herbsnailless))
 
-monacentral <- 
-  na.omit(puramona) %>% 
+
+# Transformation and centering of independent variable - tree level -------------------------------------------------
+#Poolcenter
+poolcenter_tree <- 
+  na.omit(pooldamage) %>% 
+  dplyr::select(-quadrats, -predpara) %>% 
+  group_by(Site, alltrees, treetype, Sampling, presence) %>% 
+  summarise_all(funs(sum)) %>% 
+  ungroup() %>% 
+  ##Add phloem suckers and leaf chewers
+  mutate(phloem = heteroherb + jump + scaleaphid,
+         chewer = herbeetle + lepi + ortho + snail) %>% 
+  ##Square root future predictor values
+  mutate(largeleaf = sqrt(largeleaf),
+         predcenter = preds^(1/3),
+         bromcenter = brompred^(1/3),
+         mobicenter = mobipred^(1/3),
+         arbocenter = arbopred^(1/3),
+         paracenter = para^(1/3),
+         antscenter = sqrt(ants),
+         heteropredcenter = sqrt(heteropred),
+         huntspidscenter = sqrt(huntspids),
+         lacewingscenter = sqrt(lacewings),
+         predbeetlecenter = sqrt(predbeetle),
+         predfliescenter = sqrt(predflies),
+         opiliocenter = sqrt(opilio),
+         roachescenter = sqrt(roaches),
+         webspidscenter = sqrt(webspids),
+         herbcenter = sqrt(herb),
+         phloemcenter = sqrt(phloem),
+         chewercenter = sqrt(chewer),
+         bromant_center = sqrt(bromants),
+         bromhuntspids_center = sqrt(bromhuntspids),
+         bromopilio_center = sqrt(bromopilio),
+         brompredbeetle_center = sqrt(brompredbeetle),
+         bromroaches_center = sqrt(bromroaches)) %>% 
+  ##Center around site means
   group_by(Site) %>% 
   mutate(largeleaf= largeleaf - mean(largeleaf),
-         predindex = predindex - mean(predindex))
-#Spreading with centered data -----------------------------------------------------
+         herbcenter = herbcenter - mean(herbcenter),
+         phloemcenter = phloemcenter - mean(phloemcenter),
+         chewercenter = chewercenter - mean(chewercenter),
+         predcenter = predcenter - mean(predcenter),
+         paracenter = paracenter - mean(paracenter),
+         bromcenter = bromcenter - mean(bromcenter),
+         arbocenter = arbocenter - mean(arbocenter),
+         mobicenter = mobicenter - mean(mobicenter),
+         antscenter = antscenter - mean(antscenter),
+         heteropredcenter = heteropredcenter - mean(heteropredcenter),
+         huntspidscenter = huntspidscenter - mean(huntspidscenter),
+         lacewingscenter = lacewingscenter - mean(lacewingscenter),
+         predbeetlecenter = predbeetlecenter - mean(predbeetlecenter),
+         predfliescenter = predfliescenter - mean(predfliescenter),
+         opiliocenter = opiliocenter - mean(opiliocenter),
+         roachescenter = roachescenter - mean(roachescenter),
+         webspidscenter = webspidscenter - mean(webspidscenter),
+         bromant_center = bromant_center - mean(bromant_center),
+         bromhuntspids_center = bromhuntspids_center - mean(bromhuntspids_center),
+         bromopilio_center = bromopilio_center - mean(bromopilio_center),
+         brompredbeetle_center = brompredbeetle_center - mean(brompredbeetle_center),
+         bromroaches_center = bromroaches_center - mean(bromroaches_center))
+
+
+
+
+# Spread transformed and centered data - tree level -----------------------------------------------------
 #Herbivores and predators
-##with parasitoids
-spread_predparaherb <- 
-  monacentral %>% 
+spread_predherb <- 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(kind %in% c("herbeetle", "heteroherb", "jump", "lepi", 
                      "ortho", "psyllid", "scaleaphid", "snail", "ants", "heteropred", 
                      "huntspids", "lacewings", "predbeetle", "predflies", "opilio",
-                     "roaches", "webspids", "para")) %>% 
-  dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-  group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
+                     "roaches", "webspids")) %>% 
+  dplyr::select(kind, Site, alltrees, Sampling, treetype, Abundance) %>%
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
   summarise_all(funs(sum)) %>% 
   spread(key = kind, Abundance, fill =0)
-colSums(spread_predparaherb[,8:24]) 
-##without parasitoids
+colSums(spread_predherb[,5:20]) 
+##Bind proximity index
 spread_predherb <- 
-    monacentral %>% 
-      ungroup() %>% 
-      filter(kind %in% c("herbeetle", "heteroherb", "jump", "lepi", 
-                            "ortho", "psyllid", "scaleaphid", "snail", "ants", "heteropred", 
-                            "huntspids", "lacewings", "predbeetle", "predflies", "opilio",
-                            "roaches", "webspids")) %>% 
-      dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-      group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-      summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0)
-colSums(spread_predherb[,8:23]) 
+  spread_predherb[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7)]) %>% 
+  left_join(spread_predherb)
+##Double-check
+spread_predherb <- 
+  na.omit(spread_predherb)
 
 #Predators
-##with parasitoids
-spread_predpara <-
-      monacentral %>% 
-      ungroup() %>% 
-      filter(kind %in% c("predbeetle", "webspids", "huntspids", "heteropred", "predflies","roaches", "opilio", "lacewings", "ants", "para")) %>% 
-        dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-        group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-        summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0)
-colSums(spread_predpara[,8:17])
-##without parasitoids
 spread_pred <-
-    monacentral %>% 
-      ungroup() %>% 
-      filter(kind %in% c("predbeetle", "webspids", "huntspids", "heteropred", "predflies","roaches", "opilio", "lacewings", "ants")) %>% 
-      dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-      group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-      summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0)
-colSums(spread_pred[,8:16])
+  clean_vacuum %>% 
+  ungroup() %>% 
+  filter(kind %in% c("predbeetle", "webspids", "huntspids", "heteropred", "predflies","roaches", "opilio", "lacewings", "ants")) %>% 
+  dplyr::select(kind, Site, alltrees,Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
+  summarise_all(funs(sum)) %>% 
+  spread(key = kind, Abundance, fill =0)
+colSums(spread_pred[,5:13])
+##Bind proximity index
+spread_pred <- 
+  spread_pred[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7)]) %>% 
+  left_join(spread_pred)
+##Double-check
+spread_pred <- 
+  na.omit(spread_pred)
 
-#Bromeliad predators
+#Bromeliad-associated predators
 spread_brompred <- 
-    monacentral %>% 
-      ungroup() %>% 
-      filter(where == "brom") %>% 
-      ##not including low abundance kinds webspids and heteropreds
-      filter(kind %in% c("predbeetle", "huntspids", "predflies","roaches", "opilio", "lacewings", "ants", "para")) %>% 
-      dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-      group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-      summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0) %>% 
-      ##attaching predator abundance
-      left_join(poolcenter[,c(3,5,40:45)])
+  clean_vacuum %>% 
+  ungroup() %>% 
+  filter(where == "brom") %>% 
+  ##not including low abundance kinds webspids and heteropreds
+  filter(kind %in% c("predbeetle", "huntspids", "predflies","roaches", "opilio", "lacewings", "ants", "para")) %>% 
+  dplyr::select(kind, Site, alltrees, Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
+  summarise_all(funs(sum)) %>% 
+  spread(key = kind, Abundance, fill =0)
+##Bind proximity index and abundance of other predators
+spread_brompred <- 
+  spread_brompred[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7,41:43)]) %>% 
+  left_join(spread_brompred)
+##Double-check
 spread_brompred <- 
   na.omit(spread_brompred)
+colSums(spread_brompred[,6:13])
 
-#Mobile predators
+#Aerial predators
 spread_mobipred <- 
-  monacentral %>% 
+  clean_vacuum %>% 
   ungroup() %>% 
   filter(where == "mobi") %>% 
   ##not including low abundance kind opilio
   filter(kind %in% c("predbeetle", "webspids", "huntspids", "heteropred", "predflies","roaches", "lacewings", "ants")) %>% 
-  dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-  group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
+  dplyr::select(kind, Site, alltrees, Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
   summarise_all(funs(sum)) %>% 
-  spread(key = kind, Abundance, fill =0) %>% 
-  ##attaching predator abundance
-  left_join(poolcenter[,c(3,5,40:45)])
+  spread(key = kind, Abundance, fill =0) 
+##Bind proximity index and abundance of other predators
+spread_mobipred <- 
+  spread_mobipred[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7,40,42,43)]) %>% 
+  left_join(spread_mobipred)
+##Double-check
 spread_mobipred <- 
   na.omit(spread_mobipred)
-colSums(spread_mobipred[,8:17])
-#Tree predators
+colSums(spread_mobipred[,6:12])
+
+#Tree-associated predators
 spread_arbopred <- 
-    monacentral %>% 
-      ungroup() %>% 
-      filter(where == "tree") %>% 
-      ##not including low abundance kind opilio and predatory beetle (like carabids)
-      filter(kind %in% c("para", "webspids", "huntspids", "heteropred", "predflies","roaches", "lacewings", "ants")) %>% 
-      dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-      group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-      summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0) %>% 
-      ##attaching predator abundance
-      left_join(poolcenter[,c(3,5,40:45)])
-colSums(spread_arbopred[,8:19])
+  clean_vacuum %>% 
+  ungroup() %>% 
+  filter(where == "tree") %>% 
+  ##not including low abundance kind opilio and predatory beetle (like carabids)
+  filter(kind %in% c("para", "webspids", "huntspids", "heteropred", "predflies","roaches", "lacewings", "ants")) %>% 
+  dplyr::select(kind, Site, alltrees, Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
+  summarise_all(funs(sum)) %>% 
+  spread(key = kind, Abundance, fill =0) 
+##Bind proximity index and abundance of other predators
+spread_arbopred <- 
+  spread_arbopred[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7,40,41,43)]) %>% 
+  left_join(spread_arbopred)
+##Double-check
 spread_arbopred <- 
   na.omit(spread_arbopred)
+colSums(spread_arbopred[,6:14])
 
 #Herbivores
 spread_herb <- 
-    monacentral %>% 
-      ungroup() %>% 
-      filter(kind %in% c("herbeetle", "heteroherb", "jump", "lepi", 
-                         "ortho", "psyllid", "scaleaphid", "snail")) %>% 
-      dplyr::select(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex, Abundance) %>% 
-      group_by(kind, Site, alltrees, quadrats, Sampling, Treatment, largeleaf, predindex) %>% 
-      summarise_all(funs(sum)) %>% 
-      spread(key = kind, Abundance, fill =0) %>% 
-      ##attaching predator abundance
-      left_join(poolcenter[,c(3,5,40:45)])
+  clean_vacuum %>% 
+  ungroup() %>% 
+  filter(kind %in% c("herbeetle", "heteroherb", "jump", "lepi", 
+                     "ortho", "psyllid", "scaleaphid", "snail")) %>% 
+  dplyr::select(kind, Site, alltrees, Sampling, treetype, Abundance) %>% 
+  group_by(kind, Site, alltrees, Sampling, treetype) %>% 
+  summarise_all(funs(sum)) %>% 
+  spread(key = kind, Abundance, fill =0) 
+##Bind proximity index and abundance of predators
+spread_herb <- 
+  spread_herb[,1:4] %>% 
+  left_join(poolcenter_tree[,c(2,4,7,39:43)]) %>% 
+  left_join(spread_herb)
+##Double-check
 spread_herb <- 
   na.omit(spread_herb)
-
-
-
-
-#Adding kinds of bromeliad predators ------------------------
-predcenter<- 
-  poolcenter%>% 
-  dplyr::select(-presence, -largeleaf:-arbopred, -ants:-mobicenter) %>% 
-  left_join(spread_brompred[,c(3,4, 8:12)]) %>% 
-  rename(bromants = ants) %>% 
-  rename(bromhuntspids = huntspids) %>% 
-  rename(bromopilio = opilio) %>% 
-  rename(brompredbeetle = predbeetle) %>% 
-  rename(bromroaches = roaches) %>% 
-  left_join(poolcenter[, c(3,5, 28:43)])
-predcenter[is.na(predcenter)] <- 
-  0
-
-predcenter <- 
-  predcenter %>% 
-  group_by(Site) %>% 
-  mutate(bromant_center = bromants - mean(bromants),
-         bromhuntspids_center = bromhuntspids - mean(bromhuntspids),
-         bromopilio_center = bromopilio- mean(bromopilio),
-         brompredbeetle_center = brompredbeetle- mean(brompredbeetle),
-         bromroaches_center = bromroaches - mean(bromroaches),
-         ants_center = ants- mean(ants),
-         heteropred_center = heteropred- mean(heteropred),
-         huntspids_center = huntspids- mean(huntspids),
-         lacewings_center = lacewings- mean(lacewings),
-         predbeetle_center = predbeetle- mean(predbeetle),
-         opilio_center = opilio- mean(opilio),
-         roaches_center = roaches- mean(roaches),
-         webspids_center = webspids- mean(webspids)) %>% 
-  left_join(poolcenter[,c(3,5,8,9)]) %>% 
-  left_join(calc_dichos[,c(2,3,5,8)])
-  
+colSums(spread_herb[,6:17])
 
 
 
 
 
-
-
-#Merging tree and bromeliad data -----------------------------------------
+# Merge tree and bromeliad data -----------------------------------------
+#Merge the two datasets and assign them to two different locations
 bromtree_comparison <- 
-  puramona %>% 
+  clean_vacuum %>% 
   ungroup %>% 
   dplyr::select(Site, kind, Sampling, alltrees, Abundance) %>% 
   group_by(Site, kind, Sampling, alltrees) %>% 
   summarise_all(funs(sum)) %>% 
   mutate(loc = "tree") %>% 
-  bind_rows(purabromzy %>% 
+  bind_rows(clean_dissection %>% 
               ungroup %>% 
               dplyr::select(Site, kind, Sampling, alltrees, Abundance) %>% 
               group_by(Site,kind, Sampling, alltrees) %>% 
@@ -1159,10 +1094,19 @@ bromtree_comparison <-
   spread(key= kind, 
          Abundance, 
          fill = 0) %>% 
-  unite(where, alltrees, loc, Sampling, sep= "_", remove = F)
+  ##Unique name for location,and sampling period of each sample
+  unite(where, alltrees, loc, Sampling, sep= "_", remove = F) %>% 
+  ##Remove the four outlying trees with tick nests
+  filter(where %notin% c("ER_U1_tree_B", "ER_P5_tree_B",
+                         "ER_O9_tree_B", "ER_AI1_tree_B")) %>% 
+  ##Rename Ootheca column by Ootheca instead of Blattodea
+  rename(ootheca = Blattodea)
+
+#Make a dataframe with rocation as row names
 bromtree_comparison <- 
   data.frame(bromtree_comparison,
              row.names = bromtree_comparison$where)
+#Split in two separate frames for cca
 whereloc <- 
   bromtree_comparison[,1:5]
 bromtree_comparison <- 
@@ -1174,16 +1118,3 @@ bromtree_comparison <-
 bromtree_comparison <- 
   data.frame(decostand(bromtree_comparison, 
                        "hellinger"))
-
-
-
-
-
-
-
-
-
-
-  
-  
-
