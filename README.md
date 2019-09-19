@@ -45,6 +45,7 @@ Rogy, P., Hammill, E., & Srivastava, D. S. (2019). Complex indirect effects of e
 Links to: [paper](https://doi.org/10.1111/btp.12672), [data](https://doi.org/10.5061/dryad.b4c364r), [code](https://github.com/pierrerogy/bromagro/tree/master/Rogy_et_al_2019)
 
 
+
 ### If you're interested in learning more about bromeliad research, have a look at the [Bromeliad Working Group](http://www.zoology.ubc.ca/~srivast/bwg/)!
   
 
