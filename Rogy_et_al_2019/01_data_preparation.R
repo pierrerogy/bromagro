@@ -27,17 +27,13 @@ library(vegan)
   Negate('%in%')
 
 #Load and check data
-distance <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/distance.csv",
-                     sep = ";")
+distance <- # Please download data from repository
 str(distance)
-damage <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/leafdamage.csv",
-                   sep = ";")
+damage <- read.csv() # Please download data from repository
 str(damage)
-vacuum <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/vacuum.csv",
-                   sep = ";")
+vacuum <- read.csv() # Please download data from repository
 str(vacuum)
-dissection <- read.csv("C://Users/Fabiola/Documents/Pierre/Chap2/Data/dissection.csv", 
-                   sep = ";")
+dissection <- read.csv() # Please download data from repository
 str(dissection)
 
 
