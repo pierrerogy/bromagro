@@ -1,0 +1,1109 @@
+Subphylum;Order;Suborder;Family;Subfamily;Genus;Species;Morphospecies;Species_old_name;Diet;Site;Sampling;Day;Tree;Treatment;Bromeliad;Abundance
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;DO;B;03.05.2017;A18;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;DO;B;03.05.2017;A18;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Plectoptera;;Cockroach_F;Cockroach F;scav;DO;B;03.05.2017;A18;wr;a;1
+Chelicerata;Araneae;;;;;;Jspider_A;Jspider A;pred;DO;B;03.05.2017;A18;wr;a;2
+Hexapoda;Blattodea;;Blaberidae;;Epilampra or Panchlora or other;;Cockroach_D;Cockroach D;scav;DO;B;03.05.2017;A18;wr;a;1
+Hexapoda;Blattodea;;Blaberidae;;Epilampra or Panchlora or other;;Cockroach_D;Cockroach D;scav;DO;B;03.05.2017;A18;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;DO;B;03.05.2017;A18;wr;a;9
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_A;Cricket A;omni;DO;B;03.05.2017;A18;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach E;scav;DO;B;03.05.2017;A18;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;B;03.05.2017;A18;wr;b;1
+Chelicerata;Araneae;;;;;;Spider_E;Spider E;pred;DO;B;03.05.2017;A18;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;DO;B;03.05.2017;A18;wr;b;4
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_A;Cricket A;omni;DO;B;03.05.2017;A18;wr;b;2
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Conocephalinae;;;Katydid_D;Katydid D;herb;DO;A;26.06.2017;B18;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;26.06.2017;B18;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;DO;A;26.06.2017;B18;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;DO;A;26.06.2017;B18;w;a;1
+Hexapoda;Psocoptera;;;;;;Psoco_B;Barklice B;detr;DO;A;26.06.2017;B18;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;DO;A;26.06.2017;B18;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Curculioninae;;;Beetle_DD;Beetle DD;herb;DO;A;26.06.2017;B18;w;b;1
+Chelicerata;Araneae;;;;;;Spider_AF;Spider AF;pred;DO;A;26.06.2017;B18;w;b;2
+Chelicerata;Opiliones;;;;;;Opilio_B;Opilio B;omni;DO;A;26.06.2017;B18;w;b;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_J;Cricket J;omni;DO;A;26.06.2017;B18;w;b;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;DO;A;26.06.2017;B18;w;b;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_N;Cricket N;omni;DO;A;26.06.2017;B18;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;DO;A;26.06.2017;B20;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;DO;A;26.06.2017;B20;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;DO;A;26.06.2017;B20;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;26.06.2017;B20;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_J;Cricket J;omni;DO;A;26.06.2017;B20;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;26.06.2017;B20;w;b+c;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;DO;A;26.06.2017;B20;w;b+c;1
+Chelicerata;Araneae;;;;;;Spider_CP;Spider CP ;pred;DO;A;26.06.2017;B20;w;b+c;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;26.06.2017;B20;w;b+c;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_T;Hemiptera nymph T;herb;DO;A;26.06.2017;B20;w;b+c;2
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;DO;A;26.06.2017;B20;w;b+c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;B;04.05.2017;B3;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_C;Flying ant C;pred;ER;B;04.05.2017;B3;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;B3;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Nahublatella;Nahublatella fraterna;Cockroach_Z;Cockroach Z;scav;ER;B;04.05.2017;B3;wr;a;2
+Chelicerata;Araneae;;;;;;Spider_A;Spider A;pred;ER;B;04.05.2017;B3;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;04.05.2017;B3;wr;a;5
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;04.05.2017;B3;wr;a;4
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_A;Hemiptera A;gran;ER;B;04.05.2017;B3;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_A;Cricket A;omni;ER;B;04.05.2017;B3;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;ER;B;04.05.2017;B3;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;B3;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;B3;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;B;04.05.2017;B3;wr;c;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;B;04.05.2017;B3;wr;c;nest
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;B3;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;B;04.05.2017;B3;wr;d;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;ER;B;04.05.2017;B3;wr;d;nest
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;04.05.2017;B3;wr;d;2
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Bruchinae;;;Beetle_E;Beetle E;herb;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;DO;B;03.05.2017;B8;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Plectoptera;;Cockroach_C;Cockroach C;scav;DO;B;03.05.2017;B8;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_A;Spider A;pred;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Coleoptera;Adephaga;Carabidae;;;;Beetle_G;Beetle G;pred;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Diptera;Nematocera;Sciaridae;;;;Midge_B;Midge B;nada;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_A;Cricket A;omni;DO;B;03.05.2017;B8;wr;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;03.05.2017;B8;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;DO;B;03.05.2017;B8;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Plectoptera;;Cockroach_C;Cockroach C;scav;DO;B;03.05.2017;B8;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;25.06.2017;C3;w;a;nest
+Chelicerata;Araneae;;;;;;Spider_CL;Spider CL;pred;ER;A;25.06.2017;C3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;25.06.2017;C3;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;25.06.2017;C3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;25.06.2017;C3;w;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;A;25.06.2017;C3;w;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;A;25.06.2017;C3;w;b;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_X;Beetle X;xylo;ER;A;25.06.2017;C3;w;b;2
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_DQ;Beetle DQ;poll;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;25.06.2017;C3;w;b;5
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_G;Lepilarva G;herb;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;ER;A;25.06.2017;C3;w;b;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;ER;A;25.06.2017;C3;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Nylanderia;;Ant_F;Ant F ;pred;ER;A;25.06.2017;C3;w;c;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;25.06.2017;C3;w;c;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;ER;A;25.06.2017;C3;w;c;1
+Chelicerata;Araneae;;;;;;Jspider_AF;Jspider AF;pred;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;A;25.06.2017;C3;w;c;3
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;A;25.06.2017;C3;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;25.06.2017;C3;w;d;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;25.06.2017;C3;w;d;1
+Chelicerata;Araneae;;;;;;Jspider_AE;Jspider AE;pred;ER;A;25.06.2017;C3;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;25.06.2017;C3;w;d;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_F;Lepilarva F;herb;ER;A;25.06.2017;C3;w;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Polyergus;;FlyingAnt_X;Flying ant X;pred;DO;A;06.07.2017;D19;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_BD;Ant BD;pred;DO;A;06.07.2017;D19;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;DO;A;06.07.2017;D19;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;06.07.2017;D19;w;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;DO;A;06.07.2017;D19;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Chorisoneura or Macrophyllodromia;;Cockroach_K;Cockroach K;scav;DO;A;06.07.2017;D19;w;a;1
+Chelicerata;Araneae;;;;;;Jspider_BJ;Jspider BJ;pred;DO;A;06.07.2017;D19;w;a;2
+Chelicerata;Araneae;;;;;;Spider_FM;Spider FM;pred;DO;A;06.07.2017;D19;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;06.07.2017;D19;w;a;3
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;DO;A;06.07.2017;D19;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_BD;Ant BD;pred;DO;A;06.07.2017;D19;w;b;3
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;DO;A;06.07.2017;D19;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;06.07.2017;D19;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;06.07.2017;D19;w;b;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;06.07.2017;D19;w;b;3
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;DO;A;06.07.2017;D19;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_F;Staphylinid F;pred;DO;A;06.07.2017;D19;w;b;1
+Myriapoda;Chilopoda;;;;;;Centipede_B;Centipede B;pred;DO;A;06.07.2017;D19;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;DO;A;06.07.2017;D19;w;c;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;06.07.2017;D19;w;c;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;A;06.07.2017;D19;w;c;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Nahublatella;Nahublatella fraterna;Cockroach_Z;Cockroach Z;scav;DO;A;06.07.2017;D19;w;c;1
+Chelicerata;Araneae;;;;;;Jspider_BI;Jspider BI;pred;DO;A;06.07.2017;D19;w;c;1
+Chelicerata;Araneae;;;;;;Spider_FY;Spider FY;pred;DO;A;06.07.2017;D19;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Cassidinae;;;Beetle_DF;Beetle DF;herb;DO;B;06.05.2017;E11;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;06.05.2017;E11;wr;a; 
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;06.05.2017;E11;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;;;Beetle_H;Beetle H ;myco;DO;B;06.05.2017;E11;wr;a;3
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;DO;B;06.05.2017;E11;wr;a;1
+Mollusca;Gastropoda;;;;;;Snail_B;Snail B ;unkn;DO;B;06.05.2017;E11;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Blattellinae;;;Cockroach_O;Cockroach O;scav;DO;B;06.05.2017;E11;wr;b+c;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Bruchinae;;;Beetle_DB;Beetle DB;herb;DO;B;06.05.2017;E11;wr;b+c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;DO;B;06.05.2017;E11;wr;b+c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;06.05.2017;E11;wr;b+c;1
+Hexapoda;Diptera;Nematocera;Sciaridae;;;;Midge_A;Midge A ;nada;DO;B;06.05.2017;E11;wr;b+c;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;06.05.2017;E11;wr;d;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_C;Ootheca C;nada;DO;B;06.05.2017;E11;wr;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;DO;B;06.05.2017;E11;wr;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;06.05.2017;E11;wr;d;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;06.05.2017;E11;wr;d;7
+Hexapoda;Hemiptera;Heteroptera;Reduviidae;;;;Hemiptera_BD;Hemiptera BD;pred;DO;B;06.05.2017;E11;wr;d;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;CP;B;01.05.2017;E2;wr;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;CP;B;01.05.2017;E2;wr;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;CP;B;01.05.2017;E2;wr;a;1
+Hexapoda;Coleoptera;Adephaga;Carabidae;;;;Beetle_A;Beetle A;pred;CP;B;01.05.2017;E2;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;01.05.2017;E2;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;01.05.2017;E2;wr;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;01.05.2017;E2;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;01.05.2017;E2;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;01.05.2017;E2;wr;b;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;01.05.2017;E2;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;02.07.2017;E7;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;02.07.2017;E7;w;a;nest
+Hexapoda;Hemiptera;Heteroptera;Miridae;Mirinae;;;Hemiptera_BO;Hemiptera BO;unkn;ER;A;02.07.2017;E7;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;A;02.07.2017;E7;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;ER;A;02.07.2017;E7;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;02.07.2017;E7;w;a;2
+Hexapoda;Diptera;Brachycera;Micropezidae;;;;Fly_FC;Fly FC;unkn;ER;A;02.07.2017;E7;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;02.07.2017;E7;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;FlyingAnt_L;Flying ant L;pred;ER;A;02.07.2017;E7;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;ER;A;02.07.2017;E7;w;a;1
+Hexapoda;Thysanoptera;Tubulifera;Phlaeothripidae;Idolothripinae;;;Thrip_A;Thrip B;unkn;ER;A;02.07.2017;E7;w;b;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;A;02.07.2017;E7;w;b;nest
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;ER;A;02.07.2017;E7;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_AB;Beetle AB;herb;ER;A;02.07.2017;E7;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;02.07.2017;E7;w;b;2
+Hexapoda;Dermaptera;;;;;;Earwig_B;Earwig B;omni;ER;A;02.07.2017;E7;w;b;1
+Hexapoda;Diptera;Brachycera;Empididae;;;;Fly_AN;Fly AN ;pred;ER;A;02.07.2017;E7;w;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;02.07.2017;E7;w;b;2
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;B;04.05.2017;E8;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;04.05.2017;E8;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;04.05.2017;E8;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;B;04.05.2017;E8;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;B;04.05.2017;E8;wr;a;nest
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;ER;B;04.05.2017;E8;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;E8;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;E8;wr;a;5
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_AH;Hemiptera AH;gran;ER;B;04.05.2017;E8;wr;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_C;Hemiptera C;herb;ER;B;04.05.2017;E8;wr;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;04.05.2017;E8;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;04.05.2017;E8;wr;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;B;04.05.2017;E8;wr;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_K;Flying ant K;pred;ER;B;04.05.2017;E8;wr;b;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;E8;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;04.05.2017;E8;wr;b;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_Z;Ant Z;pred;ER;B;04.05.2017;E8;wr;b;2
+Chelicerata;Araneae;;;;;;Spider_C;Spider C;pred;ER;B;04.05.2017;E8;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;B;04.05.2017;E8;wr;d;15
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_C;Flying ant C;pred;ER;B;04.05.2017;E8;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_CZ;Beetle CZ;detr;ER;B;04.05.2017;E8;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;04.05.2017;E8;wr;d;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;A;25.06.2017;F14;w;b;nest
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_AB;Beetle BG;herb;ER;A;25.06.2017;F14;w;b;1
+Hexapoda;Coleoptera;;;;;;Beetlarva_F;Beetle larva F;herb;ER;A;25.06.2017;F14;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_C;Staphylinid C;pred;ER;A;25.06.2017;F14;w;b;1
+Myriapoda;Chilopoda;;;;;;Centipede_A;Centipede A;pred;ER;A;25.06.2017;F14;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;A;24.06.2017;F2;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;A;24.06.2017;F2;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;24.06.2017;F2;w;a;nest
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;CP;A;24.06.2017;F2;w;a;1
+Chelicerata;Araneae;;;;;;Spider_L;Spider BI;pred;CP;A;24.06.2017;F2;w;a;1
+Chelicerata;Araneae;;;;;;Spider_CL;Spider CL;pred;CP;A;24.06.2017;F2;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;24.06.2017;F2;w;a;2
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;24.06.2017;F2;w;a;2
+Hexapoda;Coleoptera;;;;;;Staphlarva_E;Staphlarva E;pred;CP;A;24.06.2017;F2;w;a;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_C;Staphylinid C;pred;CP;A;24.06.2017;F2;w;a;1
+Hexapoda;Dermaptera;;;;;;Earwig_C;Earwig C;omni;CP;A;24.06.2017;F2;w;a;4
+Hexapoda;Dermaptera;;;;;;Earwig_D;Earwig D;omni;CP;A;24.06.2017;F2;w;a;7
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;A;24.06.2017;F2;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_E;Cricket nymph E;herb;CP;A;24.06.2017;F2;w;a;3
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph B;herb;CP;A;24.06.2017;F2;w;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;A;24.06.2017;F2;w;a;2
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;DO;A;01.07.2017;F23;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;01.07.2017;F23;w;a;2
+Chelicerata;Araneae;;;;;;Jspider_A;Jspider A;pred;DO;A;01.07.2017;F23;w;a;1
+Chelicerata;Araneae;;;;;;Jspider_AF;Jspider M;pred;DO;A;01.07.2017;F23;w;a;1
+Chelicerata;Araneae;;;;;;Spider_DI;Spider DI;pred;DO;A;01.07.2017;F23;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_Z;Ant Z;pred;DO;A;01.07.2017;F23;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;DO;A;01.07.2017;F23;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;DO;A;01.07.2017;F23;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;A;01.07.2017;F23;w;b;1
+Chelicerata;Araneae;;;;;;Spider_DK;Spider DK;pred;DO;A;01.07.2017;F23;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;01.07.2017;F23;w;c;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;DO;A;01.07.2017;F23;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_Z;Ant Z;pred;DO;A;01.07.2017;F23;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;FlyingAnt_Z;Wasp M;pred;DO;A;01.07.2017;F23;w;c;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;01.07.2017;F23;w;d;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;01.07.2017;F23;w;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;01.07.2017;F23;w;d;10
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;01.07.2017;F23;w;d;5
+Chelicerata;Araneae;;;;;;Spider_CS;Spider CS;pred;DO;A;01.07.2017;F23;w;d;1
+Chelicerata;Scorpiones;;;;;;Scorpion_A;Scorpion A ;pred;DO;A;01.07.2017;F23;w;d;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;DO;A;01.07.2017;F23;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Eugnominae;;;Beetle_BU;Beetle BU;herb;CP;A;24.06.2017;F4;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;A;24.06.2017;F4;w;a;nest
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;24.06.2017;F4;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_B;Staphlarva B;pred;CP;A;24.06.2017;F4;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;24.06.2017;F4;w;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G11;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G11;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;DO;A;06.07.2017;G11;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;DO;A;06.07.2017;G11;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;06.07.2017;G11;w;a;5
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;06.07.2017;G11;w;a;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;DO;A;06.07.2017;G11;w;a;1
+Chelicerata;Araneae;;;;;;Spider_BP;Spider BP;pred;DO;A;06.07.2017;G11;w;a;1
+Chelicerata;Araneae;;;;;;Spider_FM;Spider FM;pred;DO;A;06.07.2017;G11;w;a;1
+Chelicerata;Araneae;;;;;;Spider_FY;Spider FY;pred;DO;A;06.07.2017;G11;w;a;1
+Chelicerata;Araneae;;;;;;Spider_FZ;Spider FZ;pred;DO;A;06.07.2017;G11;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_CG;Beetle CG;detr;DO;A;06.07.2017;G11;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_I;Staphylinid I;pred;DO;A;06.07.2017;G11;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;DO;A;06.07.2017;G11;w;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G11;w;b;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;06.07.2017;G11;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;DO;A;06.07.2017;G11;w;b;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_J;Cricket J;omni;DO;A;06.07.2017;G11;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G11;w;c;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;DO;A;06.07.2017;G11;w;c;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;06.07.2017;G11;w;c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;06.07.2017;G11;w;c;1
+Chelicerata;Araneae;;;;;;Spider_GC;Spider GC;pred;DO;A;06.07.2017;G11;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_J;Staphylinid J;pred;DO;A;06.07.2017;G11;w;c;1
+Hexapoda;Hymenoptera;Apocrita;;;;;Wasp_GO;Wasp GO;para;DO;A;06.07.2017;G11;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;B;17.05.2017;G13;wr;a;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;17.05.2017;G13;wr;a;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;B;17.05.2017;G13;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;17.05.2017;G13;wr;a;6
+Chelicerata;Araneae;;;;;;Jspider_W;Jspider W;pred;DO;B;17.05.2017;G13;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_BT;Spider BT;pred;DO;B;17.05.2017;G13;wr;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;B;17.05.2017;G13;wr;a;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_Y;Unknown larva A;herb;DO;B;17.05.2017;G13;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_B;Staphylinid B;pred;DO;B;17.05.2017;G13;wr;a;1
+Mollusca;Gastropoda;;;;;;Snail_B;Snail B ;unkn;DO;B;17.05.2017;G13;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Baridinae;;;Beetle_GQ;Beetle GQ;herb;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;DO;A;10.07.2017;G19;w;a;8
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;10.07.2017;G19;w;a;4
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura;;Cockroach_AC;Cockroach AC;scav;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;A;10.07.2017;G19;w;a;5
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;10.07.2017;G19;w;a;1
+Chelicerata;Araneae;;;;;;Spider_DK;Spider DK;pred;DO;A;10.07.2017;G19;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;10.07.2017;G19;w;a;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;DO;A;10.07.2017;G19;w;a;2
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;;;Beetle_GR;Beetle GR;myco;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Dermaptera;;;;;;Earwig_B;Earwig B;omni;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_T;Hemiptera nymph T;herb;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_P;Psyllid P;herb;DO;A;10.07.2017;G19;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthribidae;Anthribinae;;;Beetle_GP;Beetle GP;detr;DO;A;10.07.2017;G19;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura;;Cockroach_AC;Cockroach AC;scav;DO;A;10.07.2017;G19;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;A;10.07.2017;G19;w;b;1
+Chelicerata;Araneae;;;;;;Jspider_BK;Jspider BK;pred;DO;A;10.07.2017;G19;w;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_T;Hemiptera nymph T;herb;DO;A;10.07.2017;G19;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;DO;A;10.07.2017;G19;w;c;4
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;DO;A;10.07.2017;G19;w;c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;10.07.2017;G19;w;c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;10.07.2017;G19;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;DO;A;10.07.2017;G19;w;c;1
+Chelicerata;Araneae;;;;;;Spider_DK;Spider DK;pred;DO;A;10.07.2017;G19;w;c;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;10.07.2017;G19;w;c;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;DO;A;10.07.2017;G19;w;c;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_B;Beetle CQ;pred;DO;A;10.07.2017;G19;w;c;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;DO;A;10.07.2017;G19;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Entiminae;;;Beetle_CI;Beetle CI;herb;DO;A;10.07.2017;G19;w;d;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;A;10.07.2017;G19;w;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;A;10.07.2017;G19;w;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;10.07.2017;G19;w;d;1
+Chelicerata;Araneae;;;;;;Spider_DM;Spider DM;pred;DO;A;10.07.2017;G19;w;d;1
+Chelicerata;Araneae;;;;;;Spider_DQ;Spider DQ;pred;DO;A;10.07.2017;G19;w;d;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;10.07.2017;G19;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_GO;Beetle GO;detr;DO;A;10.07.2017;G19;w;d;12
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_J;Cricket J;omni;DO;A;10.07.2017;G19;w;d;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;12.05.2017;G2;wr;a;2
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;DO;B;12.05.2017;G2;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;12.05.2017;G2;wr;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;12.05.2017;G2;wr;a;7
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_C;Beetle C;detr;DO;B;12.05.2017;G2;wr;a;4
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G3;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;CP;B;18.05.2017;G3;wr;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_I;Ootheca I;nada;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;DO;A;06.07.2017;G3;w;a;1
+Chelicerata;Araneae;;;;;;Spider_CN;Spider CN;pred;DO;A;06.07.2017;G3;w;a;1
+Chelicerata;Araneae;;;;;;Spider_GA;Spider GA;pred;DO;A;06.07.2017;G3;w;a;1
+Chelicerata;Araneae;;;;;;Spider_GB;Spider GB;pred;DO;A;06.07.2017;G3;w;a;1
+Chelicerata;Araneae;;;;;;Spider_GC;Spider GC;pred;DO;A;06.07.2017;G3;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;B;18.05.2017;G3;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_F;Staphylinid F;pred;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_I;Staphylinid I;pred;DO;A;06.07.2017;G3;w;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;DO;A;06.07.2017;G3;w;a;1
+Hexapoda;Hymenoptera;Apocrita;;;;;Wasp_N;Wasp N;para;CP;B;18.05.2017;G3;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;B;18.05.2017;G3;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;A;06.07.2017;G3;w;b;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;06.07.2017;G3;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;06.07.2017;G3;w;b;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;06.07.2017;G3;w;b;1
+Chelicerata;Araneae;;;;;;Jspider_AF;Jspider AF;pred;DO;A;06.07.2017;G3;w;b;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ H;Orthoptera nymph H;herb;DO;A;06.07.2017;G3;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;01.05.2017;G4;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;CP;B;01.05.2017;G4;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;CP;B;01.05.2017;G4;wr;a;nest
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;B;01.05.2017;G4;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_B;Spider B;pred;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_C;Beetle C;detr;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_B;Staphylinid B;pred;CP;B;01.05.2017;G4;wr;a;2
+Hexapoda;Diptera;Nematocera;Sciaridae;;;;Midge_A;Midge A ;nada;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_B;Hemiptera B;gran;CP;B;01.05.2017;G4;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_B;Cricket B;omni;CP;B;01.05.2017;G4;wr;a;4
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;01.05.2017;G4;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;CP;B;01.05.2017;G4;wr;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;CP;B;01.05.2017;G4;wr;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;B;01.05.2017;G4;wr;b;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;CP;B;01.05.2017;G4;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;01.05.2017;G4;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;01.05.2017;G4;wr;b;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_A;Hemiptera A;gran;CP;B;01.05.2017;G4;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Scarabaeidae;Aphodiinae;;;Beetle_DI;Beetle DI;detr;ER;B;07.05.2017;G5;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;ER;B;07.05.2017;G5;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;CP;B;18.05.2017;G5;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;B;18.05.2017;G5;wr;a;nest
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;07.05.2017;G5;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_R;Cockroach R;scav;ER;B;07.05.2017;G5;wr;a;1
+Chelicerata;Opiliones;;;;;;Opilio_G;Spider AP;omni;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Blattodea;;Blattidae or Ectobiidae;;Periplaneta?;;Cockroach_T;Cockroach T;scav;ER;B;07.05.2017;G5;wr;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;ER;B;07.05.2017;G5;wr;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_AB;Beetle larva E;herb;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;07.05.2017;G5;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_AK;Ant AK;pred;ER;B;07.05.2017;G5;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;07.05.2017;G5;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;18.05.2017;G5;wr;a;nest
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;B;18.05.2017;G5;wr;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;B;18.05.2017;G5;wr;a;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;18.05.2017;G5;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;ER;B;07.05.2017;G5;wr;b;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;FlyingAnt_M;Flying ant M;pred;ER;B;07.05.2017;G5;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;07.05.2017;G5;wr;b;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_AB;Beetle larva E;herb;ER;B;07.05.2017;G5;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;07.05.2017;G5;wr;b;3
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;07.05.2017;G5;wr;b;1
+Hexapoda;Thysanoptera;Tubulifera;Phlaeothripidae;Idolothripinae;;;Thrip_A;Thrip E;unkn;ER;B;07.05.2017;G5;wr;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;07.05.2017;G5;wr;c;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;B;07.05.2017;G5;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;ER;B;07.05.2017;G5;wr;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;ER;B;07.05.2017;G5;wr;d;nest
+Hexapoda;Coleoptera;Adephaga;Carabidae;;;;Beetle_AR;Beetle AR;pred;ER;B;07.05.2017;G5;wr;d;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;B;07.05.2017;G5;wr;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dorylinae ;Neivamyrmex;;Ant_AV;Ant AV;pred;CP;A;29.06.2017;G6;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;DO;B;12.05.2017;G6;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;12.05.2017;G6;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;12.05.2017;G6;wr;a;3
+Chelicerata;Araneae;;;;;;Jspider_N;Jspider N;pred;DO;B;12.05.2017;G6;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_AR;Spider AR;pred;DO;B;12.05.2017;G6;wr;a;1
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach U ;scav;CP;A;29.06.2017;G6;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;29.06.2017;G6;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;29.06.2017;G6;w;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph B;herb;CP;A;29.06.2017;G6;w;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;G6;w;a;3
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_X;Beetle X;xylo;CP;A;29.06.2017;G6;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;29.06.2017;G6;w;b;1
+Hexapoda;Dermaptera;;;;;;Earwig_D;Earwig D;omni;CP;A;29.06.2017;G6;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Forelius;;Ant_AJ;Ant AJ;pred;CP;A;07.07.2017;G7;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;02.07.2017;G7;w;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;07.07.2017;G7;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;02.07.2017;G7;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;ER;A;02.07.2017;G7;w;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;CP;A;07.07.2017;G7;w;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta or Neoblatellini;;Cockroach_AA;Cockroach AA;scav;CP;A;07.07.2017;G7;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;A;02.07.2017;G7;w;a;3
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach W;scav;CP;A;07.07.2017;G7;w;a;13
+Hexapoda;Coleoptera;;;;;;Beetlarva_F;Beetle larva F;herb;ER;A;02.07.2017;G7;w;a;2
+Hexapoda;Coleoptera;;;;;;Beetlarva_F;Beetle larva F;herb;CP;A;07.07.2017;G7;w;a;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;02.07.2017;G7;w;a;4
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;07.07.2017;G7;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_K;Staphylinid K;pred;CP;A;07.07.2017;G7;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;A;02.07.2017;G7;w;a;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_G;Lepilarva G;herb;ER;A;02.07.2017;G7;w;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;G7;w;a;5
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;ER;A;02.07.2017;G7;w;b;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_N;Lepilarva N ;herb;ER;A;02.07.2017;G7;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;02.07.2017;G7;w;c;3
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;02.07.2017;G7;w;c;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;02.07.2017;G7;w;c;3
+Hexapoda;Dermaptera;;;;;;Earwig_B;Earwig B;omni;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_I;Psyllid I ;herb;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;ER;A;02.07.2017;G7;w;c;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Conocephalinae;;;Katydid_D;Katydid D;herb;DO;A;13.07.2017;H18;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_G;Ant G;pred;DO;A;13.07.2017;H18;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;13.07.2017;H18;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;13.07.2017;H18;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;13.07.2017;H18;w;a;2
+Chelicerata;Araneae;;;;;;Spider_GG;Spider GG;pred;DO;A;13.07.2017;H18;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;13.07.2017;H18;w;a;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;DO;A;13.07.2017;H18;w;a;2
+Hexapoda;Hemiptera;Sternorrhyncha;;;;;Scale_H;Scale H;herb;DO;A;13.07.2017;H18;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_J;Cricket J;omni;DO;A;13.07.2017;H18;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;13.07.2017;H18;w;b;1
+Chelicerata;Scorpiones;;;;;;Scorpion_B;Scorpion B;pred;DO;A;13.07.2017;H18;w;b;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;DO;A;13.07.2017;H18;w;b;2
+Chelicerata;Araneae;;;;;;Jspider_BI;Jspider BI;pred;DO;A;13.07.2017;H18;w;c;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;13.07.2017;H18;w;c;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;13.07.2017;H18;w;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;A;13.07.2017;H18;w;d;1
+Chelicerata;Araneae;;;;;;Jspider_N;Jspider N;pred;DO;A;13.07.2017;H18;w;d;1
+Chelicerata;Scorpiones;;;;;;Scorpion_B;Scorpion B;pred;DO;A;13.07.2017;H18;w;d;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_T;Cricket T;omni;DO;A;13.07.2017;H18;w;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_G;Ant G;pred;DO;A;13.07.2017;H18;w;e;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_G;Ant G;pred;DO;A;13.07.2017;H18;w;e;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;13.07.2017;H18;w;e;3
+Chelicerata;Araneae;;;;;;Jspider_BJ;Jspider BJ;pred;DO;A;13.07.2017;H18;w;e;1
+Chelicerata;Araneae;;;;;;Spider_DK;Spider DK;pred;DO;A;13.07.2017;H18;w;e;1
+Chelicerata;Araneae;;;;;;Spider_GH;Spider GH;pred;DO;A;13.07.2017;H18;w;e;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;A;13.07.2017;H18;w;e;1
+Chelicerata;Scorpiones;;;;;;Scorpion_B;Scorpion B;pred;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_F;Hemiptera nymph I;herb;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;DO;A;13.07.2017;H18;w;e;1
+Hexapoda;Blattodea;;Blaberidae;Epilamprinae or Zetoborinae;;;Cockroach_S;Cockroach S;scav;CP;B;05.05.2017;H2;wr;a;4
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;05.05.2017;H2;wr;a;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;CP;B;05.05.2017;H2;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;05.05.2017;H2;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_D;Cricket nymph D;omni;CP;B;05.05.2017;H2;wr;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;H2;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_BF;Ant BF;pred;DO;A;10.07.2017;H5;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;A;10.07.2017;H5;w;a;3
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;A;10.07.2017;H5;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;10.07.2017;H5;w;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;DO;A;10.07.2017;H5;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;DO;A;10.07.2017;H5;w;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini?;;Cockroach_G;Cockroach G;scav;DO;A;10.07.2017;H5;w;a;5
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;10.07.2017;H5;w;a;11
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Macrophyllodromia;;Cockroach_X;Cockroach X;scav;DO;A;10.07.2017;H5;w;a;3
+Chelicerata;Araneae;;;;;;Jspider_BL;Jspider BL;pred;DO;A;10.07.2017;H5;w;a;1
+Chelicerata;Araneae;;;;;;Spider_GE;Spider GE;pred;DO;A;10.07.2017;H5;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;DO;A;10.07.2017;H5;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_S;Cricket S;omni;DO;A;10.07.2017;H5;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;DO;A;10.07.2017;H5;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;DO;A;10.07.2017;H5;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;10.07.2017;H5;w;b;1
+Chelicerata;Araneae;;;;;;Jspider_X;Jspider X;pred;DO;A;10.07.2017;H5;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Chrysomelinae;;;Beetle_AX;Beetle AX;herb;DO;B;17.05.2017;H6;wr;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;17.05.2017;H6;wr;a;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;B;17.05.2017;H6;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;17.05.2017;H6;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Bruchinae;;;Beetle_DB;Beetle DB;herb;DO;B;17.05.2017;H6;wr;b;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;DO;B;17.05.2017;H6;wr;b;1
+Chelicerata;Araneae;;;;;;Spider_AG;Spider AG;pred;DO;B;17.05.2017;H6;wr;b;1
+Chelicerata;Araneae;;;;;;Spider_AR;Spider AR;pred;DO;B;17.05.2017;H6;wr;b;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;DO;B;17.05.2017;H6;wr;b;1
+Hexapoda;Dermaptera;;;;;;Earwig_A;Earwig A;omni;DO;B;17.05.2017;H6;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_AB;Ant AB ;pred;DO;B;20.05.2017;H7;wr;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;20.05.2017;H7;wr;a;3
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Pseudomyrmex;;FlyingAnt_N;Flying ant N ;pred;DO;B;20.05.2017;H7;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;20.05.2017;H7;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;20.05.2017;H7;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Nyctiborinae;;;Cockroach_J;Cockroach J;scav;DO;A;13.07.2017;I1;w;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_H;Ootheca H;nada;DO;A;13.07.2017;I1;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;DO;A;13.07.2017;I1;w;a;1
+Chelicerata;Araneae;;;;;;Jspider_BL;Jspider BL;pred;DO;A;13.07.2017;I1;w;a;1
+Chelicerata;Araneae;;;;;;Spider_BX;Spider BX;pred;DO;A;13.07.2017;I1;w;a;1
+Chelicerata;Araneae;;;;;;Spider_GF;Spider GF;pred;DO;A;13.07.2017;I1;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;DO;A;13.07.2017;I1;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;;;FlyingAnt_Y;Flying ant Y;pred;DO;A;13.07.2017;I1;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;A;13.07.2017;I1;w;b;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ H;Orthoptera nymph H;herb;DO;A;13.07.2017;I1;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Liometopum;;Ant_AH;Ant AH;pred;DO;B;20.05.2017;I21;wr;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;DO;B;20.05.2017;I21;wr;a;3
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;DO;B;20.05.2017;I21;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Pseudomyrmex;;FlyingAnt_N;Flying ant N ;pred;DO;B;20.05.2017;I21;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;DO;B;20.05.2017;I21;wr;a;8
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;DO;B;20.05.2017;I21;wr;a;3
+Chelicerata;Araneae;;;;;;Spider_BP;Spider BP;pred;DO;B;20.05.2017;I21;wr;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;DO;B;20.05.2017;I21;wr;a;2
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;DO;B;20.05.2017;I21;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_E;Staphylinid E;pred;DO;B;20.05.2017;I21;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Bruchinae;;;Beetle_BN;Beetle BN;gran;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;11.07.2017;I3;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;11.07.2017;I3;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;11.07.2017;I3;w;a;nest
+Chelicerata;Araneae;;;;;;Spider_G;Spider G;pred;CP;A;11.07.2017;I3;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;11.07.2017;I3;w;a;10
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;11.07.2017;I3;w;a;2
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera BF;herb;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_CC;Hemiptera CC;herb;CP;A;11.07.2017;I3;w;a;4
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_CD;Hemiptera CD;herb;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_Z;Hemiptera Z;herb;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;A;11.07.2017;I3;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_Z;Ant Z;pred;CP;A;11.07.2017;I3;w;a;nest
+Mollusca;Gastropoda;;;;;;Snail_C;Snail C;unkn;CP;A;11.07.2017;I3;w;a;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;11.07.2017;I3;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Cassidinae;;;Beetle_DF;Beetle DF;herb;CP;A;11.07.2017;I3;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;11.07.2017;I3;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_AK;Hemiptera AK;gran;CP;A;11.07.2017;I3;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_C;Snail C;unkn;CP;A;11.07.2017;I3;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;29.06.2017;I7;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;A;29.06.2017;I7;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;29.06.2017;I7;w;a;nest
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;CP;A;29.06.2017;I7;w;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;A;29.06.2017;I7;w;a;1
+Chelicerata;Araneae;;;;;;Spider_DJ;Spider DJ ;pred;CP;A;29.06.2017;I7;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;29.06.2017;I7;w;a;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_CO;Unknown specimen BO;herb;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach U ;scav;CP;A;29.06.2017;I7;w;a;3
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach W;scav;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_AK;Hemiptera AK;gran;CP;A;29.06.2017;I7;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;A;29.06.2017;I7;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;a;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;a;6
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;A;29.06.2017;I7;w;b;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;29.06.2017;I7;w;b;5
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;29.06.2017;I7;w;b;1
+Chelicerata;Opiliones;;;;;;Opilio_G;Spider BP;omni;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_BS;Beetle BS;poll;CP;A;29.06.2017;I7;w;b;2
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;b;2
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Diptera;Brachycera;Muscidae;;;;Fly_EY;Fly EY ;unkn;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Scutelleridae;;;;Hemiptera_BM;Hemiptera BM;herb;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AQ;Hemiptera AQ;herb;CP;A;29.06.2017;I7;w;b;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;CP;A;29.06.2017;I7;w;b;1
+Hexapoda;Psocoptera;;;;;;Psoco_B;Barklice B;detr;CP;A;29.06.2017;I7;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;b;4
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;b;4
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_EU;Beetle EU ;herb;CP;A;29.06.2017;I7;w;c;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;29.06.2017;I7;w;c;1
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;29.06.2017;I7;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;c;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph B;herb;CP;A;29.06.2017;I7;w;c;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;c;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;c;2
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;29.06.2017;I7;w;d;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;A;29.06.2017;I7;w;d;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;d;1
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;29.06.2017;I7;w;e;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;29.06.2017;I7;w;e;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;e;4
+Mollusca;Gastropoda;;;;;;Snail_C;Snail C;unkn;CP;A;29.06.2017;I7;w;e;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;e;5
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;29.06.2017;I7;w;f;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant A;pred;CP;A;29.06.2017;I7;w;f;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;CP;A;29.06.2017;I7;w;f;1
+Chelicerata;Araneae;;;;;;Spider_BM;Spider BM ;pred;CP;A;29.06.2017;I7;w;f;1
+Hexapoda;Blattodea;;Blattidae;;Eurycotis;;Cockroach_Y;Cockroach Y;scav;CP;A;29.06.2017;I7;w;f;3
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;29.06.2017;I7;w;f;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;29.06.2017;I7;w;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_B;Staphylinid B;pred;CP;A;29.06.2017;I7;w;f;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;29.06.2017;I7;w;f;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;f;3
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_EU;Beetle EU ;herb;CP;A;29.06.2017;I7;w;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;29.06.2017;I7;w;g;nest
+Hexapoda;Lepidoptera;;;;;;Lepilarva_M;Lepilarva M ;herb;CP;A;29.06.2017;I7;w;g;1
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;CP;A;29.06.2017;I7;w;g;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;29.06.2017;I7;w;g;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dorylinae ;Neivamyrmex;;Ant_AV;Ant AV;pred;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Scarabaeidae;Melolonthinae;;;Beetle_BO;Beetle BO ;herb;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_X;Beetle X;xylo;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;CP;A;29.06.2017;I7;w;h;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;;;;Beetle_BC;Beetle BC ;herb;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AQ;Hemiptera AQ;herb;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_L;Lepilarva L;herb;CP;A;29.06.2017;I7;w;h;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;29.06.2017;I7;w;h;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;04.07.2017;I9;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;A;04.07.2017;I9;w;a;nest
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;CP;A;04.07.2017;I9;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Staphylinid_H;Staphylinid H;myco;CP;A;04.07.2017;I9;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;A;04.07.2017;I9;w;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;a;5
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;CP;A;04.07.2017;I9;w;b;2
+Chelicerata;Araneae;;;;;;Spider_DI;Spider DI;pred;CP;A;04.07.2017;I9;w;b;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;04.07.2017;I9;w;b;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;CP;A;04.07.2017;I9;w;b;11
+Hexapoda;Blattodea;;Blattidae;;Eurycotis;;Cockroach_Y;Cockroach Y;scav;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_BS;Beetle BS;poll;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;04.07.2017;I9;w;b;2
+Hexapoda;Diptera;Brachycera;Lauxaniidae;;;;Fly_EQ;Fly EQ;myco;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_B;Hemiptera B;gran;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Hemiptera;Sternorrhyncha;;;;;Scale_A;Scale A;herb;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_A;Cricket nymph F;omni;CP;A;04.07.2017;I9;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;04.07.2017;I9;w;b;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;CP;A;04.07.2017;I9;w;c;1
+Chelicerata;Araneae;;;;;;Spider_CJ;Spider DE;pred;CP;A;04.07.2017;I9;w;c;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;CP;A;04.07.2017;I9;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;04.07.2017;I9;w;c;1
+Hexapoda;Hemiptera;Heteroptera;Scutelleridae;;;;Hemiptera_BM;Hemiptera BM;herb;CP;A;04.07.2017;I9;w;c;1
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;CP;A;04.07.2017;I9;w;c;2
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;04.07.2017;I9;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Myrcidris;;Ant_AL;Ant AL;pred;CP;A;04.07.2017;I9;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Cucujidae;;;;Beetle_AJ;Beetle AJ;myco;CP;A;04.07.2017;I9;w;d;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;04.07.2017;I9;w;e;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Myrcidris;;Ant_AL;Ant AL;pred;CP;A;04.07.2017;I9;w;e;1
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;04.07.2017;I9;w;e;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;CP;A;04.07.2017;I9;w;e;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;e;3
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_V;Hemiptera nymph V;herb;CP;A;04.07.2017;I9;w;f;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Agroecomyrmecinae;;;Ant_C;Ant W;pred;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Cassidinae;;;Lepilarva_W;Lepilarva W;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Myrcidris;;Ant_AL;Ant AL;pred;CP;A;04.07.2017;I9;w;g;1
+Chelicerata;Araneae;;;;;;Spider_FV;Spider FV;pred;CP;A;04.07.2017;I9;w;g;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_I;Beetle I;omni;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_AB;Beetle larva E;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_AM;Psyllid AM;herb;CP;A;04.07.2017;I9;w;g;1
+Hexapoda;Lepidoptera;;;;;;Lepilarva_H;Lepilarva H;herb;CP;A;04.07.2017;I9;w;g;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;g;3
+Chelicerata;Araneae;;;;;;Spider_EK;Spider EK;pred;CP;A;04.07.2017;I9;w;h;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod B;detr;CP;A;04.07.2017;I9;w;h;3
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_G;Staphlarva G;pred;CP;A;04.07.2017;I9;w;h;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_B;Staphylinid B;pred;CP;A;04.07.2017;I9;w;h;1
+Hexapoda;Diptera;Nematocera;Ceratopogonidae;;;;Fly_BJ;Fly BJ;hema;CP;A;04.07.2017;I9;w;h;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;A;04.07.2017;I9;w;h;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_B;Hemiptera B;gran;CP;A;04.07.2017;I9;w;i;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;04.07.2017;I9;w;i;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;04.07.2017;I9;w;i;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;B;13.05.2017;J1;wr;a;nest
+Chelicerata;Araneae;;;;;;Spider_I;Spider I ;pred;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Tenebrionidae;;;;Beetle_BK;Beetle BK;scav;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Tenebrionidae;;;;Beetle_DK;Beetle DK;detr;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;B;13.05.2017;J1;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;CP;B;13.05.2017;J2;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;B;13.05.2017;J2;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;13.05.2017;J2;wr;a;1
+Hexapoda;Hemiptera;Heteroptera;Largidae;;;;Hemiptera_AE;Hemiptera AE ;herb;CP;B;13.05.2017;J2;wr;a;4
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_AK;Hemiptera AK;gran;CP;B;13.05.2017;J2;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;B;13.05.2017;J2;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Baridinae;;;Beetle_BT;Beetle BT ;herb;CP;B;13.05.2017;J2;wr;b;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_B;Psyllid B;herb;CP;B;13.05.2017;J2;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;13.05.2017;J2;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;07.07.2017;J4;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_BE;Ant BE;pred;CP;A;07.07.2017;J4;w;a;4
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;CP;A;07.07.2017;J4;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;CP;A;07.07.2017;J4;w;a;2
+Chelicerata;Araneae;;;;;;Spider_GD;Spider GD;pred;CP;A;07.07.2017;J4;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_E;Opilio E;omni;CP;A;07.07.2017;J4;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Scutelleridae;;;;Hemiptera_BM;Hemiptera BM;herb;CP;A;07.07.2017;J4;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Scutelleridae;;;;Hemiptera_CB;Hemiptera CB;herb;CP;A;07.07.2017;J4;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dorylinae ;Neivamyrmex;;Ant_AV;Ant AV;pred;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;07.07.2017;J4;w;b;2
+Hexapoda;Thysanoptera;Tubulifera;Phlaeothripidae;Idolothripinae;;;Thrip_A;Thrip B;unkn;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Pseudomyrmecinae;Myrcidris;;Ant_AL;Ant AL;pred;CP;A;07.07.2017;J4;w;b;1
+Chelicerata;Opiliones;;;;;;Opilio_F;Opilio F;omni;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;;;;Beetle_GN;Beetle GN;herb;CP;A;07.07.2017;J4;w;b;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;07.07.2017;J4;w;b;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;CP;A;07.07.2017;J4;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;07.07.2017;J4;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_U;Beetle Y;xylo;CP;A;07.07.2017;J4;w;c;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;CP;A;07.07.2017;J4;w;d;1
+Chelicerata;Araneae;;;;;;Jspider_I;Jspider I;pred;CP;A;07.07.2017;J4;w;d;1
+Chelicerata;Araneae;;;;;;Spider_CJ;Spider CJ;pred;CP;A;07.07.2017;J4;w;d;1
+Hexapoda;Hemiptera;Heteroptera;Reduviidae;;;;Hemiptera_BZ;Hemiptera BZ;pred;CP;A;07.07.2017;J4;w;d;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ H;Orthoptera nymph H;herb;CP;A;07.07.2017;J4;w;d;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;07.07.2017;J4;w;d;3
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;d;3
+Chelicerata;Araneae;;;;;;Spider_CU;Spider CU;pred;CP;A;07.07.2017;J4;w;e;1
+Chelicerata;Araneae;;;;;;Spider_FT;Spider FT;pred;CP;A;07.07.2017;J4;w;e;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;;;;Beetle_AC;Beetle AC;herb;CP;A;07.07.2017;J4;w;e;2
+Hexapoda;Coleoptera;Polyphaga;Tenebrionidae;;;;Beetle_GM;Beetle GM;scav;CP;A;07.07.2017;J4;w;e;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_F;Staphlarva F;pred;CP;A;07.07.2017;J4;w;e;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AN;Hemiptera AN;herb;CP;A;07.07.2017;J4;w;e;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Eugnominae;;;Beetle_BU;Beetle BU;herb;CP;A;07.07.2017;J4;w;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;07.07.2017;J4;w;f;2
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;07.07.2017;J4;w;f;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;f;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;07.07.2017;J4;w;g;nest
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;CP;A;07.07.2017;J4;w;g;2
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_D;Grasshopper D;herb;CP;A;07.07.2017;J4;w;g;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;07.07.2017;J4;w;g;2
+Chelicerata;Opiliones;;;;;;Opilio_E;Opilio E;omni;CP;A;07.07.2017;J4;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;A;07.07.2017;J4;w;g;1
+Hexapoda;Coleoptera;Adephaga;Carabidae;;;;Beetle_FT;Beetle FT;pred;CP;A;07.07.2017;J4;w;g;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_C;Staphylinid C;pred;CP;A;07.07.2017;J4;w;g;1
+Hexapoda;Hemiptera;Sternorrhyncha;;;;;Scale_H;Scale H;herb;CP;A;07.07.2017;J4;w;g;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;07.07.2017;J4;w;h;3
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;07.07.2017;J4;w;h;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_H;Hemiptera H;herb;CP;A;07.07.2017;J4;w;h;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;A;07.07.2017;J4;w;h;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;07.07.2017;J4;w;h;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;h;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;A;07.07.2017;J4;w;i;nest
+Chelicerata;Araneae;;;;;;Spider_CE;Spider CE;pred;CP;A;07.07.2017;J4;w;i;1
+Chelicerata;Opiliones;;;;;;Opilio_F;Opilio F;omni;CP;A;07.07.2017;J4;w;i;1
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_ET;Beetle ET;poll;CP;A;07.07.2017;J4;w;i;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_BE;Ant BE;pred;CP;A;07.07.2017;J4;w;j;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;CP;A;07.07.2017;J4;w;j;1
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;A;07.07.2017;J4;w;k;3
+Chelicerata;Opiliones;;;;;;Opilio_G;Spider AP;omni;CP;A;07.07.2017;J4;w;k;3
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_G;Staphlarva G;pred;CP;A;07.07.2017;J4;w;j;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;A;07.07.2017;J4;w;k;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_C;Staphylinid C;pred;CP;A;07.07.2017;J4;w;j;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_L;Staphylinid L;pred;CP;A;07.07.2017;J4;w;j;2
+Hexapoda;Dermaptera;;;;;;Earwig_B;Earwig B;omni;CP;A;07.07.2017;J4;w;j;1
+Hexapoda;Dermaptera;;;;;;Earwig_C;Earwig C;omni;CP;A;07.07.2017;J4;w;k;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;07.07.2017;J4;w;k;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_U;Psyllid U;herb;CP;A;07.07.2017;J4;w;j;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;A;07.07.2017;J4;w;k;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;CP;A;07.07.2017;J4;w;k;2
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;CP;A;07.07.2017;J4;w;k;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;k;4
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;07.07.2017;J4;w;j;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;05.05.2017;J5;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_AA;Ant AA;pred;CP;B;05.05.2017;J5;wr;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;CP;B;05.05.2017;J5;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_BW;Spider BW;pred;CP;B;05.05.2017;J5;wr;a;2
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle CN ;herb;CP;B;05.05.2017;J5;wr;a;2
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;a;6
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_L;Cricket L ;omni;CP;B;05.05.2017;J5;wr;a;6
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Cricket_M;Cricket M;unkn;CP;B;05.05.2017;J5;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph D;herb;CP;B;05.05.2017;J5;wr;a;1
+Mollusca;Gastropoda;;;;;;Snail_B;Snail B ;unkn;CP;B;05.05.2017;J5;wr;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;J5;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Entiminae;;;Beetle_BH;Beetle BH;herb;CP;B;05.05.2017;J5;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_AS;Ant AS;pred;CP;B;05.05.2017;J5;wr;b;nest
+Hexapoda;Collembola;;;;;;Springtail_J;Unknown specimen BN ;detr;CP;B;05.05.2017;J5;wr;b;1
+Hexapoda;Dermaptera;;;;;;Earwig_B;Earwig B;omni;CP;B;05.05.2017;J5;wr;b;1
+Hexapoda;Diptera;Nematocera;Tipulidae;;;;Fly_CQ;Fly CQ;nada;CP;B;05.05.2017;J5;wr;b;1
+Hexapoda;Hemiptera;Heteroptera;Plokiophilidae;;;;Hemiptera_BE;Hemiptera BE;pred;CP;B;05.05.2017;J5;wr;b;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;J5;wr;b;2
+Hexapoda;Collembola;;;;;;Springtail_J;Unknown specimen BN ;detr;CP;B;05.05.2017;J5;wr;c;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_Y;Hemiptera Y ;gran;CP;B;05.05.2017;J5;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_AS;Ant AS;pred;CP;B;05.05.2017;J5;wr;d;1
+Chelicerata;Araneae;;;;;;Spider_BH;Spider BH ;pred;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle CN ;herb;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AQ;Hemiptera AQ;herb;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Hemiptera;Heteroptera;Miridae;;;;Hemiptera_AS;Hemiptera AS;unkn;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;d;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_N;Psyllid N;herb;CP;B;05.05.2017;J5;wr;d;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;J5;wr;d;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;B;05.05.2017;J5;wr;e;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;e;1
+Hexapoda;Collembola;;;;;;Springtail_J;Unknown specimen BN ;detr;CP;B;05.05.2017;J5;wr;f;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AQ;Hemiptera AQ;herb;CP;B;05.05.2017;J5;wr;f;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera BF;herb;CP;B;05.05.2017;J5;wr;f;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;f;2
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera DF;herb;CP;B;05.05.2017;J5;wr;g;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_J;Hemiptera nymph J ;herb;CP;B;05.05.2017;J5;wr;g;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;J5;wr;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;05.05.2017;J5;wr;h;4
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;B;05.05.2017;J5;wr;h;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera DF;herb;CP;B;05.05.2017;J5;wr;h;4
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;h;9
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_C;Cricket nymph C;omni;CP;B;05.05.2017;J5;wr;h;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera DF;herb;CP;B;05.05.2017;J5;wr;i;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;CP;B;05.05.2017;J5;wr;i;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph D;herb;CP;B;05.05.2017;J5;wr;i;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;05.05.2017;J5;wr;i;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;CP;B;05.05.2017;J5;wr;j;1
+Chelicerata;Araneae;;;;;;Jspider_O;Jspider O ;pred;CP;B;05.05.2017;J5;wr;j;1
+Chelicerata;Araneae;;;;;;Spider_BW;Spider BW;pred;CP;B;05.05.2017;J5;wr;j;2
+Chelicerata;Opiliones;;;;;;Opilio_A;Opilio A;omni;CP;B;05.05.2017;J5;wr;j;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle CN ;herb;CP;B;05.05.2017;J5;wr;j;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera DF;herb;CP;B;05.05.2017;J5;wr;j;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;05.05.2017;J5;wr;j;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Forelius;;Ant_AJ;Ant AJ;pred;CP;B;09.05.2017;J6;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;CP;B;09.05.2017;J6;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;09.05.2017;J6;wr;a;nest
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Orthoptera_nymph_ F;Orthoptera nymph F;omni;CP;B;09.05.2017;J6;wr;a;1
+Chelicerata;Araneae;;;;;;Jspider_L;Jspider L ;pred;CP;B;09.05.2017;J6;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;09.05.2017;J6;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;B;09.05.2017;J6;wr;b;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera BF;herb;CP;B;09.05.2017;J6;wr;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;B;09.05.2017;J6;wr;b;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;B;09.05.2017;J6;wr;c;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_A;Cricket nymph B ;omni;CP;B;09.05.2017;J6;wr;c;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;B;09.05.2017;J6;wr;c;2
+Chelicerata;Araneae;;;;;;Spider_B;Spider B;pred;CP;B;09.05.2017;J6;wr;d;2
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;09.05.2017;J6;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;Archinipes;;Beetle_DJ;Beetle DJ;myco;CP;B;09.05.2017;J6;wr;d;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;B;09.05.2017;J6;wr;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;B;09.05.2017;J6;wr;e;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;CP;B;09.05.2017;J6;wr;e;5
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_AA;Ant AA;pred;CP;B;09.05.2017;J6;wr;e;6
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;B;09.05.2017;J6;wr;e;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_D;Cricket nymph D;omni;CP;B;09.05.2017;J6;wr;e;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;CP;B;09.05.2017;J6;wr;f;6
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;CP;B;09.05.2017;J6;wr;f;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;B;09.05.2017;J8;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant I;pred;CP;B;09.05.2017;J8;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_AA;Ant AA;pred;CP;B;09.05.2017;J8;wr;a;nest
+Hexapoda;Blattodea;;Blattidae or Ectobiidae;;Periplaneta?;;Cockroach_T;Cockroach T;scav;CP;B;09.05.2017;J8;wr;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;B;09.05.2017;J8;wr;a;6
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph D;herb;CP;B;09.05.2017;J8;wr;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;B;09.05.2017;J8;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Dolichoderinae;Forelius;;Ant_AJ;Ant AJ;pred;CP;B;09.05.2017;J8;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant AR;pred;CP;B;09.05.2017;J8;wr;b;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_AA;Ant AA;pred;CP;B;09.05.2017;J8;wr;b;1
+Chelicerata;Araneae;;;;;;Jspider_E;Jspider E;pred;CP;B;09.05.2017;J8;wr;b;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;09.05.2017;J8;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;B;09.05.2017;J8;wr;c;nest
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach U ;scav;CP;B;09.05.2017;J8;wr;c;7
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_BS;Beetle BS;poll;CP;B;09.05.2017;J8;wr;c;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;09.05.2017;J8;wr;c;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;09.05.2017;J8;wr;c;1
+Hexapoda;Blattodea;;Ectobiidae;Nyctiborinae;;;Cockroach_J;Cockroach J;scav;CP;B;09.05.2017;J8;wr;d;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;;Ant_AA;Ant AA;pred;CP;B;09.05.2017;J8;wr;d;nest
+Chelicerata;Opiliones;;;;;;Opilio_G;Spider AP;pred;CP;B;09.05.2017;J8;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;09.05.2017;J8;wr;d;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;09.05.2017;J8;wr;d;3
+Chelicerata;Araneae;;;;;;Spider_BW;Spider BW;pred;CP;B;09.05.2017;J8;wr;e;2
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_BF;Hemiptera BF;herb;CP;B;09.05.2017;J8;wr;e;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;B;09.05.2017;J8;wr;e;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede A;detr;CP;B;09.05.2017;J8;wr;e;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;CP;B;09.05.2017;J8;wr;f;1
+Chelicerata;Araneae;;;;;;Spider_BW;Spider BW;pred;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Blattodea;;Blattidae;;Periplaneta;Periplaneta australiasae;Cockroach_U;Cockroach U ;scav;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphlarva_B;Beetle CQ;pred;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;CP;B;09.05.2017;J8;wr;f;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Ectatomma;;Ant_J;Ant J ;pred;CP;B;09.05.2017;J8;wr;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;CP;B;09.05.2017;J8;wr;g;nest
+Chelicerata;Araneae;;;;;;Jspider_E;Jspider E;pred;CP;B;09.05.2017;J8;wr;g;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;CP;B;09.05.2017;J8;wr;g;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;B;09.05.2017;J8;wr;g;2
+Hexapoda;Psocoptera;;;;;;Psoco_B;Barklice B;detr;CP;B;09.05.2017;J8;wr;g;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;CP;A;04.07.2017;K5;w;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;CP;A;04.07.2017;K5;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_D;Opilio D;omni;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Cucujidae;;;;Beetle_AJ;Beetle AJ;myco;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_FL;Beetle FL;omni;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Rhyparochromidae;;;;Hemiptera_A;Hemiptera A;gran;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;CP;A;04.07.2017;K5;w;a;3
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_V;Hemiptera nymph V;herb;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Hemiptera;Sternorrhyncha;;;;;Scale_E;Scale E;herb;CP;A;04.07.2017;K5;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;CP;A;04.07.2017;K5;w;a;2
+Mollusca;Gastropoda;;;;;;Snail_C;Snail C;unkn;CP;A;04.07.2017;K5;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;CP;A;04.07.2017;K5;w;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;04.07.2017;K5;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Vespidae;;;;Bigwasp_F;Bigwasp F;pred;CP;A;04.07.2017;K5;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;04.07.2017;K5;w;b;2
+Hexapoda;Thysanoptera;Tubulifera;Phlaeothripidae;Idolothripinae;;;Thrip_A;Thrip I;unkn;CP;A;04.07.2017;K5;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;04.07.2017;K5;w;c;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;CP;A;04.07.2017;K5;w;c;5
+Hexapoda;Collembola;;;;;;Springtail_I;Unknown specimen BB;detr;CP;A;04.07.2017;K5;w;c;1
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_AL;Hemiptera AL;herb;CP;A;04.07.2017;K5;w;c;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;CP;A;04.07.2017;K5;w;c;2
+Hexapoda;Neuroptera;;;;;;Neurolarva_A;Neuroptera larva E;pred;CP;A;04.07.2017;K5;w;c;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;04.07.2017;K5;w;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;CP;A;11.07.2017;L2;w;a;nest
+Hexapoda;Coleoptera;Polyphaga;Scirtidae;;;;Beetle_BS;Beetle BS;poll;CP;A;11.07.2017;L2;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Endomychidae;;;;Beetle_DY;Beetle DY;myco;CP;A;11.07.2017;L2;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;CP;A;11.07.2017;L2;w;a;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;CP;A;11.07.2017;L2;w;a;1
+Chelicerata;Araneae;;;;;;Jspider_AG;Jspider AG;pred;ER;A;08.07.2017;L22;w;a;1
+Chelicerata;Araneae;;;;;;Jspider_AH;Jspider AH;pred;ER;A;08.07.2017;L22;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;A;08.07.2017;L22;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;08.07.2017;L22;w;a;2
+Hexapoda;Thysanoptera;Tubulifera;Phlaeothripidae;;;;Thrip_C;Thrip C;unkn;ER;A;08.07.2017;L22;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;08.07.2017;L22;w;b;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_D;Ootheca D;nada;ER;A;08.07.2017;L22;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;A;08.07.2017;L22;w;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;ER;A;08.07.2017;L22;w;b;3
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_AB;Beetle BG;herb;ER;A;08.07.2017;L22;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;14.05.2017;L24;wr;a;nest
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;ER;B;14.05.2017;L24;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_AN;Beetle AN ;detr;ER;B;14.05.2017;L24;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;ER;B;14.05.2017;L24;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;14.05.2017;L24;wr;a;3
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;14.05.2017;L24;wr;b;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_F;Ootheca F;nada;ER;B;14.05.2017;L24;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;ER;B;14.05.2017;L24;wr;b;1
+Chelicerata;Araneae;;;;;;Jspider_E;Jspider E;pred;ER;B;14.05.2017;L24;wr;b;2
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;ER;B;14.05.2017;L24;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_CO;Beetle CO ;herb;ER;B;14.05.2017;L24;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;14.05.2017;L24;wr;b;3
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ectatomminae;Gnamptogenys;;Ant_K;Ant K;pred;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;10.05.2017;L8;wr;a;5
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_AN;Beetle AN ;detr;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;10.05.2017;L8;wr;a;2
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;10.05.2017;L8;wr;a;3
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_D;Cricket nymph D;omni;ER;B;10.05.2017;L8;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;05.07.2017;M12;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;05.07.2017;M12;w;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;FlyingAnt_V;Flying ant V;pred;ER;A;05.07.2017;M12;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;FlyingAnt_W;Flying ant W;pred;ER;A;05.07.2017;M12;w;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Paraponerinae;Paraponera;Paraponera clavata;Ant_L;Ant AE;pred;ER;A;05.07.2017;M12;w;a;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;ER;A;05.07.2017;M12;w;a;2
+Hexapoda;Coleoptera;;;;;;Beetlarva_G;Beetle larva G;herb;ER;A;05.07.2017;M12;w;a;4
+Hexapoda;Thysanoptera;;;;;;Thrip_nymph_E;Thrip nymph E;unkn;ER;A;05.07.2017;M12;w;a;1
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;ER;A;05.07.2017;M12;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_DC;Beetle DC;herb;ER;A;05.07.2017;M12;w;b;1
+Chelicerata;Schizomida;;;;;;Schizo_A;Spider FW;pred;ER;A;05.07.2017;M12;w;b;1
+Hexapoda;Coleoptera;;;;;;Beetlarva_F;Beetle larva F;herb;ER;A;05.07.2017;M12;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_D;Staphylinid D;pred;ER;A;05.07.2017;M12;w;b;5
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;A;05.07.2017;M12;w;b;2
+Hexapoda;Mantodea;;;;;;Mantid_D;Mantid D;pred;ER;A;05.07.2017;M12;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;ER;A;05.07.2017;M12;w;b;3
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;ER;A;05.07.2017;M12;w;b;4
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;05.07.2017;M12;w;c;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_A;Ootheca A;nada;ER;A;05.07.2017;M12;w;c;1
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;ER;A;05.07.2017;M12;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;;;;Beetle_EP;Beetle EP;herb;ER;A;05.07.2017;M12;w;c;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;ER;A;05.07.2017;M12;w;c;4
+Hexapoda;Coleoptera;;;;;;Staphlarva_H;Staphlarva H;pred;ER;A;05.07.2017;M12;w;c;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;05.07.2017;M12;w;c;2
+Hexapoda;Lepidoptera;;;;;;Lepilarva_L;Lepilarva L;herb;ER;A;05.07.2017;M12;w;c;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;05.07.2017;M12;w;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Ponerinae;Odontomachus;Odontomachus hastatus;Ant_BA;Ant BA;pred;ER;A;05.07.2017;M12;w;d;1
+Chelicerata;Araneae;;;;;;Spider_FX;Spider FX;pred;ER;A;05.07.2017;M12;w;d;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_R;Cricket R;omni;ER;A;05.07.2017;M12;w;d;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;B;07.05.2017;N1;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;07.05.2017;N1;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;07.05.2017;N1;wr;a;9
+Hexapoda;Hymenoptera;Apocrita;;;;;Bee_B;Bee B;poll/nect;ER;B;07.05.2017;N1;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_nymph_D;Cricket nymph D;omni;ER;B;07.05.2017;N1;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph D;herb;ER;B;07.05.2017;N1;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;B;07.05.2017;N1;wr;b;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;ER;B;07.05.2017;N1;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_N;Beetle N ;herb;ER;B;07.05.2017;N1;wr;b;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;07.05.2017;N1;wr;b;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;07.05.2017;N1;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Baridinae;;;Beetle_GL;Beetle GL;herb;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Formica;;Ant_H;Ant H;pred;ER;A;05.07.2017;N10;w;a;nest
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;Tachyporinae;;;Beetle_GK;Beetle GK;myco;ER;A;05.07.2017;N10;w;a;1
+Chelicerata;Araneae;;;;;;Spider_G;Spider BQ;pred;ER;A;05.07.2017;N10;w;a;1
+Chelicerata;Opiliones;;;;;;Opilio_F;Opilio F;omni;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;05.07.2017;N10;w;a;3
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_I;Staphylinid I;pred;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;A;05.07.2017;N10;w;a;2
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Katydid_nymph_A;Katydid nymph A;herb;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Psocoptera;;;;;;Psoco_N;Barklice N;detr;ER;A;05.07.2017;N10;w;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_DC;Beetle DC;herb;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;Pseudophyllinae;;;Grasshopper_A;Grasshopper A;herb;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Anaplecta;;Cockroach_A;Cockroach A;scav;ER;B;14.05.2017;O18;wr;a;2
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini or Chorisoneura or Macrophyllodromia;;Cockroach_K;Cockroach K;scav;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Scolytinae;;;Beetle_X;Beetle X;xylo;ER;B;14.05.2017;O18;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_CH;Spider CH;pred;ER;B;14.05.2017;O18;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_CI;Spider CI ;pred;ER;B;14.05.2017;O18;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_GH;Spider GH;pred;ER;B;14.05.2017;O18;wr;a;1
+Chelicerata;Araneae;;;;;;Spider_H;Spider H ;pred;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Nitidulidae;;;;Beetle_AN;Beetle AN ;detr;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Coleoptera;;;;;;Staphlarva_D;Staphlarva D;pred;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Hemiptera_nymph_R;Hemiptera nymph R;herb;ER;B;14.05.2017;O18;wr;a;2
+Hexapoda;Hemiptera;Heteroptera;Lygaeidae;;;;Hemiptera_S;Hemiptera S;herb;ER;B;14.05.2017;O18;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_K;Cricket K;omni;ER;B;14.05.2017;O18;wr;a;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;14.05.2017;O18;wr;a;nest
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;10.05.2017;O9;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;ER;B;10.05.2017;O9;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;FlyingAnt_E;Flying ant E;pred;ER;B;10.05.2017;O9;wr;a;2
+Hexapoda;Coleoptera;Polyphaga;Anthicidae;;;;Beetle_B;Beetle B;omni;ER;B;10.05.2017;O9;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;10.05.2017;O9;wr;b;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;10.05.2017;O9;wr;c;1
+Hexapoda;Hemiptera;Heteroptera;Reduviidae;;;;Hemiptera_BD;Hemiptera BD;pred;ER;B;10.05.2017;O9;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;10.05.2017;O9;wr;c;1
+Hexapoda;Coleoptera;Adephaga;Carabidae;;;;Beetle_AR;Beetle AR;pred;ER;B;10.05.2017;O9;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;10.05.2017;O9;wr;d;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;10.05.2017;O9;wr;d;2
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;10.05.2017;O9;wr;d;1
+Chelicerata;Araneae;;;;;;Spider_BT;Spider BT;pred;ER;B;10.05.2017;O9;wr;e;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Curculioninae;;;Beetle_DD;Beetle DD;herb;ER;B;10.05.2017;O9;wr;f;1
+Chelicerata;Araneae;;;;;;Spider_O;Spider AA;pred;ER;B;10.05.2017;O9;wr;f;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;B;10.05.2017;O9;wr;f;1
+Hexapoda;Hemiptera;Auchenorrhyncha;;;;;Homoptera_A;Psyllid A;herb;ER;B;10.05.2017;O9;wr;f;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;10.05.2017;O9;wr;f;4
+Hexapoda;Coleoptera;Polyphaga;Caridae;Carinae;;;Beetle_AG;Beetle AG ;herb;ER;B;19.05.2017;R14;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;Ant_A;Ant S;pred;ER;B;19.05.2017;R14;wr;a;nest
+Chelicerata;Araneae;;;;;;Spider_B;Spider B;pred;ER;B;19.05.2017;R14;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Elateridae;;;;Beetle_AB;Beetle BG;herb;ER;B;19.05.2017;R14;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_D;Cricket D ;omni;ER;B;19.05.2017;R14;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Nylanderia;;Ant_F;Ant F ;pred;ER;B;19.05.2017;R14;wr;b;1
+Hexapoda;Collembola;;;;;;Springtail_J;Unknown specimen BN ;detr;ER;B;19.05.2017;R14;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Euphyllodromia?;;Cockroach_Q;Cockroach Q;scav;ER;B;19.05.2017;R14;wr;c;1
+Chelicerata;Araneae;;;;;;Spider_AG;Spider AG;pred;ER;B;19.05.2017;R14;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_AK;Ant AK;pred;ER;B;19.05.2017;R14;wr;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_E;Ant E;pred;ER;B;19.05.2017;R14;wr;d;nest
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Baridinae;;;Beetle_DH;Beetle DH;herb;ER;B;19.05.2017;S18;wr;a;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;B;19.05.2017;S18;wr;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;19.05.2017;S18;wr;a;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_C;Flying ant C;pred;ER;B;19.05.2017;S18;wr;a;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;ER;B;19.05.2017;S18;wr;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;19.05.2017;S18;wr;a;3
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_P;Cockroach P;scav;ER;B;19.05.2017;S18;wr;a;1
+Hexapoda;Orthoptera;Ensifera;Tettigoniidae;;;;Orthoptera_nymph_ B;Orthoptera nymph D;herb;ER;B;19.05.2017;S18;wr;a;1
+Hexapoda;Blattodea;;Blaberidae;Epilamprinae or Zetoborinae;;;Cockroach_S;Cockroach S;scav;ER;B;19.05.2017;S18;wr;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;19.05.2017;S18;wr;b;nest
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_C;Flying ant C;pred;ER;B;19.05.2017;S18;wr;b;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Neoblattellini;;Cockroach_R;Cockroach R;scav;ER;B;19.05.2017;S18;wr;b;1
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;Bruchinae;;;Beetle_BA;Beetle BA ;gran;ER;B;19.05.2017;S18;wr;c;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;B;19.05.2017;S18;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;B;19.05.2017;S18;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Myrmicinae;;;FlyingAnt_C;Flying ant C;pred;ER;B;19.05.2017;S18;wr;c;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_B;Ootheca B;nada;ER;B;19.05.2017;S18;wr;c;2
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;ER;B;19.05.2017;S18;wr;c;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;B;19.05.2017;S18;wr;c;2
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_D;Staphylinid D;pred;ER;B;19.05.2017;S18;wr;c;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_Z;Ant Z;pred;ER;B;19.05.2017;S18;wr;c;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_E;Ootheca E;nada;ER;B;19.05.2017;S18;wr;d;1
+Chelicerata;Araneae;;;;;;Spider_B;Spider B;pred;ER;B;19.05.2017;S18;wr;d;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;FlyingAnt_L;Flying ant L ;pred;ER;B;19.05.2017;S18;wr;d;1
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_D;Cricket D ;omni;ER;B;19.05.2017;S18;wr;d;1
+Hexapoda;Coleoptera;Polyphaga;Curculionidae;Dryophthorinae;;;Beetle_D;Beetle D;herb;ER;A;12.07.2017;T8;w;a;1
+Hexapoda;Blattodea;;Blaberidae;Epilamprinae or Zetoborinae;;;Cockroach_S;Cockroach S;scav;ER;A;12.07.2017;T8;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;12.07.2017;T8;w;a;nest
+Crustacea;Isopoda;;;;;;Isopod_A;Isopod A;detr;ER;A;12.07.2017;T8;w;a;1
+Hexapoda;Hemiptera;Heteroptera;Cydnidae;;;;Hemiptera_CH;Beetle DA;herb;ER;A;12.07.2017;T8;w;a;2
+Hexapoda;Orthoptera;Ensifera;Gryllidae;;;;Cricket_G;Cricket nymph G;herb;ER;A;12.07.2017;T8;w;a;1
+Hexapoda;Orthoptera;Ensifera;Gryllacrididae;;;;Katydid_C;Katydid nymph C;unkn;ER;A;12.07.2017;T8;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_C;Snail C;unkn;ER;A;12.07.2017;T8;w;a;1
+Mollusca;Gastropoda;;;;;;Snail_D;Snail D;unkn;ER;A;12.07.2017;T8;w;a;2
+Myriapoda;Diplopoda;;;;;;Millipede_A;Millipede B;detr;ER;A;12.07.2017;T8;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;Formicinae;Camponotus;;Ant_X;Ant X;pred;ER;A;12.07.2017;X7;w;a;nest
+Hexapoda;Blattodea;;;Ootheca;;;Ootheca_G;Ootheca G;nada;ER;A;12.07.2017;X7;w;a;1
+Hexapoda;Blattodea;;Ectobiidae;Pseudophyllodromiinae;Chorisoneura or Neoblatellini;;Cockroach_B;Cockroach B;scav;ER;A;12.07.2017;X7;w;a;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_AK;Ant AK;pred;ER;A;12.07.2017;X7;w;a;2
+Hexapoda;Coleoptera;Polyphaga;Chrysomelidae;;;;Beetle_EP;Beetle EP;herb;ER;A;12.07.2017;X7;w;b;1
+Hexapoda;Coleoptera;Polyphaga;Staphylinidae;;;;Staphylinid_A;Staphylinid A;pred;ER;A;12.07.2017;X7;w;b;1
+Hexapoda;Hymenoptera;Apocrita;Formicidae;;;;Ant_AK;Ant AK;pred;ER;A;12.07.2017;X7;w;b;1
+Mollusca;Gastropoda;;;;;;Snail_A;Snail A;herb;ER;A;12.07.2017;X7;w;b;1
