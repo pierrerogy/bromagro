@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:dataset xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" system="uuid">
+  <title>Bromeliads affect the interactions and composition of invertebrates on their support tree</title>
+  <creator>
+    <individualName>
+      <givenName>Pierre</givenName>
+      <surName>Rogy</surName>
+    </individualName>
+    <electronicMailAddress>rogy@zoology.ubc.ca</electronicMailAddress>
+  </creator>
+  <abstract>Individual species can have profound effects on ecological communities, but, in hyperdiverse systems, it can be challenging to determine the underlying ecological mechanisms. Simplifying species' responses by trophic level or functional group may be useful, but characterizing the trait structure of communities may be better related to niche processes. A largely overlooked trait in such community-level analyses is behaviour. In the Neotropics, epiphytic tank bromeliads (Bromeliaceae) harbour a distinct fauna of terrestrial invertebrates that is mainly composed of predators, such as ants and spiders. As these bromeliad-associated predators tend to forage on the bromeliads' support tree, they may influence the arboreal invertebrate fauna. We examined how, by increasing associated predator habitat, bromeliads may affect arboreal invertebrates. Specifically, we observed the trophic and functional group composition, and the behaviour and interspecific interactions of arboreal invertebrates in trees with and without bromeliads. Bromeliads modified the functional composition of arboreal invertebrates, but not the overall abundance of predators and herbivores. Bromeliads did not alter the overall behavioural profile of arboreal invertebrates, but did lead to more positive interactions in the day than at night, with a reverse pattern on trees without bromeliads. In particular, tending behaviours were influenced by bromeliad-associated predators. These results indicate that detailed examination of the functional affiliations and behaviour of organisms can reveal complex effects of habitat-forming species like bromeliads, even when total densities of trophic groups are insensitive.</abstract>
+  <dataTable>
+    <entityName>observation.csv</entityName>
+    <entityDescription>Observational survey data</entityDescription>
+    <physical>
+      <objectName>observation.csv</objectName>
+      <size unit="bytes"/>
+      <dataFormat>
+        <textFormat>
+          <recordDelimiter>\n\r</recordDelimiter>
+          <attributeOrientation>column</attributeOrientation>
+          <simpleDelimited>
+            <fieldDelimiter>,</fieldDelimiter>
+          </simpleDelimited>
+        </textFormat>
+      </dataFormat>
+    </physical>
+    <attributeList>
+      <attribute>
+        <attributeName>Site</attributeName>
+        <attributeDefinition>Site ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>block</attributeName>
+        <attributeDefinition>Block or group ID (NB: block X includes extra trees, not part of block or group)</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>rep</attributeName>
+        <attributeDefinition>Repetition of observation on block</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Day</attributeName>
+        <attributeDefinition>Day of observation</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Time</attributeName>
+        <attributeDefinition>Observation during the day or at night</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Observer</attributeName>
+        <attributeDefinition>Name of observer</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Tree</attributeName>
+        <attributeDefinition>Tree ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Bromeliads</attributeName>
+        <attributeDefinition>Presence of bromeliads in the tree</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>obs</attributeName>
+        <attributeDefinition>Observation ID</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Order</attributeName>
+        <attributeDefinition>Order of morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Suborder</attributeName>
+        <attributeDefinition>Suborder of morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Family</attributeName>
+        <attributeDefinition>Family of morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>cleanspec</attributeName>
+        <attributeDefinition>Name of morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Specimen</attributeName>
+        <attributeDefinition>Individual specimen in each observation</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Diet</attributeName>
+        <attributeDefinition>Diet of morphospecies</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>behaviour</attributeName>
+        <attributeDefinition>Behaviour of specimen</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Behavior_Duration</attributeName>
+        <attributeDefinition>Duration of observed behaviour</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>second</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>integer</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>interaction</attributeName>
+        <attributeDefinition>Type of interspecific interaction</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Interaction_Target</attributeName>
+        <attributeDefinition>Target of interspecific interaction</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+      <attribute>
+        <attributeName>Interaction_Duration</attributeName>
+        <attributeDefinition>Duration of interspecific interaction</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>second</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>integer</numberType>
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+      </attribute>
+      <attribute>
+        <attributeName>Interaction_Outcome</attributeName>
+        <attributeDefinition>Outcome of interspecific interaction</attributeDefinition>
+        <storageType>string</storageType>
+      </attribute>
+    </attributeList>
+  </dataTable>
+</eml:dataset>

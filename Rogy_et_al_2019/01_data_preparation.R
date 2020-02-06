@@ -28,12 +28,16 @@ library(vegan)
 
 #Load and check data
 distance <- # Please download data from repository
+  read.csv("Data/distance.csv", stringsAsFactors = F)
 str(distance)
-damage <- read.csv() # Please download data from repository
+damage <- # Please download data from repository
+  read.csv("Data/damage.csv", stringsAsFactors = F)
 str(damage)
-vacuum <- read.csv() # Please download data from repository
+vacuum <- # Please download data from repository
+  read.csv("Data/vacuum.csv", stringsAsFactors = F)
 str(vacuum)
-dissection <- read.csv() # Please download data from repository
+dissection <- # Please download data from repository
+  read.csv("Data/dissection.csv", stringsAsFactors = F)
 str(dissection)
 
 
