@@ -34,12 +34,6 @@ In the observational survey, I found that bromeliads had subtle effects on the t
 These studies are interesting because they seem to contradict a [study](https://onlinelibrary.wiley.com/doi/full/10.1111/btp.12073) led by my co-supervisor [Dr. Edd Hammill](https://www.eddhammill.com/), in which the presence of bromeliads in a tree effectively reduced leaf damage when compared to trees without bromeliads. Here, the main difference lied in the identity of the most common ant species, which tend to be the most common predators in tropical systems. This therefore implies that the same ecological system can behave differently depending on the identity of common species. Such results are relevant in sustainable agricultural practices that aim at establishing natural enemies populations to control pest species.
 
 ## Project outputs
-### Metadata
-[Data](https://doi.org/10.5061/dryad.b4c364r) and [metadata](https://github.com/pierrerogy/bromagro/tree/master/Metadata_manipulative_experiment) are presently available for the manipulative experiment.
-<p> 
-[Data and metadata](https://osf.io/kx7sw/) are presently available for the observational survey. 
-</p>
-
 ### Thesis
 To have a look at the thesis, please follow [this link](https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0371615).
 
