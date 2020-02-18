@@ -36,6 +36,9 @@ These studies are interesting because they seem to contradict a [study](https://
 ## Project outputs
 ### Metadata
 [Data](https://doi.org/10.5061/dryad.b4c364r) and [metadata](https://github.com/pierrerogy/bromagro/tree/master/Metadata_manipulative_experiment) are presently available for the manipulative experiment.
+<p> 
+[Data and metadata](https://osf.io/kx7sw/) are presently available for the observational survey. 
+</p>
 
 ### Thesis
 To have a look at the thesis, please follow [this link](https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0371615).
