@@ -41,7 +41,7 @@ To have a look at the thesis, please follow [this link](https://open.library.ubc
 Rogy, P., Hammill, E., & Srivastava, D. S. (2019). Complex indirect effects of epiphytic bromeliads on the invertebrate food webs of their support tree. Biotropica, 51(4), 549–561. 
 Links to: [paper](https://doi.org/10.1111/btp.12672), [data](https://doi.org/10.5061/dryad.b4c364r), [code](https://github.com/pierrerogy/bromagro/tree/master/Rogy_et_al_2019)
 
-
+Rogy, P., Hammill, E., Smith, M.A., Rost-Komiya, B., Srivastava D. S. (2020). Bromeliads affect the interactions and composition of invertebrates on their support tree. Oecologia. Links to: [paper](https://doi.org/10.1007/s00442-020-04616-w), [data](https://osf.io/kx7sw/), [code](https://github.com/pierrerogy/bromagro/tree/master/Rogy_et_al_2020)
 
 ### If you're interested in learning more about bromeliad research, have a look at the [Bromeliad Working Group](http://www.zoology.ubc.ca/~srivast/bwg/)!
   
